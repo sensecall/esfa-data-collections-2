@@ -1,0 +1,40 @@
+{% extends "layout-index.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="homepage-top">
+  <div class="homepage-top-content">
+    <h1 class="heading-xlarge">
+      Data Collections
+      <span>Prototypes</span>
+    </h1>
+  </div>
+</div>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="example">
+        {% include 'summaries/version-2/summary.html' %}
+      </div>
+
+      <h2 class="heading-large">All versions</h2>
+
+      <!-- start data collections stuff -->
+      <details>
+        <summary><span class="summary">Version 2</span></summary>
+        <div class="panel">
+          {% include 'summaries/version-2/summary.html' %}
+        </div>
+      </details>
+      <!-- end data collections stuff -->
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

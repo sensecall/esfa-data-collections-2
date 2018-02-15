@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+{{serviceName}}
+{% endblock %}
+
+{% block content %}
+{% include '../includes/_header-nav.html' %}
+
+<main id="content" role="main">
+	<div class="service-info">
+		<div class="phase-banner-beta">
+			<p>
+				<strong class="phase-tag">BETA</strong>
+				<span>This is a new service – your <a href="https://www.surveymonkey.co.uk/r/accessmylevysurvey" target="_blank">feedback</a> will help us to improve it. </span>
+			</p>
+		</div>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">
+				Submit your data
+			</h1>
+
+			<h2 class="heading-medium">
+				<a href="ilr">Individualised Learner Records (ILR)</a>
+			</h2>
+
+			<p>Sunt quis duis eiusmod dolor cillum eu sint qui ea nostrud laboris sunt anim sit fugiat deserunt dolor aute dolor cillum est aliqua nisi sed ut mollit duis sint amet cupidatat.</p>
+
+			<ul class="list">
+				<li><a href="#">Submit an ILR file</a></li>
+				<li><a href="#">View your ILR history</a></li>
+			</ul>
+			<!-- <details>
+				<summary><span class="summary">I don't know what an ILR is</span></summary>
+
+				<div class="panel panel-border wide">
+					<p>
+						If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+					</p>
+
+					<p>
+						We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
+					</p>
+				</div>
+			</details> -->
+
+			<hr>
+
+			<h2 class="heading-medium">
+				<a href="#">Earnings Adjustment Statement (EAS)</a>
+			</h2>
+
+			<p>Lorem ipsum ea adipisicing nulla enim tempor id aute sunt ut mollit cupidatat in nostrud in incididunt excepteur est aute in id officia anim id sunt ut consequat dolore reprehenderit minim amet qui ut voluptate fugiat officia minim culpa dolore.</p>
+
+			<ul class="list">
+				<li><a href="#">Manage your EAS return</a></li>
+			</ul>
+
+			<hr>
+
+			<h2 class="heading-medium">Other resources</h2>
+
+			<ul class="list list-bullet">
+				<li>
+					<a href="https://govuk-elements.herokuapp.com/snippets/">
+						Guide to GOV.UK Elements
+					</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/service-manual">
+						Service design manual
+					</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/design-principles">
+						Government Digital Service Design Principles
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="column-one-third">
+			<aside class="govuk-related-items" data-module="track-click" role="complementary">
+				<h2 class="heading-medium">
+					Claiming funding for your organisation
+				</h2>
+
+				<nav role="navigation">
+					<ul>
+						<li>
+							<a href="#">How to return ILR final funding claims to the ESFA</a>
+						</li>
+						<li>
+							<a href="#">Data collection for further education providers</a>
+						</li>
+						<li>
+							<a href="#">Further education funding data</a>
+						</li>
+						<li>
+							<a href="#">ESFA: Inform newsletter</a>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+		</div>
+	</div>
+</main>
+{% endblock %}

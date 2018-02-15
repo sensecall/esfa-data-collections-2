@@ -1,0 +1,60 @@
+{% extends "../layout.html" %}
+
+{% block page_title %}
+Submit an ILR - GOV.UK
+{% endblock %}
+
+{% block service_name %}
+Submit an ILR
+{% endblock %}
+
+{% block content %}
+{% include 'includes/_header-nav.html' %}
+
+<main id="content" role="main">
+	{% include '../includes/_phase-banner.html' %}
+	
+	<div class="breadcrumbs">
+		<ol>
+			<li><a href="./data-submissions">{{ data['provider-name'] or "Cambridge College" }}</a></li>
+			<li><a href="./submit-ilr">Submit an ILR file</a></li>
+		</ol>
+	</div>
+	
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">
+				Submit an <abbr title="Individualised Learner Record">ILR</abbr> file
+			</h1>
+	  	  	
+			<p class="lede">You can use this service to submit an ILR file for the current Return period.</p>
+			
+			<p>Before submitting a file make sure:</p>
+			<ul class="list list-bullet">
+				<li>Learner data should be entered correctly</li>
+				<li>ILR files must be saved in the <abbr title="Extensible Markup Language">XML</abbr> file format</li>
+			</ul>
+
+			<p><a class="button button-start" href="submit-ilr/upload-ilr" role="button">Start now</a></p>
+
+			<h2 class="heading-medium">Other resources</h2>
+			
+			<ul class="list list-bullet">
+				<li>
+					<a href="https://www.gov.uk/guidance/sfa-funding-rules">Funding Rules</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/government/collections/individualised-learner-record-ilr">The ILR Returns Calendar</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="column-one-third">
+			{% include '../includes/_return-period-info.html' %}
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

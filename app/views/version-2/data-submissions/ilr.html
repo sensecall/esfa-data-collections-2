@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+{{serviceName}}
+{% endblock %}
+
+{% block content %}
+{% include 'includes/_header-nav.html' %}
+
+<main id="content" role="main">
+	<div class="service-info">
+		<div class="phase-banner-beta">
+			<p>
+				<strong class="phase-tag">BETA</strong>
+				<span>This is a new service – your <a href="https://www.surveymonkey.co.uk/r/accessmylevysurvey" target="_blank">feedback</a> will help us to improve it. </span>
+			</p>
+		</div>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<a class="link-back" href="javascript:history.back()">Back</a>
+
+			<h1 class="heading-large">
+				Individualised Learner Records (ILR)
+			</h1>
+
+		</div>
+
+		<div class="column-one-third">
+			<aside class="govuk-related-items" data-module="track-click" role="complementary">
+				<h2 class="heading-medium">
+					Claiming funding for your organisation
+				</h2>
+
+				<nav role="navigation">
+					<ul>
+						<li>
+							<a href="#">How to return ILR final funding claims to the ESFA</a>
+						</li>
+						<li>
+							<a href="#">Data collection for further education providers</a>
+						</li>
+						<li>
+							<a href="#">Further education funding data</a>
+						</li>
+						<li>
+							<a href="#">ESFA: Inform newsletter</a>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+		</div>
+	</div>
+</main>
+{% endblock %}
