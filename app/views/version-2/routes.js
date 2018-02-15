@@ -3,19 +3,26 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
-  res.redirect(`/${req.version}/index`)
+	res.redirect(`/${req.version}/index`)
 })
 
 router.get('/history', (req, res) => {
-  res.render(`${req.version}/history`,)
+	var currentPage = 'history'
+	res.render(`${req.version}/history`,{currentPage})
 })
 
-router.get('/submit-your-data', (req, res) => {
-  res.render(`${req.version}/data-submissions`,)
+router.get('/data-submissions', (req, res) => {
+	var currentPage = 'submit'
+	res.render(`${req.version}/data-submissions/index`,{currentPage})
+})
+
+router.get('/data-submissions/ilr', (req, res) => {
+	var currentPage = 'submit'
+	res.render(`${req.version}/data-submissions/ilr`,{currentPage})
 })
 
 router.get('/login', (req, res) => {
-  res.render(`${req.version}/login`,)
+	res.render(`${req.version}/login`,)
 })
 
 module.exports = router

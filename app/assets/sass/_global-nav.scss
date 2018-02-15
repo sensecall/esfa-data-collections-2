@@ -36,7 +36,7 @@ $light-nav-color: scale-color($header-user-bg, $lightness: 80%);
 
 	.heading-small {
 		.heading-secondary {
-			color: darken($header-user-bg,50%);
+			color: scale-color($header-user-bg, $lightness: 80%);
 			font-weight: normal;
 			font-size: 16px;
 		}
@@ -68,13 +68,19 @@ $light-nav-color: scale-color($header-user-bg, $lightness: 80%);
 				border-top: 1px solid scale-color($header-user-bg, $lightness: 20%);
 				margin-left: $gutter-two-thirds;
 				padding: $gutter-one-quarter 0;
-
+				&.current {
+					a {
+						text-decoration: none;
+						color: scale-color($header-user-bg, $lightness: 60%);
+					}
+				}
 				a {
 					$nav-link-color: $white;
 					color: $nav-link-color;
 					text-decoration: underline;
 					&:hover {
-						color: scale-color($header-user-bg, $lightness: 80%)
+						color: scale-color($header-user-bg, $lightness: 80%);
+						text-decoration: underline;
 					}
 				}
 

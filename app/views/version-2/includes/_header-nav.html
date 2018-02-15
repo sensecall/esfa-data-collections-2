@@ -5,19 +5,19 @@
 			<div class="column-one-third">
 				<h2 class="heading-small">
 					<a href="#">Cambridge College</a>
-					<!-- <span class="heading-secondary">
-						adjsadj
-					</span> -->
+					<span class="heading-secondary">
+						<span class="visuallyhidden">Logged in as </span>{% if data['user-id']%} {{data['user-id']}} {% else %}Norma Jones{% endif %}
+					</span>
 				</h2>
 			</div>
 
 			<div class="column-two-thirds">
 				<nav id="user-nav" class="js-hidden-mobile">
 					<ul>
-						<li><a href="./data-submissions">Submit your data</a></li>
-						<li><a href="./history">View submission history</a></li>
-						<li><a href="./settings">Settings</a></li>
-						<li><a href="/version-2?authenticated=false">Sign out</a></li>
+						<li{% if currentPage == 'submit' %} class="current"{% endif %}><a href="/{{version}}/data-submissions">Submit your data</a></li>
+						<li{% if currentPage == 'history' %} class="current"{% endif %}><a href="/{{version}}/history">View submission history</a></li>
+						<li{% if currentPage == 'history' %} class="current"{% endif %}><a href="/{{version}}/settings">Settings</a></li>
+						<li{% if currentPage == 'history' %} class="current"{% endif %}><a href="/{{version}}/?authenticated=false">Sign out</a></li>
 					</ul>
 				</nav>
 			</div>
