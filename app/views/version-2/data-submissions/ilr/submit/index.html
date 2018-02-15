@@ -1,4 +1,4 @@
-{% extends "../layout.html" %}
+{% extends "layout.html" %}
 
 {% block page_title %}
 Submit an ILR - GOV.UK
@@ -9,17 +9,10 @@ Submit an ILR
 {% endblock %}
 
 {% block content %}
-{% include 'includes/_header-nav.html' %}
+{% include version + '/includes/_header-nav.html' %}
 
 <main id="content" role="main">
-	{% include '../includes/_phase-banner.html' %}
-	
-	<div class="breadcrumbs">
-		<ol>
-			<li><a href="./data-submissions">{{ data['provider-name'] or "Cambridge College" }}</a></li>
-			<li><a href="./submit-ilr">Submit an ILR file</a></li>
-		</ol>
-	</div>
+	{% include version + '/includes/_phase-banner.html' %}
 	
 	<div class="grid-row">
 		<div class="column-two-thirds">
@@ -35,7 +28,7 @@ Submit an ILR
 				<li>ILR files must be saved in the <abbr title="Extensible Markup Language">XML</abbr> file format</li>
 			</ul>
 
-			<p><a class="button button-start" href="submit-ilr/upload-ilr" role="button">Start now</a></p>
+			<p><a class="button button-start" href="upload-your-ilr" role="button">Start now</a></p>
 
 			<h2 class="heading-medium">Other resources</h2>
 			
@@ -50,7 +43,7 @@ Submit an ILR
 		</div>
 		
 		<div class="column-one-third">
-			{% include '../includes/_return-period-info.html' %}
+			{% include version + '/includes/_return-period-info.html' %}
 		</div>
 	</div>
 </main>
