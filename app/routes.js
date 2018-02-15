@@ -7,6 +7,7 @@ router.use('/', (req, res, next) => {
   req.version = req.originalUrl.split('/')[1] // this is added by DC project
   req.feature = req.originalUrl.split('/')[1]
   req.sprint = req.originalUrl.split('/')[2]
+  res.locals.version = req.version // this is added by DC project
   res.locals.feature = req.feature
   res.locals.sprint = req.sprint
   next()
