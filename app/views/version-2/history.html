@@ -32,18 +32,12 @@
 						</legend>
 						<div class="form-group">
 							<div class="multiple-choice">
-								<input id="filter-reports" name="filter-reports" type="checkbox" value="true" {{ checked("filter-reports", "true") }}>
+								<input id="filter-reports" name="filter-reports" type="checkbox" value="true" {{ checked("filter-reports", "true") }} class="filter-control">
 								<label for="filter-reports">Reports</label>
-								{% if data["filter-reports"] %}
-								<input type="hidden" name="filter-reports" value="">
-								{% endif %}
 							</div>
 							<div class="multiple-choice">
-								<input id="filter-submissions" name="filter-submissions" type="checkbox" value="true" {{ checked("filter-submissions", "true") }}>
+								<input id="filter-submissions" name="filter-submissions" type="checkbox" value="true" {{ checked("filter-submissions", "true") }} class="filter-control">
 								<label for="filter-submissions">Submissions</label>
-								{% if data["filter-submissions"] %}
-								<input type="hidden" name="filter-submissions" value="">
-								{% endif %}
 							</div>
 						</div>
 					</fieldset>
@@ -120,6 +114,20 @@
 						</td>
 						<td>{{report.type}}</td>
 						<td>{{report.submission_date}}</td>
+					</tr>
+					{% endfor %}
+					{% endif %}
+
+					{% if data['filter-submissions'] == 'true' %}
+					{% for submission in d.submission_history.submissions %}
+					<tr>
+						<td>
+							<a href="./ilr-details?ilr-period=6&ilr-year=2017&ndash;2018">
+								{{submission.name}}
+							</a>
+						</td>
+						<td>{{submission.type}}</td>
+						<td>{{submission.submission_date}}</td>
 					</tr>
 					{% endfor %}
 					{% endif %}

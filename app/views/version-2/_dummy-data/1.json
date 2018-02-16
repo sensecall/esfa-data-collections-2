@@ -1,77 +1,67 @@
-  {
-    "submission_history": {
-      "reports": [
-        { 
-          "id": "1",
-          "name": "Return period 7",
-          "type": "ILR",
-          "submission_date": "23 Sep 20"
-        },
-        {
-          "id": "2",
-          "name": "Return period 6",
-          "type": "ILR",
-          "submission_date": "23 Sep 20"
-        },
-        {
-          "id": "3",
-          "name": "Return period 5",
-          "type": "ILR",
-          "submission_date": "23 Sep 20"
-        },
-        {
-          "id": "4",
-          "name": "Return period 4",
-          "type": "ILR",
-          "submission_date": "23 Sep 20"
-        },
-        {
-          "id": "5",
-          "name": "Return period 3",
-          "type": "ILR",
-          "submission_date": "23 Sep 20"
-        }
-      ]
-    },
-
-
-    "claim": {
-      "status": "Disallowed"
-    },
-    "claimant": {
-      "fullName": "Sarah Wilson",
-      "nino": "BB123456B",
-      "dateOfClaim": "2 October 2017",
-      "dateOfBirth": "11 August 1950",
-      "sex": "Female",
-      "currentAddress": {
-        "number": "8",
-        "street": "Limetree Grove",
-        "town": "Selby",
-        "county": "Leeds",
-        "postcode": "L1 4PP"
+  { "submission_history": {
+    "reports": [
+      { 
+        "id": "1",
+        "name": "Return period 7",
+        "type": "ILR",
+        "submission_date": "23 Sep 20"
       },
-      "contact": {
-        "home": "11311234567"
+      {
+        "id": "2",
+        "name": "Return period 6",
+        "type": "ILR",
+        "submission_date": "23 Sep 20"
+      },
+      {
+        "id": "3",
+        "name": "Return period 5",
+        "type": "ILR",
+        "submission_date": "23 Sep 20"
+      },
+      {
+        "id": "4",
+        "name": "Return period 4",
+        "type": "ILR",
+        "submission_date": "23 Sep 20"
+      },
+      {
+        "id": "5",
+        "name": "Return period 3",
+        "type": "ILR",
+        "submission_date": "23 Sep 20"
       }
-    },
-    "partner": {
-      "fullName": "Patrick Wilson",
-      "nino": "HH123456H",
-      "dateOfDeath": "10 October 2017"  
-    },
-    "children": {
-      "dependant": "No"
-    },
-    "payment": {
-      "nameOnAccount": "Mrs S Wilson",
-      "sortCode": "121234",
-      "accountNumber": "12341234",
-      "country": "United Kingdom"
-    },
-    "verification": {
-      "marriage": "Yes",
-      "death": "Yes",
-      "conts": "Yes"
-    }
+    ],
+    "submissions": [
+      { 
+        "id": "1",
+        "name": "Return period 7",
+        "type": "EAS",
+        "submission_date": "23 Sep 20"
+      },
+      {
+        "id": "2",
+        "name": "Return period 6",
+        "type": "EAS",
+        "submission_date": "23 Sep 20"
+      },
+      {
+        "id": "3",
+        "name": "Return period 5",
+        "type": "ILR",
+        "submission_date": "23 Sep 20"
+      },
+      {
+        "id": "4",
+        "name": "Return period 4",
+        "type": "QAR",
+        "submission_date": "23 Sep 20"
+      },
+      {
+        "id": "5",
+        "name": "Return period 3",
+        "type": "Funding Claim",
+        "submission_date": "23 Sep 20"
+      }
+    ]
   }
+}

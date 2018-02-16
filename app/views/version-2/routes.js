@@ -41,6 +41,10 @@ router.get('/login', (req, res) => {
 	res.render(`${req.version}/login`,)
 })
 
+router.get('/signed-out', (req, res) => {
+	res.render(`${req.version}/signed-out`,)
+})
+
 router.get('/claim-esfa-funding', (req, res) => {
 	res.render(`${req.version}/index`,)
 })
