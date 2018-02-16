@@ -3,7 +3,7 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
-	res.redirect(`/${req.version}/index`)
+	res.redirect(`/${req.version}/settings`)
 })
 
 router.get('/history', (req, res) => {
@@ -32,8 +32,17 @@ router.get('/upload-your-ilr', (req, res) => {
 	res.render(`${req.version}/data-submissions/ilr/submit/upload-ilr`,{currentPage})
 })
 
+router.get('/ilr-upload-complete', (req, res) => {
+	var currentPage = 'submit'
+	res.render(`${req.version}/data-submissions/ilr/submit/ilr-upload-complete`,{currentPage})
+})
+
 router.get('/login', (req, res) => {
 	res.render(`${req.version}/login`,)
+})
+
+router.get('/claim-esfa-funding', (req, res) => {
+	res.render(`${req.version}/index`,)
 })
 
 module.exports = router
