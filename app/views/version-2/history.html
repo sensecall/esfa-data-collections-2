@@ -1,22 +1,21 @@
 {% extends "layout.html" %}
+{% set d = '1' | esfaDummyData %}
 
 {% block page_title %}
 {{serviceName}}
 {% endblock %}
 
+{% block page_scripts %}
+<script>
+	{% include './frontend-js/history-search.js' %}
+</script>
+{% endblock %}
 
 {% block content %}
 {% include './includes/_header-nav.html' %}
 
 <main id="content" role="main">
-	<div class="service-info">
-		<div class="phase-banner-beta">
-			<p>
-				<strong class="phase-tag">BETA</strong>
-				<span>This is a new service – your <a href="https://www.surveymonkey.co.uk/r/accessmylevysurvey" target="_blank">feedback</a> will help us to improve it. </span>
-			</p>
-		</div>
-	</div>
+	{% include version + '/includes/_phase-banner.html' %}
 
 	<h1 class="heading-large">
 		Your submission history
@@ -25,7 +24,7 @@
 	<div class="grid-row">
 		<div class="column-third">
 			<div class="dc-history-panel-grey">
-				<h2 class="heading-medium">Filter submissions</h2>
+				<h2 class="heading-medium">Filter</h2>
 				<form>
 					<fieldset>
 						<legend>
@@ -33,19 +32,25 @@
 						</legend>
 						<div class="form-group">
 							<div class="multiple-choice">
-								<input id="ilr" name="filter-ilr" type="checkbox" value="ilr">
-								<label for="ilr">Reports</label>
+								<input id="filter-reports" name="filter-reports" type="checkbox" value="true" {{ checked("filter-reports", "true") }}>
+								<label for="filter-reports">Reports</label>
+								{% if data["filter-reports"] %}
+								<input type="hidden" name="filter-reports" value="">
+								{% endif %}
 							</div>
 							<div class="multiple-choice">
-								<input id="eas" name="filter-eas" type="checkbox" value="eas">
-								<label for="eas">Submissions</label>
+								<input id="filter-submissions" name="filter-submissions" type="checkbox" value="true" {{ checked("filter-submissions", "true") }}>
+								<label for="filter-submissions">Submissions</label>
+								{% if data["filter-submissions"] %}
+								<input type="hidden" name="filter-submissions" value="">
+								{% endif %}
 							</div>
 						</div>
 					</fieldset>
 
 					<fieldset>
 						<legend>
-							<h3 class="heading-small">Submission types</h3>
+							<h3 class="heading-small">Submission type</h3>
 						</legend>
 						<div class="form-group">
 							<div class="multiple-choice">
@@ -91,54 +96,35 @@
 		</div>
 
 		<div class="column-two-thirds">
-			<table class="table-font-xsmall">
+			<h3 class="heading-medium">
+				Showing <span id="history-results-count"></span> items from your history
+			</h3>
+
+			<table class="table-font-xsmall" id="history-table">
 				<thead>
 					<tr>
 						<th>Name</th>
 						<th>Type</th>
-						<th></th>
 						<th>Submitted</th>
 					</tr>
 				</thead>
 
-				<tbody>	
+				<tbody>
+					{% if data['filter-reports'] == 'true' %}
+					{% for report in d.submission_history.reports %}
 					<tr>
-						<td><a href="./ilr-details?ilr-period=6&ilr-year=2017&ndash;2018">Return period 6</a></td>
-						<td>ILR</td>
-						<td>30th September 2017</td>
+						<td>
+							<a href="./ilr-details?ilr-period=6&ilr-year=2017&ndash;2018">
+								{{report.name}}
+							</a>
+						</td>
+						<td>{{report.type}}</td>
+						<td>{{report.submission_date}}</td>
 					</tr>
-
-					<tr>
-						<td><a href="#">Return period 5</a></td>
-						<td>ILR</td>
-						<td>31st August 2017</td>
-					</tr>
-
-					<tr>
-						<td><a href="#">Return period 4</a></td>
-						<td>ILR</td>
-						<td>23rd July 2017</td>
-					</tr>
-					
-					<tr>
-						<td><a href="#">Return period 3</a></td>
-						<td>ILR</td>
-						<td>23rd June 2017</td>
-					</tr>
-					
-					<tr>
-						<td><a href="#">Return period 2</a></td>
-						<td>ILR</td>
-						<td>23rd May 2017</td>
-					</tr>
-					
-					<tr>
-						<td><a href="#">Return period 1</a></td>
-						<td>ILR</td>
-						<td>22nd April 2017</td>
-					</tr>
+					{% endfor %}
+					{% endif %}
 				</tbody>
-			</table>	
+			</table>
 		</div>
 	</div>
 </main>
