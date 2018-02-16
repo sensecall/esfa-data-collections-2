@@ -18,75 +18,127 @@
 		</div>
 	</div>
 
+	<h1 class="heading-large">
+		Your submission history
+	</h1>
+
 	<div class="grid-row">
 		<div class="column-third">
-			<h2 class="heading-medium">Filter submissions</h2>
-			<form>
-				<fieldset>
-					<legend>
-						<h3 class="heading-small">History type</h3>
-					</legend>
-					<div class="form-group">
-						<div class="multiple-choice">
-							<input id="ilr" name="filter-ilr" type="checkbox" value="ilr">
-							<label for="ilr">Reports</label>
+			<div class="dc-history-panel-grey">
+				<h2 class="heading-medium">Filter submissions</h2>
+				<form>
+					<fieldset>
+						<legend>
+							<h3 class="heading-small">History type</h3>
+						</legend>
+						<div class="form-group">
+							<div class="multiple-choice">
+								<input id="ilr" name="filter-ilr" type="checkbox" value="ilr">
+								<label for="ilr">Reports</label>
+							</div>
+							<div class="multiple-choice">
+								<input id="eas" name="filter-eas" type="checkbox" value="eas">
+								<label for="eas">Submissions</label>
+							</div>
 						</div>
-						<div class="multiple-choice">
-							<input id="eas" name="filter-eas" type="checkbox" value="eas">
-							<label for="eas">Submissions</label>
-						</div>
-					</div>
-				</fieldset>
+					</fieldset>
 
-				<fieldset>
-					<legend>
-						<h3 class="heading-small">Submission types</h3>
-					</legend>
-					<div class="form-group">
-						<div class="multiple-choice">
-							<input id="ilr" name="filter-ilr" type="checkbox" value="ilr">
-							<label for="ilr">Individualised Learner Records</label>
-						</div>
-						<div class="multiple-choice">
-							<input id="eas" name="filter-eas" type="checkbox" value="eas">
-							<label for="eas">Earnings Adjustment Statements</label>
-						</div>
-						<div class="multiple-choice">
-							<input id="funding-claims" name="filter-funding-claims" type="checkbox" value="funding-claims">
-							<label for="funding-claims">Funding claims</label>
-						</div>
+					<fieldset>
+						<legend>
+							<h3 class="heading-small">Submission types</h3>
+						</legend>
+						<div class="form-group">
+							<div class="multiple-choice">
+								<input id="ilr" name="filter-ilr" type="checkbox" value="ilr">
+								<label for="ilr">Individualised Learner Records</label>
+							</div>
+							<div class="multiple-choice">
+								<input id="eas" name="filter-eas" type="checkbox" value="eas">
+								<label for="eas">Earnings Adjustment Statements</label>
+							</div>
+							<div class="multiple-choice">
+								<input id="funding-claims" name="filter-funding-claims" type="checkbox" value="funding-claims">
+								<label for="funding-claims">Funding claims</label>
+							</div>
 
-					</div>
-				</fieldset>
-
-				<fieldset>
-					<legend>
-						<h3 class="heading-small">Return year</h3>
-					</legend>
-					<div class="form-group">
-						<div class="multiple-choice">
-							<input id="ilr" name="filter-ilr" type="checkbox" value="ilr">
-							<label for="ilr">2017/18</label>
 						</div>
-						<div class="multiple-choice">
-							<input id="eas" name="filter-eas" type="checkbox" value="eas">
-							<label for="eas">2016/17</label>
-						</div>
-						<div class="multiple-choice">
-							<input id="funding-claims" name="filter-funding-claims" type="checkbox" value="funding-claims">
-							<label for="funding-claims">2015/16</label>
-						</div>
+					</fieldset>
 
-					</div>
-				</fieldset>
+					<fieldset>
+						<legend>
+							<h3 class="heading-small">Return year</h3>
+						</legend>
+						<div class="form-group">
+							<div class="multiple-choice">
+								<input id="ilr" name="filter-ilr" type="checkbox" value="ilr">
+								<label for="ilr">2017/18</label>
+							</div>
+							<div class="multiple-choice">
+								<input id="eas" name="filter-eas" type="checkbox" value="eas">
+								<label for="eas">2016/17</label>
+							</div>
+							<div class="multiple-choice">
+								<input id="funding-claims" name="filter-funding-claims" type="checkbox" value="funding-claims">
+								<label for="funding-claims">2015/16</label>
+							</div>
 
-				<input type="submit" class="button" value="Filter">
-			</form>
+						</div>
+					</fieldset>
+
+					<input type="submit" class="button" value="Filter">
+				</form>
+			</div>
 		</div>
+
 		<div class="column-two-thirds">
-			<h1 class="heading-large">
-				Your submission history
-			</h1>
+			<table class="table-font-xsmall">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th></th>
+						<th>Submitted</th>
+					</tr>
+				</thead>
+
+				<tbody>	
+					<tr>
+						<td><a href="./ilr-details?ilr-period=6&ilr-year=2017&ndash;2018">Return period 6</a></td>
+						<td>ILR</td>
+						<td>30th September 2017</td>
+					</tr>
+
+					<tr>
+						<td><a href="#">Return period 5</a></td>
+						<td>ILR</td>
+						<td>31st August 2017</td>
+					</tr>
+
+					<tr>
+						<td><a href="#">Return period 4</a></td>
+						<td>ILR</td>
+						<td>23rd July 2017</td>
+					</tr>
+					
+					<tr>
+						<td><a href="#">Return period 3</a></td>
+						<td>ILR</td>
+						<td>23rd June 2017</td>
+					</tr>
+					
+					<tr>
+						<td><a href="#">Return period 2</a></td>
+						<td>ILR</td>
+						<td>23rd May 2017</td>
+					</tr>
+					
+					<tr>
+						<td><a href="#">Return period 1</a></td>
+						<td>ILR</td>
+						<td>22nd April 2017</td>
+					</tr>
+				</tbody>
+			</table>	
 		</div>
 	</div>
 </main>
