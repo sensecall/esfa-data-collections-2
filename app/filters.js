@@ -10,6 +10,7 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  // DWP dummy data example
   filters.loadDummyData = (filename, feature = 'claim-capture') => {
     const data = require(`./views/${feature}/_dummy-data/${filename}.json`)
     if (data.schedule) {
@@ -27,6 +28,12 @@ module.exports = function (env) {
       }
       data.schedule.payments.monthly = monthly
     }
+    return data
+  }
+
+  // ESFA dummy data
+  filters.esfaDummyData = (filename, version = 'version-2') => {
+    const data = require(`./views/${version}/_dummy-data/${filename}.json`)
     return data
   }
 
