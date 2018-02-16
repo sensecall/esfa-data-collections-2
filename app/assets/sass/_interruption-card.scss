@@ -2,9 +2,12 @@
   background: $govuk-blue;
   color: $white;
   margin-top: 1em;
-  padding: 30px;
+  padding: $gutter-two-thirds;
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4 {
     &:first-of-type {
       margin-top: 0;
     }
@@ -36,11 +39,10 @@
 
   @media (min-width: 769px) {
     margin-top: 1.25em;
-    padding: 35px 50px;
+    padding: $gutter;
   }
-}
 
-.button-white {
+  .button-white {
   background-color: $white;
   border: $black 1px solid;
   border-radius: 0;
@@ -99,4 +101,6 @@
   color: $govuk-blue;
   float: left;
   margin-right: 10px;
+}
+
 }

@@ -21,7 +21,7 @@ Submit an ILR
 	{% include version + '/includes/_phase-banner.html' %}
 	
 	<div class="back">
-		<a class="back-to-previous link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous question</span></a>
+		<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
 	</div>
 	
 	<div class="grid-row">
@@ -32,7 +32,7 @@ Submit an ILR
 			
 			<p>Use this page to upload an <abbr title="Individual Learner Record">ILR</abbr> file using either the <abbr title="Extensible Markup Language">XML</abbr> file type, or as a compressed ZIP file.</p>			
 			
-			<form action="ilr-submission-complete" id="file-submission">
+			<form action="ilr-upload-complete" id="file-submission">
 				<div id="upload-v2">
 					<div id="upload-select-area">
 						<label for="upload" class="button photo-upload-label" role="button">
@@ -45,15 +45,15 @@ Submit an ILR
 						<table class="table-font-xsmall">
 							<tbody>
 								<tr>
-									<td><span class="bold">File name</span></td>
+									<td><span class="bold">File</span></td>
 									<td class="file-name"></td>
 									<td><a id="change-file" href="#change">Change</a></td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<td><span class="bold">File size</span></td>
 									<td>209.8kb</td>
 									<td></td>
-								</tr>
+								</tr> -->
 								<tr>
 									<td><span class="bold">Date and time</span></td>
 									<td class="file-date">28 April 2018 at 10.38am</td>

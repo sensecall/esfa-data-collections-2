@@ -1,4 +1,4 @@
-{% extends "version-6/layout.html" %}
+{% extends "layout.html" %}
 
 {% block page_title %}
 Submit an ILR - GOV.UK
@@ -9,54 +9,45 @@ Submit an ILR
 {% endblock %}
 
 {% block content %}
+{% include version + '/includes/_header-nav.html' %}
 
 <main id="content" role="main">
-	{% include 'includes/phase_banner.html' %}
-	
-	<div class="back">
-		<a class="back-to-previous link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous question</span></a>
-	</div>
+	{% include version + '/includes/_phase-banner.html' %}
 	
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-large">
-				Check and submit your <abbr title="Individual Learner Record">ILR</abbr> file
-			</h1>
-			
-			<p>After confirming and submitting your uploaded file, it will be added to a queue for processing.</p>
-			
-			<table>
+			<div class="govuk-box-highlight">
+				<h1 class="heading-large">
+					ILR file upload complete
+				</h1>
+				
+				<p>The ILR file for <span class="bold">Return period 6</span> is now being processed.</p>
+				<p>Estimated processing time is currently <span class="bold">around 3 hours</span>.</p>
+			</div>
+
+			<table class="table-font-xsmall">
 				<tbody>
 					<tr>
-						<td class="bold">File name</td>
+						<td><span class="bold">File name</span></td>
 						<td>{{ data['file-upload'] }}</td>
-						<td>
-							<a href="javascript:history.back()">Change<span class="visually-hidden"> file</span></a>
-						</td>
 					</tr>
 					<tr>
-						<td class="bold">File size</td>
+						<td><span class="bold">File size</span></td>
 						<td>209.8kb</td>
-						<td></td>
+					</tr>
+					<tr>
+						<td><span class="bold">Date and time</span></td>
+						<td>{{ data['file-date'] }}</td>
 					</tr>
 				</tbody>
-			</table>
+			</table>	
 			
-			<br>
-						
-			<form action="submission-complete">				
-				<div class="form-group">
-					<div class="multiple-choice">
-						<input id="email-confirmation" name="email-confirmation" type="checkbox" value="email-confirmation" checked>
-						<label for="email-confirmation">Email me when the ILR file has been processed</label>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<input type="hidden" name="ilr-submission-status" value="processing">
-					<input type="submit" class="button" role="button" value="Confirm and submit file">
-				</div>
-			</form>
+			<h2 class="heading-medium">What happens next?</h2>
+			{% if data['email-confirmation'] %}<p>You will receive an email notification once your file has been processed.</p>{% endif %}
+
+			<p>If any warnings or errors are found in the data you submitted they will be listed in a report file which can be downloaded once your submission has been processed.</p>
+			<p><a class="button" href="/{{version}}/data-submissions/ilr" role="button">Finished</a></p>
+			
 		</div>
 	</div>
 </main>
