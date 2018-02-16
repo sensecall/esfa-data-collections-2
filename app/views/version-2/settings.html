@@ -1,0 +1,83 @@
+{% extends "layout-index.html" %}
+
+{% block page_title %}
+Prototype
+{% endblock %}
+
+{% block service_name %}
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+		<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+
+	<h1 class="heading-large">
+		Prototype configurator
+	</h1>
+
+	<form id="save-config" action="/{{version}}/claim-esfa-funding">
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<h3 class="heading-medium">User details</h3>
+				<div class="form-group">
+					<label class="form-label" for="user-name">User name</label>
+					<input class="form-control" id="user-name" type="text" name="user-name" value="{{ data['user-name'] or "J Jones" }}">
+				</div>
+
+				<h3 class="heading-medium">Provider details</h3>
+				<div class="form-group">
+					<label class="form-label" for="provider-name">
+						Organisation name
+					</label>
+					<input class="form-control" id="provider-name" type="text" name="provider-name" value="{{ data['provider-name'] or "Coventry City College" }}">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label" for="ukprn-number">UKPRN number</label>
+					<input class="form-control" id="ukprn-number" type="tel" name="ukprn-number" value="{{ data['ukprn-number'] or "10003928" }}">
+				</div>
+				
+				<div class="form-group">
+					<fieldset>
+						<legend>
+							<h3 class="heading-medium">Available submission types</h3>
+						</legend>
+
+						<div class="multiple-choice" data-target="ilr-config">
+							<input id="feature-1" name="features" type="checkbox" value="feature-1" checked>
+							<label for="feature-1">ILR</label>
+						</div>
+						<div class="panel panel-border-narrow js-hidden" id="ilr-config">
+							<div class="multiple-choice">
+								<input id="ilr-submitted" type="checkbox" name="ilr-submitted" value="Yes">
+								<label for="ilr-submitted">The user has submitted an ILR file already</label>
+							</div>
+						</div>
+
+						<div class="multiple-choice">
+							<input id="feature-eas" name="features" type="checkbox" value="feature-eas" checked>
+							<label for="feature-eas">EAS</label>
+						</div>
+
+						<div class="multiple-choice">
+							<input id="feature-1" name="features" type="checkbox" value="feature-1">
+							<label for="feature-1">QAR</label>
+						</div>
+
+						<div class="multiple-choice">
+							<input id="feature-1" name="features" type="checkbox" value="feature-1" checked>
+							<label for="feature-1">Learning aims</label>
+						</div>
+					</fieldset>
+				</div>
+
+				<p>
+					<input type="submit" class="button button-start" value="Start now">
+				</p>
+			</div>
+		</form>
+	</div>
+</main>
+
+{% endblock %}
