@@ -10,10 +10,10 @@
 <main id="content" role="main">
 	{% include version + '/includes/_phase-banner.html' %}
 
+	<a class="link-back" href="/{{version}}/data-submissions">Back</a>
+
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<a class="link-back" href="/{{version}}/data-submissions">Back</a>
-
 			<h1 class="heading-large">
 				Individualised Learner Records (ILR)
 			</h1>
@@ -41,6 +41,10 @@
 					</strong>
 				</p>
 			</div>
+
+			<div class="panel panel-border-wide">
+				<p>If you don't submit a file before <a href="#">this return period</a> closes then amet non culpa voluptate exercitation cillum in aliqua et quis eiusmod qui exercitation commodo consectetur sint do.</p>
+			</div>
 			{% elif data['ilr-submission-status'] == 'processing' %}
 			<div class="info-summary">
 				<h3 class="heading-medium">Your recent ILR submission</h3>
@@ -54,8 +58,9 @@
 			{% elif data['ilr-submission-status'] == 'errors' %}
 			<div class="error-summary">
 				<h3 class="heading-medium">Your recent ILR submission</h3>
-				<p>Your <a href="{{ ilr_url }}">latest ILR submission</a> contains a number of errors or warnings.</p>
+				<p>Your <a href="{{ ilr_url }}">latest ILR file</a> contains a number of errors or warnings.</p>
 				<p>We were able to find details for <span class="bold">21 learners</span>.</p>
+				<p>If this is not the number of learners you were expecting, <a href="#">check the generated error reports</a> and re-submit your file.</p>
 			</div>
 			{% endif %}
 
@@ -69,7 +74,7 @@
 
 			{% if data['ilr-submission-status'] and data['ilr-submission-status'] != 'processing' %}
 			<div class="panel panel-border-wide">
-				<p>If you don't submit any additional files before <a href="#">this return period</a> closes then we will use the information from your most recent file submission to calculate your funding.</p>
+				<p>If you don't submit any further files before <a href="#">this return period</a> closes then we will use the information from your <a href="#">most recent file submission</a> to calculate your funding.</p>
 			</div>
 			{% endif %}	
 		</div>
