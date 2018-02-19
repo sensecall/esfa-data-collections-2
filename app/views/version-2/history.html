@@ -48,15 +48,15 @@
 						</legend>
 						<div class="form-group">
 							<div class="multiple-choice">
-								<input id="ilr" name="filter-ilr" type="checkbox" value="ilr">
+								<input id="ilr" name="filter-ilr" type="checkbox" value="true" {{ checked("filter-ilr", "true") }} class="filter-control">
 								<label for="ilr">Individualised Learner Records</label>
 							</div>
 							<div class="multiple-choice">
-								<input id="eas" name="filter-eas" type="checkbox" value="eas">
+								<input id="eas" name="filter-eas" type="checkbox" value="true" {{ checked("filter-eas", "true") }} class="filter-control">
 								<label for="eas">Earnings Adjustment Statements</label>
 							</div>
 							<div class="multiple-choice">
-								<input id="funding-claims" name="filter-funding-claims" type="checkbox" value="funding-claims">
+								<input id="funding-claims" name="filter-funding-claims" type="checkbox" value="true" {{ checked("filter-funding-claims", "true") }} class="filter-control">
 								<label for="funding-claims">Funding claims</label>
 							</div>
 

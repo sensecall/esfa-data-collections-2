@@ -18,6 +18,18 @@
 				Individualised Learner Records (ILR)
 			</h1>
 
+			<div class="panel panel-border-wide">
+				<h2 class="heading-medium">15 days left to submit your ILR file</h2>
+				<p>
+					Return period 6 (R06) closes on Tuesday 6th February 2018 at 6.00 PM
+				</p>
+				<a href="./submit-ilr/dates">See all Return dates</a>
+			</div>
+
+			<h2 class="heading-medium">
+				Submit your ILR file
+			</h2>
+
 			{% if not data['ilr-submission-status'] %}
 			<div class="warning-summary">
 				<p class="notice">
@@ -35,54 +47,71 @@
 				<p>We are currently processing <a href="{{ ilr_url }}">your latest ILR submission</a> and you will receive an email when it has been processed.</p>
 			</div>
 			{% elif data['ilr-submission-status'] == 'processed' %}
-			<p class="notice">
-				<i class="icon icon-important">
-					<span class="visually-hidden">Warning</span>
-				</i>
-				<strong class="bold-small">
-					{% if '01-B' in data['file-upload'] %}
-					Your <a href="{{ ilr_url }}">latest ILR submission</a> has been processed. 
-					{% else %}
-					Your <a href="{{ ilr_url }}">latest ILR submission</a> contains errors.
-					{% endif %}
-				</strong>
-			</p>
+			<div class="success-summary">
+				<h3 class="heading-medium">Your latest ILR submission has been processed</h3>
+				<p>We found details for <span class="bold">243 learners</span>. A total of <span class="bold">77 rule warnings</span> were detected. <a href="#">View more details</a> about your latest submission.</p>
+			</div>
+			{% elif data['ilr-submission-status'] == 'errors' %}
+			<div class="error-summary">
+				<h3 class="heading-medium">Your recent ILR submission</h3>
+				<p>Your <a href="{{ ilr_url }}">latest ILR submission</a> contains a number of errors or warnings.</p>
+				<p>We were able to find details for <span class="bold">21 learners</span>.</p>
+			</div>
 			{% endif %}
 
 			<p>
 				<a href="/{{version}}/submit-your-ilr" class="button">Submit an ILR file</a>
 			</p>
+
 			{% if data['file-upload'] %}
-			<p class="font-xsmall">Your most recent upload was on {{ data['file-date'] }}</p>
+			<p class="font-xsmall">Your last upload was on {{ data['file-date'] }}</p>
 			{% endif %}
 
-			<ul class="list">
-				<li><a href="#">View your ILR history</a></li>
-			</ul>
-
-			<h2 class="heading-medium">Get help with your ILR return</h2>
-			<ul class="list list-bullet">
-				<li>
-					<a href="https://govuk-elements.herokuapp.com/snippets/">
-						Guide to GOV.UK Elements
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/service-manual">
-						Service design manual
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/design-principles">
-						Government Digital Service Design Principles
-					</a>
-				</li>
-			</ul>
+			{% if data['ilr-submission-status'] and data['ilr-submission-status'] != 'processing' %}
+			<div class="panel panel-border-wide">
+				<p>If you don't submit any additional files before <a href="#">this return period</a> closes then we will use the information from your most recent file submission to calculate your funding.</p>
+			</div>
+			{% endif %}	
 		</div>
 
-		<div class="column-one-third">
-			{% include '../includes/_return-period-info.html' %}
+		<div class="column-one-third" id="sidebar">
+			<aside class="govuk-related-items">
+				<h2 class="heading-medium">Get help with your ILR return</h2>
+				<ul class="list">
+					<li>
+						<a href="https://govuk-elements.herokuapp.com/snippets/">
+							Guide to GOV.UK Elements
+						</a>
+					</li>
+					<li>
+						<a href="https://www.gov.uk/service-manual">
+							Service design manual
+						</a>
+					</li>
+					<li>
+						<a href="https://www.gov.uk/design-principles">
+							Government Digital Service Design Principles
+						</a>
+					</li>
+				</ul>
+			</aside>
 		</div>
 	</div>
 </main>
+{% endblock %}
+
+{% block footer_support_links %}
+{% if useAutoStoreData %}
+<h4 class="heading-small">
+	Developer tools
+</h4>
+<ul>
+	<li>
+		<a href="/prototype-admin/clear-data">Clear data</a>
+	</li>
+	<li>
+		<a href="?ilr-submission-status=processed&file-upload={% if data['file-upload'] %}{{data['file-upload']}}{% else %}ILR-10000747-1718-20171004-141927-01.xml{% endif %}&file-date={% if data['file-date'] %}{{data['file-date']}}{% else %}19 February 2018 at 10:55 AM{% endif %}">Process ILR file</a>
+	</li>
+</ul>
+{% endif %}
 {% endblock %}

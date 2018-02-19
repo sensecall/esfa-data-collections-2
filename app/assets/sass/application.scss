@@ -36,6 +36,7 @@ $pale-blue: #EDF4F7;
 @import 'related-items';
 @import 'history-panel';
 @import 'summary-messages';
+@import 'other-buttons';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -143,4 +144,10 @@ $pale-blue: #EDF4F7;
   margin: -1px;
   padding: 0;
   border: 0;
+}
+
+#sidebar {
+  .govuk-related-items:first-of-type {
+    margin-top: 4.25em
+  }
 }
