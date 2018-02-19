@@ -41,6 +41,10 @@ router.get('/login', (req, res) => {
 	res.render(`${req.version}/login`,)
 })
 
+router.get('/settings', (req, res) => {
+	res.render(`${req.version}/account-settings`,)
+})
+
 router.get('/signed-out', (req, res) => {
 	res.render(`${req.version}/signed-out`,)
 })
