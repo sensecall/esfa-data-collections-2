@@ -44,11 +44,16 @@ router.get('/ilr-upload-complete', (req, res) => {
 	res.render(`${req.version}/data-submissions/ilr/submit/ilr-upload-complete`,{currentPage})
 })
 
+router.get('/ilr-dates', (req, res) => {
+	var currentPage = 'submit'
+	res.render(`${req.version}/data-submissions/ilr/ilr-dates`,{currentPage})
+})
+
 router.get('/login', (req, res) => {
 	res.render(`${req.version}/login`,)
 })
 
-router.get('/settings', (req, res) => {
+router.get('/account-settings', (req, res) => {
 	res.render(`${req.version}/account-settings`,)
 })
 

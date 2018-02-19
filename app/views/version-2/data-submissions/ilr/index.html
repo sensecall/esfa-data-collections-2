@@ -18,18 +18,6 @@
 				Individualised Learner Records (ILR)
 			</h1>
 
-			<div class="panel panel-border-wide">
-				<h2 class="heading-medium">15 days left to submit your ILR file</h2>
-				<p>
-					Return period 6 (R06) closes on Tuesday 6th February 2018 at 6.00 PM
-				</p>
-				<a href="./submit-ilr/dates">See all Return dates</a>
-			</div>
-
-			<h2 class="heading-medium">
-				Submit your ILR file
-			</h2>
-
 			{% if not data['ilr-submission-status'] %}
 			<div class="warning-summary">
 				<p class="notice">
@@ -64,6 +52,18 @@
 			</div>
 			{% endif %}
 
+			<h2 class="heading-medium">
+				Submit an ILR file
+			</h2>
+
+			<div class="panel panel-border-wide font-xsmall">
+				<h2 class="heading-small">15 days left in Return Period 6 (R06)</h2>
+				<p class="">
+					Return period 6 (R06) closes on Tuesday 6th February 2018 at 6.00 PM
+				</p>
+				<p><a href="/{{version}}/ilr-dates">See all Return dates</a></p>
+			</div>
+
 			<p>
 				<a href="/{{version}}/submit-your-ilr" class="button">Submit an ILR file</a>
 			</p>
@@ -74,7 +74,7 @@
 
 			{% if data['ilr-submission-status'] and data['ilr-submission-status'] != 'processing' %}
 			<div class="panel panel-border-wide">
-				<p>If you don't submit any further files before <a href="#">this return period</a> closes then we will use the information from your <a href="#">most recent file submission</a> to calculate your funding.</p>
+				<p>If you don't submit any further files before <a href="/{{version}}/ilr-dates">the current return period</a> closes then we will use the information from your <a href="ilr/details">most recent file submission</a> to calculate your funding.</p>
 			</div>
 			{% endif %}	
 		</div>
