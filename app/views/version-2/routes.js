@@ -19,7 +19,14 @@ router.get('/data-submissions', (req, res) => {
 // ILR
 router.get('/data-submissions/ilr', (req, res) => {
 	var currentPage = 'submit'
-	res.render(`${req.version}/data-submissions/ilr`,{currentPage})
+	var show_ilr_button = true
+	res.render(`${req.version}/data-submissions/ilr/index`,{currentPage,show_ilr_button})
+})
+
+router.get('/data-submissions/ilr/details', (req, res) => {
+	var currentPage = 'submit'
+	var show_ilr_button = true
+	res.render(`${req.version}/data-submissions/ilr/details`,{currentPage,show_ilr_button})
 })
 
 router.get('/submit-your-ilr', (req, res) => {

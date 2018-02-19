@@ -1,46 +1,58 @@
 {% extends "govuk_template.html" %}
 
 {% block head %}
-  {% include "includes/head.html" %}
+{% include "includes/head.html" %}
 {% endblock %}
 
 {% block cookie_message %}
-  <p>{{cookieText | safe }}</p>
+<p>{{cookieText | safe }}</p>
 {% endblock %}
 
 {% block proposition_header %}
-  <div class="header-proposition">
-    <div class="content">
-      <nav id="proposition-menu">
-        <a href="/" id="proposition-name">
-          {% block service_name %}
-            {% if serviceName %} {{ serviceName }} {% endif %}
-          {% endblock %}
-        </a>
-      </nav>
-    </div>
+<div class="header-proposition">
+  <div class="content">
+    <nav id="proposition-menu">
+      <a href="/" id="proposition-name">
+        {% block service_name %}
+        {% if serviceName %} {{ serviceName }} {% endif %}
+        {% endblock %}
+      </a>
+    </nav>
   </div>
+</div>
 
 {% endblock %}
 
 {% block header_class %}
-  with-proposition
+with-proposition
 {% endblock %}
 
 {% block footer_support_links %}
-  {% if useAutoStoreData %}
-    <ul>
-      <li>
-        <a href="/prototype-admin/clear-data">Clear data</a>
-      </li>
-    </ul>
+{% if useAutoStoreData %}
+<ul>
+  <li>
+    <a href="/prototype-admin/clear-data">Clear data</a>
+  </li>
+
+  {% if show_ilr_button %}
+  <li>
+    <a href="?ilr-submission-status=processed&file-upload={% if data['file-upload'] %}{{data['file-upload']}}{% else %}ILR-10000747-1718-20171004-141927-01.xml{% endif %}&file-date={% if data['file-date'] %}{{data['file-date']}}{% else %}19 February 2018 at 10:55 AM{% endif %}">ILR processed</a>
+  </li>
+  <li>
+    <a href="?ilr-submission-status=errors&file-upload={% if data['file-upload'] %}{{data['file-upload']}}{% else %}ILR-10000747-1718-20171004-141927-01.xml{% endif %}&file-date={% if data['file-date'] %}{{data['file-date']}}{% else %}19 February 2018 at 10:55 AM{% endif %}">ILR errors</a>
+  </li>
+  <li>
+    <a href="?ilr-submission-status=processing&file-upload={% if data['file-upload'] %}{{data['file-upload']}}{% else %}ILR-10000747-1718-20171004-141927-01.xml{% endif %}&file-date={% if data['file-date'] %}{{data['file-date']}}{% else %}19 February 2018 at 10:55 AM{% endif %}">ILR processing</a>
+  </li>
   {% endif %}
+</ul>
+{% endif %}
 {% endblock %}
 
 {% block body_end %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block page_scripts %}{% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block page_scripts %}{% endblock %}
+{% endblock %}
+<!-- GOV.UK Prototype kit {{releaseVersion}} -->
 {% endblock %}

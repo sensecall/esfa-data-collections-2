@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-{% include '../includes/_header-nav.html' %}
+{% include version + '/includes/_header-nav.html' %}
 
 <main id="content" role="main">
 	{% include version + '/includes/_phase-banner.html' %}
@@ -48,17 +48,17 @@
 			{% elif data['ilr-submission-status'] == 'processing' %}
 			<div class="info-summary">
 				<h3 class="heading-medium">Your recent ILR submission</h3>
-				<p>We are currently processing <a href="{{ ilr_url }}">your latest ILR submission</a> and you will receive an email when it has been processed.</p>
+				<p>We are currently processing <a href="ilr/details">your latest ILR submission</a> and you will receive an email when it has been processed.</p>
 			</div>
 			{% elif data['ilr-submission-status'] == 'processed' %}
 			<div class="success-summary">
 				<h3 class="heading-medium">Your latest ILR submission has been processed</h3>
-				<p>We found details for <span class="bold">243 learners</span>. A total of <span class="bold">77 rule warnings</span> were detected. <a href="#">View more details</a> about your latest submission.</p>
+				<p>We found details for <span class="bold">243 learners</span>. A total of <span class="bold">77 rule warnings</span> were detected. <a href="ilr/details">View more details</a> about your latest submission.</p>
 			</div>
 			{% elif data['ilr-submission-status'] == 'errors' %}
 			<div class="error-summary">
 				<h3 class="heading-medium">Your recent ILR submission</h3>
-				<p>Your <a href="{{ ilr_url }}">latest ILR file</a> contains a number of errors or warnings.</p>
+				<p>Your <a href="ilr/details">latest ILR file</a> contains a number of errors or warnings.</p>
 				<p>We were able to find details for <span class="bold">21 learners</span>.</p>
 				<p>If this is not the number of learners you were expecting, <a href="#">check the generated error reports</a> and re-submit your file.</p>
 			</div>
@@ -103,20 +103,4 @@
 		</div>
 	</div>
 </main>
-{% endblock %}
-
-{% block footer_support_links %}
-{% if useAutoStoreData %}
-<h4 class="heading-small">
-	Developer tools
-</h4>
-<ul>
-	<li>
-		<a href="/prototype-admin/clear-data">Clear data</a>
-	</li>
-	<li>
-		<a href="?ilr-submission-status=processed&file-upload={% if data['file-upload'] %}{{data['file-upload']}}{% else %}ILR-10000747-1718-20171004-141927-01.xml{% endif %}&file-date={% if data['file-date'] %}{{data['file-date']}}{% else %}19 February 2018 at 10:55 AM{% endif %}">Process ILR file</a>
-	</li>
-</ul>
-{% endif %}
 {% endblock %}
