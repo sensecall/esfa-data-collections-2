@@ -21,8 +21,8 @@ Prototype
 			<div class="column-two-thirds">
 				<h3 class="heading-medium">User details</h3>
 				<div class="form-group">
-					<label class="form-label" for="user-name">User name</label>
-					<input class="form-control" id="user-name" type="text" name="user-name" value="{{ data['user-name'] or "J Jones" }}">
+					<label class="form-label" for="user-id">User id</label>
+					<input class="form-control" id="user-id" type="text" name="user-id" value="{{ data['user-id'] or "J Jones" }}">
 				</div>
 
 				<h3 class="heading-medium">Provider details</h3>
@@ -83,13 +83,19 @@ Prototype
 						</div>
 
 						<div class="form-group">
-							<label class="form-label" for="ilr-period-status">Return period status</label>
-							<select class="form-control" id="ilr-period-status" name="ilr-period-status">
-								{% set ilr_status = ['Open','Closed'] %}
-								{% for i in ilr_status %}
-								<option value="{{i}}" {{'selected=selected' if data["ilr-period-status"] == i }}>{{i}}</option>
-								{% endfor %}
-							</select>
+							<legend>
+								Return period status
+							</legend>
+							<fieldset class="inline">
+								<div class="multiple-choice">
+									<input id="ilr-period-status-1" type="radio" name="ilr-period-status" value="open" {{'checked' if data["ilr-period-status"] != "closed" }}>
+									<label for="ilr-period-status-1">Open</label>
+								</div>
+								<div class="multiple-choice">
+									<input id="ilr-period-status-2" type="radio" name="ilr-period-status" value="closed" {{'checked' if data["ilr-period-status"] == "closed" }}>
+									<label for="ilr-period-status-2">Closed</label>
+								</div>
+							</fieldset>
 						</div>
 
 						<div class="form-group">
@@ -120,11 +126,11 @@ Prototype
 					</legend>
 					<fieldset class="inline">
 						<div class="multiple-choice">
-							<input id="authenticated-1" type="radio" name="authenticated" value="true" checked>
+							<input id="authenticated-1" type="radio" name="authenticated" value="true" {{'checked' if data["authenticated"] != "false"}}>
 							<label for="authenticated-1">Yes</label>
 						</div>
 						<div class="multiple-choice">
-							<input id="authenticated-2" type="radio" name="authenticated" value="false">
+							<input id="authenticated-2" type="radio" name="authenticated" value="false" {{'checked' if data["authenticated"] == "false"}}>
 							<label for="authenticated-2">No</label>
 						</div>
 					</fieldset>
