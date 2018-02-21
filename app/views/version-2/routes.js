@@ -60,6 +60,10 @@ router.get('/login', (req, res) => {
 	}
 })
 
+router.get('/sfs', (req, res) => {
+	res.render(`${req.version}/sfs-home`,)
+})
+
 router.get('/account-settings', (req, res) => {
 	res.render(`${req.version}/account-settings`,)
 })

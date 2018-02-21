@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+{% set serviceName = 'Manage your education and skills funding' %}
+{% endblock %}
+
+{% block content %}
+<!-- {% include version + '/includes/_header-nav.html' %} -->
+
+<main id="content" role="main">
+	{% include version + '/includes/_phase-banner.html' %}
+
+	<h1 class="heading-xlarge">
+		{{ data['provider-name'] or "Cambridge College" }}
+	</h1>
+
+	<div class="grid-row">
+		<ul class="dashboard-group">
+			<li class="column-third margin-top">
+				<a class="dashboard-links" href="agreement-not-signed-softstop.html">
+					<span class="service-name">Apprenticeship service</span>
+					<!-- <span class="alert-name-red">Submit a nil declaration</span> -->
+					<span class="alert-name-blue">Add and update apprentices</span>
+				</a>
+			</li>
+
+
+			<li class="column-third margin-top">
+				<a class="dashboard-links" href="andrea-authoriser2">
+					<span class="service-name">Contracts and agreements</span>
+					<span class="alert-name-blue">1 new alert to review</span>
+					<!-- <span class="alert-name-red">You have contracts to sign and review</span> -->
+				</a>
+			</li>
+
+			<li class="column-third margin-top">
+				<a class="dashboard-links" href="/{{version}}/data-submissions">
+					<span class="service-name">Submit learner data</span>
+					<span class="alert-name-blue">Download your AGE reports</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="grid-row">
+		<ul class="dashboard-group">
+			<li class="column-third margin-top">
+				<a class="dashboard-links" href="/andrea-authoriser-NEW">
+					<span class="service-name">Apprenticeship agreements</span>
+					<span class="alert-name-red">1 new alert to review</span>
+				</a>
+			</li>
+
+			<li class="column-third margin-top">
+				<a class="dashboard-links" href="payment-history">
+					<span class="service-name">Payment history</span>
+					<span class="alert-name-blue">View your payments</span>
+				</a>
+			</li>
+
+			<li class="column-third margin-top">
+				<a class="dashboard-links" href="andrea-authoriser-NEW">
+					<span class="service-name">Funding claims</span>
+					<span class="alert-name-blue">3 new alerts to review</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</main>
+{% endblock %}
