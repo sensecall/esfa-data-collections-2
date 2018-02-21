@@ -25,7 +25,7 @@
 						<span class="visually-hidden">Warning</span>
 					</i>
 					<strong class="bold-small">
-						You haven't submitted an ILR file for Return period 6 (R06) yet.
+						You haven't submitted an ILR file for {% include version + '/_return-period-text.html' %} yet.
 					</strong>
 				</p>
 			</div>
@@ -34,32 +34,24 @@
 				<p>If you don't submit a file before <a href="#">this return period</a> closes then amet non culpa voluptate exercitation cillum in aliqua et quis eiusmod qui exercitation commodo consectetur sint do.</p>
 			</div>
 			{% elif data['ilr-submission-status'] == 'processing' %}
-			<div class="info-summary">
-				<h3 class="heading-medium">Your recent ILR submission</h3>
-				<p>We are currently processing <a href="ilr/details">your latest ILR submission</a> and you will receive an email when it has been processed.</p>
-			</div>
+			{% include './_notification-processing.html' %}
 			{% elif data['ilr-submission-status'] == 'processed' %}
-			<div class="success-summary">
-				<h3 class="heading-medium">Your latest ILR submission has been processed</h3>
-				<p>We found details for <span class="bold">243 learners</span>. A total of <span class="bold">77 rule warnings</span> were detected. <a href="ilr/details">View more details</a> about your latest submission.</p>
-			</div>
+			{% include './_notification-processed.html' %}
 			{% elif data['ilr-submission-status'] == 'errors' %}
-			<div class="error-summary">
-				<h3 class="heading-medium">Your recent ILR submission</h3>
-				<p>Your <a href="ilr/details">latest ILR file</a> contains a number of errors or warnings.</p>
-				<p>We were able to find details for <span class="bold">21 learners</span>.</p>
-				<p>If this is not the number of learners you were expecting, <a href="#">check the generated error reports</a> and re-submit your file.</p>
-			</div>
+			{% include './_notification-errors.html' %}
 			{% endif %}
 
 			<h2 class="heading-medium">
 				Submit an ILR file
 			</h2>
 
-			<div class="panel panel-border-wide font-xsmall">
-				<h2 class="heading-small">15 days left in Return Period 6 (R06)</h2>
-				<p class="">
-					Return period 6 (R06) closes on Tuesday 6th February 2018 at 6.00 PM
+			<div class="panel panel-border-wide">
+				<h2 class="heading-small">15 days until {% include version + '/_return-period-text.html' %} closes</h2>
+				<p>
+					{% include version + '/_return-period-text.html' %} will be closed on Tuesday 6th February 2018 at 6.00 PM.
+				</p>
+				<p>
+					You will not be able to submit learner information for {% include version + '/_return-period-text.html' %} once it has closed.
 				</p>
 				<p><a href="/{{version}}/ilr-dates">See all Return dates</a></p>
 			</div>
@@ -68,8 +60,8 @@
 				<a href="/{{version}}/submit-your-ilr" class="button">Submit an ILR file</a>
 			</p>
 
-			{% if data['file-upload'] %}
-			<p class="font-xsmall">Your last upload was on {{ data['file-date'] }}</p>
+			{% if data['ilr-submission-status'] %}
+			<p class="font-xsmall">Your last upload was on {{ data['file-date'] or "6 February 2018 at 4:42 PM" }}</p>
 			{% endif %}
 
 			{% if data['ilr-submission-status'] and data['ilr-submission-status'] != 'processing' %}

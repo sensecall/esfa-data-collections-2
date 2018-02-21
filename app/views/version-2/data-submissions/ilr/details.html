@@ -16,14 +16,14 @@
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
 				<span class="heading-secondary">Individualised Learner Record (ILR) submission</span>
-				Return period 6 (R06)
+				{% include version + '/_return-period-text.html' %}
 			</h1>
 			{% if data['ilr-submission-status'] == 'processed' %}
-			{% include version + '/includes/_ilr-details--processed.html' %}
+			{% include './_ilr-details-processed.html' %}
 			{% elif data['ilr-submission-status'] == 'processing' %}
 			processing
 			{% elif data['ilr-submission-status'] == 'errors' %}
-			errors
+			{% include './_ilr-details-errors.html' %}
 			{% endif %}
 		</div>
 

@@ -50,7 +50,14 @@ router.get('/ilr-dates', (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-	res.render(`${req.version}/login`,)
+	var authenticated = req.query.authenticated
+	if (authenticated === 'true') {
+    // Redirect to the relevant page
+	    res.redirect(`/${req.version}/data-submissions`,)
+	} else {
+    // If over18 is any other value (or is missing) render the page requested
+		res.render(`${req.version}/login`,)
+	}
 })
 
 router.get('/account-settings', (req, res) => {
@@ -62,7 +69,14 @@ router.get('/signed-out', (req, res) => {
 })
 
 router.get('/claim-esfa-funding', (req, res) => {
-	res.render(`${req.version}/index`,)
+	var authenticated = req.query.authenticated
+	if (authenticated === 'true') {
+    // Redirect to the relevant page
+	    res.redirect(`/${req.version}/data-submissions`,)
+	} else {
+    // If over18 is any other value (or is missing) render the page requested
+		res.render(`${req.version}/index`,)
+	}
 })
 
 module.exports = router

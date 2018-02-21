@@ -10,7 +10,7 @@ Prototype
 
 {% block content %}
 <main id="content" role="main">
-		<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
 
 	<h1 class="heading-large">
 		Prototype configurator
@@ -44,15 +44,9 @@ Prototype
 							<h3 class="heading-medium">Available submission types</h3>
 						</legend>
 
-						<div class="multiple-choice" data-target="ilr-config">
+						<div class="multiple-choice">
 							<input id="feature-1" name="features" type="checkbox" value="feature-1" checked>
 							<label for="feature-1">ILR</label>
-						</div>
-						<div class="panel panel-border-narrow js-hidden" id="ilr-config">
-							<div class="multiple-choice">
-								<input id="ilr-submitted" type="checkbox" name="ilr-submitted" value="Yes">
-								<label for="ilr-submitted">The user has submitted an ILR file already</label>
-							</div>
 						</div>
 
 						<div class="multiple-choice">
@@ -68,6 +62,70 @@ Prototype
 						<div class="multiple-choice">
 							<input id="feature-1" name="features" type="checkbox" value="feature-1" checked>
 							<label for="feature-1">Learning aims</label>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="form-group">
+					<fieldset>
+						<legend>
+							<h3 class="heading-medium">ILR settings</h3>
+						</legend>
+
+						<div class="form-group">
+							<label class="form-label" for="ilr-return-period">ILR return period</label>
+							<select class="form-control" id="ilr-return-period" name="ilr-return-period">
+								{% set ilr_periods = [1,2,3,4,5,6,7,8,9,10,11,12,13,14] %}
+								{% for i in ilr_periods %}
+								<option value="{{i}}" {{'selected=selected' if data["ilr-return-period"] == i }}>Return period {{i}}</option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label class="form-label" for="ilr-period-status">Return period status</label>
+							<select class="form-control" id="ilr-period-status" name="ilr-period-status">
+								{% set ilr_status = ['Open','Closed'] %}
+								{% for i in ilr_status %}
+								<option value="{{i}}" {{'selected=selected' if data["ilr-period-status"] == i }}>{{i}}</option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label class="form-label" for="ilr-submission-status">ILR Submission Status</label>
+							<select class="form-control" id="ilr-submission-status" name="ilr-submission-status">
+								<option value="" {{'selected=selected' if data["ilr-submission-status"] == "" }}>
+									Not submitted
+								</option>
+								<option value="processing" {{'selected=selected' if data["ilr-submission-status"] == "processing" }}>
+									Processing
+								</option>
+								<option value="processed" {{'selected=selected' if data["ilr-submission-status"] == "processed" }}>
+									Processed
+								</option>
+								<option value="errors" {{'selected=selected' if data["ilr-submission-status"] == "errors" }}>
+									Errors
+								</option>
+							</select>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="form-group">
+					<legend>
+						<h1 class="heading-medium">
+							Already logged in?
+						</h1>
+					</legend>
+					<fieldset class="inline">
+						<div class="multiple-choice">
+							<input id="authenticated-1" type="radio" name="authenticated" value="true" checked>
+							<label for="authenticated-1">Yes</label>
+						</div>
+						<div class="multiple-choice">
+							<input id="authenticated-2" type="radio" name="authenticated" value="false">
+							<label for="authenticated-2">No</label>
 						</div>
 					</fieldset>
 				</div>

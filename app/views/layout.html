@@ -34,17 +34,9 @@ with-proposition
     <a href="/prototype-admin/clear-data">Clear data</a>
   </li>
 
-  {% if show_ilr_button %}
   <li>
-    <a href="?ilr-submission-status=processed&file-upload={% if data['file-upload'] %}{{data['file-upload']}}{% else %}ILR-10000747-1718-20171004-141927-01.xml{% endif %}&file-date={% if data['file-date'] %}{{data['file-date']}}{% else %}19 February 2018 at 10:55 AM{% endif %}">ILR processed</a>
+    <a href="/{{version}}/settings">Prototype settings</a>
   </li>
-  <li>
-    <a href="?ilr-submission-status=errors&file-upload={% if data['file-upload'] %}{{data['file-upload']}}{% else %}ILR-10000747-1718-20171004-141927-01.xml{% endif %}&file-date={% if data['file-date'] %}{{data['file-date']}}{% else %}19 February 2018 at 10:55 AM{% endif %}">ILR errors</a>
-  </li>
-  <li>
-    <a href="?ilr-submission-status=processing&file-upload={% if data['file-upload'] %}{{data['file-upload']}}{% else %}ILR-10000747-1718-20171004-141927-01.xml{% endif %}&file-date={% if data['file-date'] %}{{data['file-date']}}{% else %}19 February 2018 at 10:55 AM{% endif %}">ILR processing</a>
-  </li>
-  {% endif %}
 </ul>
 {% endif %}
 {% endblock %}
