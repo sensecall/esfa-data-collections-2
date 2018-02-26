@@ -1,128 +1,100 @@
 .dashboard-group {
-    margin-top: $gutter
-}
+    margin-top: $gutter;
 
-.dashboard-links {
-    // margin-bottom: 20px;
-}
+    .dashboard-item {
+        @extend .column-third;
 
-a.dashboard-links {
-    color: white;
-    text-decoration: none;
-    display: block;
-}
+        a {
+            background: $white;
+            display: block;
+            text-decoration: none;
 
-.service-name {
-    display: block;
-    min-height: 70px;
-    background-color: $black;
-    font-size: 26px;         /*was 32px*/
-    font-weight: bold;
-    padding: 10px 20px;
-}
+            &:hover {
+                .service-name {
+                    background: darken($link-colour,10%);
+                    border-bottom: 3px solid darken($link-colour,20%);
+                }
+            }
+            &:active {
+                .service-name {
+                    border-bottom: 3px solid darken($link-colour,10%);
+                    margin-top: 3px;
+                    position: relative;
+                }
+                .alert {
+                    margin-bottom: -3px;
+                }
+            }
+        }
 
-.alert-name-blue {
-    margin-top: 5px;
-    display: block;
-    background-color: $govuk-blue;
-    padding: 7px 15px;
-}
+        .service-name {
+            @extend .heading-medium;
+            margin: 0;
+            background: $link-colour;
+            border-bottom: 3px solid darken($link-colour,10%);
+            display: block;
+            min-height: 70px;
+            color: $white;
+            padding: $gutter-half;
+        }
 
-.alert-name-blue:hover {
-    text-decoration: underline;
-}
+        .alert {
+            margin-top: $gutter-one-quarter;
+            color: $white;
+            display: block;
+            padding: 7px 15px;
 
-.alert-name-red {
-    margin-top: 5px;
-    display: block;
-    background-color: $mellow-red;
-    padding: 7px 15px;
-}
+            &.alert-info {
+                background: $grey-3;
+                color: $black;
+                &:hover {
+                    background: darken
+                }
+            }
 
-.alert-name-red:hover {
-    text-decoration: underline;
-}
+            &.alert-important {
+                background: $orange-25;
+                color: $orange;
+                font-weight: bold;
+            }
 
-.alert-name-green {
-    margin-top: 5px;
-    display: block;
-    background-color: $grass-green;
-    padding: 7px 15px;
-}
+            &.alert-success {
+                background: $grass-green;
+            }
+        }
 
-.alert-name-green:hover {
-    text-decoration: underline;
-}
+        @include media(mobile) {
+            width: 100%;
+            margin-top: $gutter;
 
-@media (min-width: 641px) {
-    .service-name {
-        display: block;
-        min-height: 70px;
+            .service-name {
+                min-height: auto
+            }
+
+            a {
+            background: $white;
+            display: block;
+            text-decoration: none;
+
+            &:hover {
+                .service-name {
+                    background: darken($link-colour,10%);
+                    border-bottom: 3px solid darken($link-colour,15%);
+                }
+            }
+            &:active {
+                .service-name {
+                    border-bottom: 3px solid darken($link-colour,10%);
+                    top: 3px;
+                    position: relative;
+                }
+                .alert {
+                    top: 3px;
+                    position: relative;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+        }
     }
 }
-
-/*End of dashboard style*/
-
-
-/*New dashboard melody*/
-
-.dash-links {
-    margin-bottom: 20px;
-}
-
-a.dash-links {
-    color: white;
-    text-decoration: none;
-    display: block;
-}
-
-.serv-name {
-    display: block;
-    min-height: 70px;
-    background-color: $black;
-    font-size: 26px;         /*was 32px*/
-    font-weight: bold;
-    padding: 10px 20px;
-}
-
-.alert-name-blue {
-    margin-top: 5px;
-    display: block;
-    background-color: $govuk-blue;
-    padding: 7px 15px;
-}
-
-.alert-name-blue:hover {
-    text-decoration: underline;
-}
-
-.alert-name-red {
-    margin-top: 5px;
-    display: block;
-    background-color: $mellow-red;
-    padding: 7px 15px;
-}
-
-.alert-name-red:hover {
-    text-decoration: underline;
-}
-
-.alert-name-green {
-    margin-top: 5px;
-    display: block;
-    background-color: $grass-green;
-    padding: 7px 15px;
-}
-
-.alert-name-green:hover {
-    text-decoration: underline;
-}
-
-@media (min-width: 641px) {
-    .serv-name {
-        display: block;
-        min-height: 70px;
-    }
-}
-
-/*End of dashboard melody*/

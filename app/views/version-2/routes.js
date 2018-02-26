@@ -6,9 +6,9 @@ router.get('/', (req, res) => {
 	res.redirect(`/${req.version}/settings`)
 })
 
-router.get('/history', (req, res) => {
-	var currentPage = 'history'
-	res.render(`${req.version}/history`,{currentPage})
+router.get('/reports', (req, res) => {
+	var currentPage = 'reports'
+	res.render(`${req.version}/reports`,{currentPage})
 })
 
 router.get('/data-submissions', (req, res) => {
