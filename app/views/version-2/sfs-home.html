@@ -21,35 +21,50 @@
 	<div class="grid-row">
 		<ul class="dashboard-group">
 			<li class="dashboard-item">
-				<a href="#">
-					<span class="service-name">
+				<a href="#" class="service-name">
+					<h2 class="heading-medium">
 						Contracts and agreements
-					</span>
-					<span class="alert alert-important">
-						1 new alert to review			
-					</span>
+					</h2>
+					<p class="font-xsmall">
+						Short one-liner about this service
+					</p>
+				</a>
+				<a href="#" class="alert alert-important">
+					1 new alert to review
 				</a>
 			</li>
 
 			<li class="dashboard-item">
-				<a href="/{{version}}/data-submissions">
-					<span class="service-name">
-						Data submission and funding reports				
-					</span>
-					<span class="alert alert-info">
-						Send data to the ESFA					
-					</span>
+				<a href="/{{version}}/data-submissions" class="service-name">
+					<h2 class="heading-medium">
+						Data submission and funding reports
+					</h2>
+					<p class="font-xsmall">
+						Send data to the ESFA about your learners and other spending
+					</p>
 				</a>
+				{% if data['ilr-submission-status'] == 'errors' or data['ilr-submission-status'] == 'processed' %}
+				<a href="/{{version}}/data-submissions/ilr" class="alert alert-important">
+					1 new alert to review
+				</a>
+				{% else %}
+				<span class="alert alert-info">
+					No alerts to review
+				</span>
+				{% endif %}
 			</li>
 
 			<li class="dashboard-item">
-				<a href="#">
-					<span class="service-name">
+				<a href="#" class="service-name">
+					<h2 class="heading-medium">
 						Apprenticeship agreements
-					</span>
-					<span class="alert alert-important">
-						1 new alert to review
-					</span>
+					</h2>
+					<p class="font-xsmall">
+						This is a short one line description of the service found after the link
+					</p>
+				</a>
+				<a href="#" class="alert alert-important">
+					1 new alert to review
 				</a>
 			</li>
 		</ul>
@@ -58,35 +73,44 @@
 	<div class="grid-row">
 		<ul class="dashboard-group">
 			<li class="dashboard-item">
-				<a href="#">
-					<span class="service-name">
-						Apprenticeship service			
-					</span>
-					<span class="alert alert-info">
-						Add and update apprentices				
-					</span>
+				<a href="#" class="service-name">
+					<h2 class="heading-medium">
+						Apprenticeship service
+					</h2>
+					<p class="font-xsmall">
+						Add and update apprentices
+					</p>
 				</a>
+				<span class="alert alert-info">
+					No alerts to review
+				</span>
 			</li>
 
 			<li class="dashboard-item">
-				<a href="#">
-					<span class="service-name">
+				<a href="#" class="service-name">
+					<h2 class="heading-medium">
 						Payment history
-					</span>
-					<span class="alert alert-info">
+					</h2>
+					<p class="font-xsmall">
 						View your payments
-					</span>
+					</p>
 				</a>
+				<span class="alert alert-info">
+					No alerts to review
+				</span>
 			</li>
 
 			<li class="dashboard-item">
-				<a href="#">
-					<span class="service-name">
+				<a href="#" class="service-name">
+					<h2 class="heading-medium">
 						Funding claims
-					</span>
-					<span class="alert alert-important">
-						3 new alerts to review
-					</span>
+					</h2>
+					<p class="font-xsmall">
+						View your payments
+					</p>
+				</a>
+				<a href="#" class="alert alert-important">
+					3 new alerts to review
 				</a>
 			</li>
 		</ul>

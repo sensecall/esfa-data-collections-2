@@ -4,29 +4,14 @@
     .dashboard-item {
         @extend .column-third;
 
+        .heading-medium {
+            margin: 0;
+        }
 
-        
         a {
             background: $white;
             display: block;
             text-decoration: none;
-
-            &:hover {
-                .service-name {
-                    background: darken($link-colour,8%);
-                    border-bottom: 3px solid darken($link-colour,20%);
-                }
-            }
-            &:active {
-                .service-name {
-                    border-bottom: 3px solid darken($link-colour,10%);
-                    margin-top: 3px;
-                    position: relative;
-                }
-                .alert {
-                    margin-bottom: -3px;
-                }
-            }
         }
 
         .service-name {
@@ -38,6 +23,17 @@
             min-height: 70px;
             color: $white;
             padding: $gutter-half;
+
+            &:hover {
+                background: darken($link-colour,8%);
+                border-bottom: 3px solid darken($link-colour,20%);
+            }
+            &:active {
+                border-bottom: 3px solid darken($link-colour,10%);
+                margin-top: 3px;
+                margin-bottom: -3px;
+                position: relative;
+            }
         }
 
         .alert {
@@ -47,15 +43,14 @@
             padding: 7px 15px;
 
             &.alert-info {
-                background: $grey-3;
-                color: $black;
-                &:hover {
-                    background: darken
-                }
+                $alert-background: $grey-3;
+                background: $alert-background;
+                color: $grey-1;
             }
 
             &.alert-important {
-                background: $orange-25;
+                $alert-background: $orange-25;
+                background: $alert-background;
                 color: $orange;
                 font-weight: bold;
             }
@@ -67,6 +62,12 @@
             }
         }
 
+        a.alert {
+            &:hover {
+            text-decoration: underline
+        }
+    }
+
         @include media(mobile) {
             width: 100%;
             margin-top: $gutter;
@@ -76,29 +77,29 @@
             }
 
             a {
-            background: $white;
-            display: block;
-            text-decoration: none;
+                background: $white;
+                display: block;
+                text-decoration: none;
 
-            &:hover {
-                .service-name {
-                    background: darken($link-colour,10%);
-                    border-bottom: 3px solid darken($link-colour,15%);
+                &:hover {
+                    .service-name {
+                        background: darken($link-colour,10%);
+                        border-bottom: 3px solid darken($link-colour,15%);
+                    }
+                }
+                &:active {
+                    .service-name {
+                        border-bottom: 3px solid darken($link-colour,10%);
+                        top: 3px;
+                        position: relative;
+                    }
+                    .alert {
+                        top: 3px;
+                        position: relative;
+                        margin-bottom: 3px;
+                    }
                 }
             }
-            &:active {
-                .service-name {
-                    border-bottom: 3px solid darken($link-colour,10%);
-                    top: 3px;
-                    position: relative;
-                }
-                .alert {
-                    top: 3px;
-                    position: relative;
-                    margin-bottom: 3px;
-                }
-            }
-        }
         }
     }
 }
