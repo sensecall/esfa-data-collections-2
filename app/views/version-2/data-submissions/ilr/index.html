@@ -45,19 +45,29 @@
 				Submit an ILR file
 			</h2>
 
-			<div class="panel panel-border-wide">
-				<h2 class="heading-small">15 days until {% include version + '/_return-period-text.html' %} closes</h2>
-				<p>
-					{% include version + '/_return-period-text.html' %} will be closed on Tuesday 6th February 2018 at 6.00 PM.
-				</p>
-				<p>
-					You will not be able to submit learner information for {% include version + '/_return-period-text.html' %} once it has closed.
-				</p>
-				<p><a href="/{{version}}/ilr-dates">See all Return dates</a></p>
+			<div class="interruption-card">
+				<h2 class="heading-medium">15 days until {% include version + '/_return-period-text.html' %} closes</h2>
+
+				<!-- <details> -->
+					<!-- <summary style="margin: 0">
+						Return period details
+					</summary> -->
+
+					<div class="panel-border-narrow panel">
+						{% include version + '/_return-period-text.html' %} will close at: <br>
+						<span class="bold">6.00 PM on Tuesday 6th February 2018</span>
+					</div>
+					<p>
+						You will not be able to submit learner information for {% include version + '/_return-period-text.html' %} after the period has closed.
+					</p>
+					<p>
+						<a href="/{{version}}/ilr-dates">See all Return dates</a>
+					</p>
+				<!-- </details> -->
 			</div>
 
 			<p>
-				<a href="/{{version}}/submit-your-ilr" class="button">Submit an ILR file</a>
+				<a href="/{{version}}/submit-your-ilr" class="button button-start">Submit an ILR file</a>
 			</p>
 
 			{% if data['ilr-submission-status'] %}

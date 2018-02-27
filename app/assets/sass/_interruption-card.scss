@@ -1,8 +1,12 @@
 .interruption-card {
   background: $govuk-blue;
   color: $white;
-  margin-top: 1em;
+  margin: $gutter 0;
   padding: $gutter-two-thirds;
+
+  *:last-child {
+    margin: 0
+  }
 
   h1,
   h2,
@@ -43,64 +47,64 @@
   }
 
   .button-white {
-  background-color: $white;
-  border: $black 1px solid;
-  border-radius: 0;
-  box-shadow: 0 1px 0 $black;
-  color: $black;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1em;
-  line-height: 1.25;
-  outline: 1px solid transparent;
-  outline-offset: -1px;
-  padding: .526315em .789473em .263157em;
-  position: relative;
-  text-decoration: none;
-
-  &:hover {
-    background-color: $grey-3;
-  }
-
-  &:visited,
-  &:focus {
     background-color: $white;
-  }
+    border: $black 1px solid;
+    border-radius: 0;
+    box-shadow: 0 1px 0 $black;
+    color: $black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.25;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    padding: .526315em .789473em .263157em;
+    position: relative;
+    text-decoration: none;
 
-  &:active {
-    box-shadow: 0 0 0 $white;
-    top: 2px;
+    &:hover {
+      background-color: $grey-3;
+    }
+
+    &:visited,
+    &:focus {
+      background-color: $white;
+    }
+
+    &:active {
+      box-shadow: 0 0 0 $white;
+      top: 2px;
+
+      &::before {
+        height: 120%;
+        top: -10%;
+      }
+    }
+
+    &:link,
+    &:hover,
+    &:focus,
+    &:visited {
+      color: $black;
+    }
 
     &::before {
-      height: 120%;
-      top: -10%;
+      background: transparent;
+      content: '';
+      display: block;
+      height: 110%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
   }
 
-  &:link,
-  &:hover,
-  &:focus,
-  &:visited {
-    color: $black;
+  .circle-white {
+    background: $white;
+    color: $govuk-blue;
+    float: left;
+    margin-right: 10px;
   }
-
-  &::before {
-    background: transparent;
-    content: '';
-    display: block;
-    height: 110%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-}
-
-.circle-white {
-  background: $white;
-  color: $govuk-blue;
-  float: left;
-  margin-right: 10px;
-}
 
 }
