@@ -10,7 +10,25 @@
 <main id="content" role="main">
 	{% include version + '/includes/_phase-banner.html' %}
 
-	<a class="link-back" href="/{{version}}/data-submissions">Back</a>
+	<div class="breadcrumbs">
+		<ol>
+			<li>
+				<a href="/{{version}}/sfs">
+					{{data['provider-name']}}
+				</a>
+			</li>
+			<li>
+				<a href="/{{version}}/data-submissions">
+					Submit your data
+				</a>
+			</li>
+			<li>
+				<a href="#content">
+					Individualised Learner Records (ILR)
+				</a>
+			</li>
+		</ol>
+	</div>
 
 	<div class="grid-row">
 		<div class="column-two-thirds">

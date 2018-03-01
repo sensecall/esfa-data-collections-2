@@ -10,7 +10,30 @@
 <main id="content" role="main">
 	{% include version + '/includes/_phase-banner.html' %}
 
-	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+	<div class="breadcrumbs">
+		<ol>
+			<li>
+				<a href="/{{version}}/sfs">
+					{{data['provider-name']}}
+				</a>
+			</li>
+			<li>
+				<a href="/{{version}}/data-submissions">
+					Submit your data
+				</a>
+			</li>
+			<li>
+				<a href="/{{version}}/data-submissions/ilr">
+					Individualised Learner Records (ILR)
+				</a>
+			</li>
+			<li>
+				<a href="#content">
+					{% include version + '/_return-period-text.html' %}
+				</a>
+			</li>
+		</ol>
+	</div>
 
 	<div class="grid-row">
 		<div class="column-two-thirds">
