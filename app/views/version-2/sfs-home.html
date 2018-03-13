@@ -29,9 +29,6 @@
 						Short one-liner about this service
 					</p>
 				</a>
-				<a href="#" class="alert alert-important">
-					1 new alert to review
-				</a>
 			</li>
 
 			<li class="dashboard-item">
@@ -43,15 +40,6 @@
 						Send data to the ESFA about your learners and other spending
 					</p>
 				</a>
-				{% if data['ilr-submission-status'] == 'errors' or data['ilr-submission-status'] == 'processed' %}
-				<a href="/{{version}}/data-submissions/ilr" class="alert alert-important">
-					1 new alert to review
-				</a>
-				{% else %}
-				<span class="alert alert-info">
-					No alerts to review
-				</span>
-				{% endif %}
 			</li>
 
 			<li class="dashboard-item">
@@ -62,9 +50,6 @@
 					<p class="font-xsmall">
 						This is a short one line description of the service found after the link
 					</p>
-				</a>
-				<a href="#" class="alert alert-important">
-					1 new alert to review
 				</a>
 			</li>
 		</ul>
@@ -81,9 +66,6 @@
 						Add and update apprentices
 					</p>
 				</a>
-				<span class="alert alert-info">
-					No alerts to review
-				</span>
 			</li>
 
 			<li class="dashboard-item">
@@ -95,9 +77,6 @@
 						View your payments
 					</p>
 				</a>
-				<span class="alert alert-info">
-					No alerts to review
-				</span>
 			</li>
 
 			<li class="dashboard-item">
@@ -108,9 +87,6 @@
 					<p class="font-xsmall">
 						Another description about what this service allows the user to do.
 					</p>
-				</a>
-				<a href="#" class="alert alert-important">
-					3 new alerts to review
 				</a>
 			</li>
 		</ul>
