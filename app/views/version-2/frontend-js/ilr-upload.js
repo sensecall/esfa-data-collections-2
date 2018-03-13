@@ -46,5 +46,28 @@ $(document).ready(function () {
 		setTimeout(function () {
 			window.location.href = currentPage + "/../../ilr-upload-complete";
 		}, 8000);
+
+		var times = [
+		'14 minutes',
+		'10 minutes',
+		'10 minutes',
+		'8 minutes',
+		'5 minutes',
+		'2 minutes',
+		'30 seconds',
+		'10 seconds',
+		'1 second'
+		];
+
+		(function cycle() { 
+			var time = times.shift();
+			$('#countdown').html(time);
+			times.push(time);
+			setTimeout(cycle,1000);
+		})();
 	}
+
+	$('#upload-complete-button').on('click', function(e) {
+		window.open('email','_blank');
+	})
 })

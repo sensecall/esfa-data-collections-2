@@ -64,6 +64,11 @@ router.get('/sfs', (req, res) => {
 	res.render(`${req.version}/sfs-home`,)
 })
 
+router.get('/email', (req, res) => {
+	var url = req.protocol + '://' + req.get('host');
+	res.render(`${req.version}/email`,{url})
+})
+
 router.get('/account-settings', (req, res) => {
 	res.render(`${req.version}/account-settings`,)
 })

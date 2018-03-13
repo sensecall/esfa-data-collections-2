@@ -1,0 +1,47 @@
+{% extends "./layout-email.html" %}
+
+{% set serviceName = 'Submit your data' %}
+
+{% block page_title %}
+{{serviceName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <img src="/public/images/esfa-logo.png" width="180px" id="logo">
+
+  <h1 class="heading-large">
+    Your ILR data submission has been processed
+  </h1>
+
+  <p>
+    Hi {{data['user-id'] or 'J Jones'}},
+  </p>
+
+  <p>
+    Sunt cillum aliqua laboris dolore id aliqua minim exercitation quis tempor dolor in sunt aliqua nulla dolor ea officia nostrud duis.
+  </p>
+
+  <p>
+    Ut in dolore elit in velit ea nisi irure do dolor sed in officia laboris enim nostrud incididunt nisi eiusmod aliqua consequat officia voluptate incididunt ut dolor excepteur deserunt ex:
+  </p>
+
+  <p>
+      <a href="{{url}}/{{version}}/data-submissions/ilr/details" target="_blank">{{url}}/{{version}}/data-submissions/ilr/details</a>
+  </p>
+
+  <p>
+    Lorem ipsum cillum ad et enim magna proident reprehenderit cupidatat pariatur dolore tempor culpa in in id sunt ullamco.
+  </p>
+
+  <p>
+    Regards,
+  </p>
+
+  <p>
+    Data Collections Team,<br>
+    Education and Skills Funding Agency
+  </p>
+</main>
+{% endblock %}
