@@ -1,18 +1,16 @@
 {% extends "layout.html" %}
 
-{% set serviceName = 'Submit your data' %}
-
 {% block page_title %}
 {{serviceName}}
 {% endblock %}
 
 {% block content %}
-<!-- {% include '../includes/_header-nav.html' %} -->
+{% include '../includes/_header-nav.html' %}
 
 <main id="content" role="main">
 	{% include version + '/includes/_phase-banner.html' %}
 
-	<!-- <div class="breadcrumbs">
+	<div class="breadcrumbs">
 		<ol>
 			<li>
 				<a href="/{{version}}/sfs">
@@ -25,41 +23,37 @@
 				</a>
 			</li>
 		</ol>
-	</div> -->
+	</div>
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<!-- <h1 class="heading-xlarge">
+			<h1 class="heading-large">
 				Submit your data
-			</h1> -->
+			</h1>
 
-			<h2 class="heading-large">
-				Individualised Learner Records (ILR)
+			<h2 class="heading-medium">
+				<a href="./data-submissions/ilr">Individualised Learner Records (ILR)</a>
 			</h2>
 
 			<!-- THIS IS NOT ESFA CONTENT -->
 			<!-- TAKEN FROM: http://www.adls.ac.uk/the-information-authority/individualised-learner-record/?detail -->
 			<p>The Individualised Learner Record (ILR) is a dataset that collects information on learners and their learning in the Further Education system in England.</p>
 			<p>The ILR return is compulsory for state funded Further Education in England.</p>
-			<!-- END SNIPPET -->
+			<!-- END -->
 
-			<p>
-				You can use this service to:
-			</p>
-			<ul class="list list-bullet">
-				<li><a href="/{{version}}/submit-your-ilr">Submit ILR data</a></li>
+			<ul class="list">
+				<li><a href="/{{version}}/submit-your-ilr">Submit an ILR file</a></li>
 				<li><a href="/{{version}}/history?filter-submissions=true&filter-ilr=true">View your ILR history</a></li>
 			</ul>
 
-			<h2 class="heading-large">
-				Earnings Adjustment Statement (EAS)
+			<hr>
+
+			<h2 class="heading-medium">
+				<a href="#">Earnings Adjustment Statement (EAS)</a>
 			</h2>
 
 			<p>The Earnings Adjustment Statement (EAS) is an online process used to claim funding that is not reported in the Individualised Learner Record (ILR).</p>
 
-			<p>
-				You can use this service to:
-			</p>
-			<ul class="list list-bullet">
+			<ul class="list">
 				<li><a href="#">Manage your EAS return</a></li>
 			</ul>
 
@@ -86,7 +80,7 @@
 		</div>
 
 		<div class="column-one-third">
-			<!-- <aside class="govuk-related-items" data-module="track-click" role="complementary">
+			<aside class="govuk-related-items" data-module="track-click" role="complementary">
 				<h2 class="heading-medium">
 					Claiming funding for your organisation
 				</h2>
@@ -107,7 +101,7 @@
 						</li>
 					</ul>
 				</nav>
-			</aside> -->
+			</aside>
 		</div>
 	</div>
 </main>

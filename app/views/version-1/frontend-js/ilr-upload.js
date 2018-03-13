@@ -28,6 +28,21 @@ $(document).ready(function () {
 		$('.file-name').text(fileName);
 		$('.file-date').text(fileDate);
 		$('input[name="file-date"]').val(fileDate);
+		
+
+		// form submission
+		$('input[name="confirm-upload"]').on('click',function(e) {
+			e.preventDefault();
+
+			// hide the table
+			$('#submit-file-area').addClass('hidden');
+			// show the progress bar
+			$('#uploading-progress').removeClass('hidden');
+
+			setTimeout(function () {
+				$('#file-submission').submit()
+			}, 12000);
+		});
 
 		// revert the page when clicking the change button
 		var changeButton = $('#change-file');
@@ -39,12 +54,4 @@ $(document).ready(function () {
 			$('#upload-select-area').removeClass('hidden');
 		})
 	})
-
-	// uploading page timeout
-	if($('#uploading-content').length){
-		var currentPage = window.location.href.split("?")[0];
-		setTimeout(function () {
-			window.location.href = currentPage + "/../../ilr-upload-complete";
-		}, 8000);
-	}
 })

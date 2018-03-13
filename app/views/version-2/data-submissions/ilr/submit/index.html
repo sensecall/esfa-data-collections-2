@@ -1,15 +1,19 @@
 {% extends "layout.html" %}
 
+{% set serviceName = 'Submit ILR data' %}
+
 {% block page_title %}
-Submit an ILR - GOV.UK
+{{serviceName}} - GOV.UK
 {% endblock %}
 
-{% block service_name %}
-Submit an ILR
+{% block page_scripts %}
+<script>
+	{% include '../../../frontend-js/ilr-upload.js' %}
+</script>
 {% endblock %}
 
 {% block content %}
-{% include version + '/includes/_header-nav.html' %}
+<!-- {% include version + '/includes/_header-nav.html' %} -->
 
 <main id="content" role="main">
 	{% include version + '/includes/_phase-banner.html' %}
@@ -19,31 +23,71 @@ Submit an ILR
 			<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
 			
 			<h1 class="heading-xlarge">
-				Submit an <abbr title="Individualised Learner Record">ILR</abbr> file
+				{{serviceName}}
 			</h1>
 
-			<p class="lede">You can use this service to submit an ILR file for the current Return period.</p>
+			<p>
+				Use this page to upload and submit an <abbr title="Individual Learner Record">ILR</abbr> file for the current return period.
+			</p>
 			
-			<p>Before submitting a file make sure:</p>
+			<p>Before submitting a file, make sure:</p>
 			<ul class="list list-bullet">
 				<li>Learner data should be entered correctly</li>
-				<li>ILR files must be saved in the <abbr title="Extensible Markup Language">XML</abbr> file format</li>
+				<li>ILR files must be either <abbr title="Extensible Markup Language">XML</abbr> file format or a compressed ZIP file</li>
 			</ul>
 
-			<p><a class="button button-start" href="upload-your-ilr" role="button">Start now</a></p>
+			<form action="submit-your-ilr/uploading" id="file-submission">
+				<div id="upload-v2">
+					<p class="panel panel-border-narrow">
+						<strong class="bold-small">
+							WARNING: Any files currently being processed will be deleted
+						</strong>
+					</p>
+					
+					<div id="upload-select-area">
+						<label for="upload" class="button" role="button">
+							<span class="">Select ILR file</span>
+						</label>
+						<input accept="text/xml" id="upload" class="choose-file" name="file-upload" aria-controls="progress-container" aria-required="true" type="file">
+					</div>
 
-			<h2 class="heading-medium">Other resources</h2>
-			
-			<ul class="list list-bullet">
-				<li>
-					<a href="https://www.gov.uk/guidance/sfa-funding-rules">Funding Rules</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/government/collections/individualised-learner-record-ilr">The ILR Returns Calendar</a>
-				</li>
-			</ul>
+					<div id="file-details" class="hidden">
+						<div class="info-summary">
+							<h3 class="heading-medium">
+								Selected file
+							</h3>
+							<p class="file-name"></p>
+							<p><a id="change-file" href="#change">Change</a></p>
+						</div>
+
+						<div id="submit-file-area">
+							<div class="form-group">
+								<div class="multiple-choice" data-target="contact-by-email">
+									<input id="email-confirmation" name="email-confirmation" type="checkbox" value="email-confirmation" checked>
+									<label for="email-confirmation">Send an email when the ILR file has been processed</label>
+								</div>
+								<div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+									<label class="form-label" for="contact-email">Email address</label>
+									<input class="form-control" name="contact-email" type="text" id="contact-email" value="your.name@youremail.com">
+								</div>
+							</div>
+
+							<input type="hidden" name="ilr-submission-status" value="processing">
+							<input type="hidden" name="file-date" value="">
+
+							<input type="submit" class="button" name="confirm-upload" value="Confirm and upload ILR file">
+						</div>
+					</div>
+
+					<div id="uploading-progress" class="hidden">
+						<img id="loading-spinner" src="/public/images/loading-spinner.gif" width="40px">
+						<p>Uploading <span class="file-name"></span></p>
+						<p>Estimated time remaining: 14 minutes.</p>
+					</div>
+				</div>
+			</form>
 		</div>
-		
+
 		<div class="column-one-third">
 			{% include version + '/includes/_return-period-info.html' %}
 		</div>

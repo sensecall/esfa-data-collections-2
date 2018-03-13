@@ -72,10 +72,6 @@ router.get('/signed-out', (req, res) => {
 	res.render(`${req.version}/signed-out`,)
 })
 
-router.get('/submit-your-ilr/uploading', (req, res) => {
-	res.render(`${req.version}/data-submissions/ilr/submit/uploading`,)
-})
-
 router.get('/claim-esfa-funding', (req, res) => {
 	var authenticated = req.query.authenticated
 	if (authenticated === 'true') {
