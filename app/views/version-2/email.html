@@ -1,6 +1,6 @@
 {% extends "./layout-email.html" %}
 
-{% set serviceName = 'Submit your data' %}
+{% set serviceName = 'EMAIL' %}
 
 {% block page_title %}
 {{serviceName}}
@@ -9,7 +9,9 @@
 {% block content %}
 
 <main id="content" role="main">
-  <img src="/public/images/esfa-logo.png" width="180px" id="logo">
+  <a href="https://www.gov.uk/government/organisations/education-and-skills-funding-agency" target="_blank">
+    <img src="/public/images/esfa-logo.png" width="180px" id="logo">
+  </a>
 
   <h1 class="heading-large">
     Your ILR data submission has been processed
@@ -27,7 +29,7 @@
     Ut in dolore elit in velit ea nisi irure do dolor sed in officia laboris enim nostrud incididunt nisi eiusmod aliqua consequat officia voluptate incididunt ut dolor excepteur deserunt ex:
   </p>
 
-  <p>
+  <p class="panel panel-border-narrow">
       <a href="{{url}}/{{version}}/data-submissions/ilr/details" target="_blank">{{url}}/{{version}}/data-submissions/ilr/details</a>
   </p>
 

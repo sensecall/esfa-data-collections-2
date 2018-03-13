@@ -85,7 +85,7 @@ router.get('/claim-esfa-funding', (req, res) => {
 	var authenticated = req.query.authenticated
 	if (authenticated === 'true') {
     // Redirect to the relevant page
-	    res.redirect(`/${req.version}/data-submissions`,)
+	    res.redirect(`/${req.version}/sfs`,)
 	} else {
     // If over18 is any other value (or is missing) render the page requested
 		res.render(`${req.version}/index`,)
