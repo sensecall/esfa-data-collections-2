@@ -67,7 +67,8 @@ $(document).ready(function () {
 		})();
 	}
 
-	$('#upload-complete-button').on('click', function(e) {
-		window.open('email','_blank');
-	})
+	// For opening email in another tab
+	// $('#upload-complete-button').on('click', function(e) {
+	// 	window.open('email','_blank');
+	// })
 })
