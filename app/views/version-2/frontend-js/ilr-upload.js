@@ -45,17 +45,18 @@ $(document).ready(function () {
 		var currentPage = window.location.href.split("?")[0];
 		setTimeout(function () {
 			window.location.href = currentPage + "/../../ilr-upload-complete";
-		}, 8000);
+		}, 9500);
 
 		var times = [
 		'14 minutes',
-		'10 minutes',
-		'10 minutes',
 		'8 minutes',
 		'5 minutes',
 		'2 minutes',
-		'30 seconds',
-		'10 seconds',
+		'1 minute',
+		'36 seconds',
+		'12 seconds',
+		'11 seconds',
+		'2 seconds',
 		'1 second'
 		];
 
