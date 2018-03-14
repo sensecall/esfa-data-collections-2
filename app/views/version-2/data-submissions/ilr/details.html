@@ -15,6 +15,7 @@
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
 				<span class="heading-secondary">Individualised Learner Record (ILR) submission</span>
+				<span class="visually-hidden"> for </span>
 				{% include version + '/_return-period-text.html' %}
 			</h1>
 			{% if data['ilr-submission-status'] == 'processed' %}
@@ -24,6 +25,10 @@
 			{% elif data['ilr-submission-status'] == 'errors' %}
 			{% include './_ilr-details-errors.html' %}
 			{% endif %}
+		</div>
+
+		<div class="column-one-third">
+			{% include version + '/includes/_return-period-info.html' %}
 		</div>
 	</div>
 </main>
