@@ -12,13 +12,13 @@ Prototype
 <main id="content" role="main">
 	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
 
-	<h1 class="heading-large">
-		Prototype configurator
-	</h1>
-
 	<form id="save-config" action="/{{version}}/claim-esfa-funding">
 		<div class="grid-row">
 			<div class="column-two-thirds">
+				<h1 class="heading-xlarge">
+					Prototype configuration
+				</h1>
+
 				<h3 class="heading-medium">User details</h3>
 				<div class="form-group">
 					<label class="form-label" for="user-id">User id</label>
@@ -97,6 +97,11 @@ Prototype
 										</option>
 									</select>
 								</div>
+
+								<div class="form-group">
+									<label class="form-label" for="funding-amount">ILR funding amount</label>
+									<input class="form-control" id="funding-amount" type="tel" name="funding-amount" value="{{ data['funding-amount'] or "120000" }}">
+								</div>
 							</fieldset>
 						</div>
 
@@ -138,6 +143,30 @@ Prototype
 				<p>
 					<input type="submit" class="button button-start" value="Start now">
 				</p>
+			</div>
+
+			<div class="column-one-third">
+				<aside class="govuk-related-items">
+					<h2 class="heading-large">
+						Quick links
+					</h2>
+					<p>Protoype configuration changes <span class="bold">will not be saved</span> if you visit these links without saving first.</p>
+
+					<h3 class="heading-medium">
+						Pages
+					</h3>
+					<ul class="list">
+						<li><a href="/{{version}}/data-submissions/ilr/details">ILR details</a></li>
+						<li><a href="/{{version}}/login">Login</a></li>
+					</ul>
+
+					<h3 class="heading-medium">
+						Emails
+					</h3>
+					<ul class="list">
+						<li><a href="/{{version}}/email">ILR processed</a></li>
+					</ul>
+				</aside>
 			</div>
 		</form>
 	</div>

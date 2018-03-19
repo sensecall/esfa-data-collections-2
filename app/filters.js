@@ -1,5 +1,8 @@
 const {addMonths, format} = require('date-fns')
+
 var parse = require('date-fns/parse')
+var numeralFilter = require('nunjucks-numeral-filter')
+var dateFilter = require('nunjucks-date')
 
 module.exports = function (env) {
   /**
@@ -8,7 +11,12 @@ module.exports = function (env) {
    * gov.uk core filters by creating filter methods of the same name.
    * @type {Object}
    */
-  var filters = {}
+   var filters = {}
+
+  // nunjucks numeral.js
+  filters.numeral = numeralFilter
+
+  filters.moment = dateFilter
 
   // DWP dummy data example
   filters.loadDummyData = (filename, feature = 'claim-capture') => {
