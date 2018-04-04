@@ -2,7 +2,6 @@ const {addMonths, format} = require('date-fns')
 
 var parse = require('date-fns/parse')
 var numeralFilter = require('nunjucks-numeral-filter')
-var dateFilter = require('nunjucks-date')
 
 module.exports = function (env) {
   /**
