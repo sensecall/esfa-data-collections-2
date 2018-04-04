@@ -40,9 +40,19 @@ router.use(/\/citizen-facing\/version-([0-9]+)/, (req, res, next) => {
   require(`./views/citizen-facing/version-${req.params[0]}/routes`)(req, res, next);
 })
 
-// Version 2
+// Dan's Versions
 router.use(/\/version-([0-9]+)/, (req, res, next) => {
   require(`./views/version-${req.params[0]}/routes`)(req, res, next);
+})
+
+// ILR submission
+router.use(/\/ilr-submission\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/ilr-submission/version-${req.params[0]}/routes`)(req, res, next);
+})
+
+// Estimator
+router.use(/\/estimate-your-funding\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/estimate-your-funding/version-${req.params[0]}/routes`)(req, res, next);
 })
 
 module.exports = router
