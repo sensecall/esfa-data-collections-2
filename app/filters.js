@@ -15,8 +15,6 @@ module.exports = function (env) {
   // nunjucks numeral.js
   filters.numeral = numeralFilter
 
-  filters.moment = dateFilter
-
   // DWP dummy data example
   filters.loadDummyData = (filename, feature = 'claim-capture') => {
     const data = require(`./views/${feature}/_dummy-data/${filename}.json`)
