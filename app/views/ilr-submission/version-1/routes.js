@@ -2,6 +2,10 @@ const express = require('express')
 
 const router = new express.Router()
 
+router.get('/', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/submission-type`)
+})
+
 router.post('/submission-type', (req, res) => {
   var submissionType = req.body['submissionType']
   if (submissionType === 'online') {    
