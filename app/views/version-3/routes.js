@@ -2,6 +2,15 @@ const express = require('express')
 
 const router = new express.Router()
 
+router.post('/settings', (req, res) => {
+  var authenticated = req.body['authenticated']
+  if (authenticated === 'true') {    
+    res.redirect(`/${req.version}/sfs`)
+  } else {
+    res.redirect(`/${req.version}/`)
+  }
+})
+
 router.get('/', (req, res) => {
   res.redirect(`/${req.version}/guidance`)
 })
@@ -63,8 +72,9 @@ router.post('/submit-ilr-online/learners-left-additional', (req, res) => {
   }
 })
 
-router.get('/file', (req, res) => {
-	res.redirect('/file')
+router.get('/email', (req, res) => {
+  var url = req.protocol + '://' + req.get('host');
+  res.render(`${req.version}/email`,{url})
 })
 
 module.exports = router

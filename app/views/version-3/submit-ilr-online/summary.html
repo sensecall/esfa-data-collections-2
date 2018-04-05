@@ -1,4 +1,4 @@
-{% extends "./layout.html" %}
+{% extends version + "/layout.html" %}
 
 {% set serviceName = 'Submit ILR data' %}
 
@@ -7,16 +7,12 @@
 {% endblock %}
 
 {% block page_scripts %}
-<script>
-	{% include './frontend-js/ilr-upload.js' %}
-</script>
 {% endblock %}
 
 {% block content %}
-<!-- {% include './includes/_header-nav.html' %} -->
 
 <main id="content" role="main">
-	{% include './includes/_phase-banner.html' %}
+	{% include version + "/includes/_phase-banner.html" %}
 	
 	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
 
@@ -35,10 +31,10 @@
 
 			<h2 class="heading-medium">Details for 2 learners have changed:</h2>
 
-			<p>
-				
-				<a class="button" href="#">Confirm submission</a>
-			</p>
+			<form action="/{{version}}/ilr-details">
+				<input type="hidden" value="processed" name="ilr-submission-status">
+				<input class="button" type="submit" value="Confirm submission">
+			</form>
 		</div>
 	</div>
 </main>
