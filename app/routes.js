@@ -55,4 +55,9 @@ router.use(/\/estimate-your-funding\/version-([0-9]+)/, (req, res, next) => {
   require(`./views/estimate-your-funding/version-${req.params[0]}/routes`)(req, res, next);
 })
 
+// Student data entry
+router.use(/\/student-data-collection\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/student-data-collection/version-${req.params[0]}/routes`)(req, res, next);
+})
+
 module.exports = router

@@ -20,19 +20,20 @@
 	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
 
 	<div class="grid-row">
-		<div class="column-two-thirds">					
+		<div class="column-two-thirds">
+			<h1 class="heading-large">
+				{{serviceName}}
+			</h1>
+
 			<form method="post">
-				<div class="form-group">
-					<fieldset>
 
-						<legend>
-							<h1 class="heading-large">Would you like to submit your ILR data by uploading a file?</h1>
-						</legend>
+					<h2 class="heading-medium">Would you like to submit your ILR data by uploading a file?</h2>
 
-						<p class="form-hint">
-							File uploads are suitable for advanced users who are submitting data for lots of learners, typically exported from a Management Information System.
-						</p>
-
+				<fieldset>
+					<p class="form-hint">
+						File uploads are suitable for advanced users who are submitting data for lots of learners, typically exported from a Management Information System.
+					</p>
+					<div class="form-group">
 						<div class="multiple-choice">
 							<input id="radio-file-upload" type="radio" name="submissionType" value="file">
 							<label for="radio-file-upload">Yes, I want to upload a file</label>
@@ -42,9 +43,9 @@
 							<input id="radio-web-form" type="radio" name="submissionType" value="online">
 							<label for="radio-web-form">No, I'd like to use the online form</label>
 						</div>
-						
-					</fieldset>
-				</div>
+					</div>
+				</fieldset>
+
 
 				<input type="submit" value="Continue" class="button">
 			</form>
