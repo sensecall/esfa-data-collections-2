@@ -28,6 +28,19 @@ router.post('/submit-ilr', (req, res) => {
   }
 })
 
+router.get('/ilr-details', (req, res) => {
+  var ilrStatus = req.session.data['ilr-submission-status']
+  if (ilrStatus === 'processed') {
+    res.render(`${req.version}/ilr-details--processed`)
+  } else if (ilrStatus === 'processing') {
+    res.render(`${req.version}/ilr-details--processing`)
+  } else if (ilrStatus === 'errors') {
+    res.render(`${req.version}/ilr-details--processing`)
+  } else {
+    res.render(`${req.version}/ilr-details--empty`)
+  }
+})
+
 router.get('/upload-ilr-file', (req, res) => {
   res.render(`${req.version}/upload-ilr-file/upload-ilr-file`)
 })
