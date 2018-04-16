@@ -28,8 +28,16 @@
 			{% if data['ilr-status'] == 'errors' %}
 			<div class="error-summary">
 				<h3 class="heading-medium">Errors were found in this file that may prevent funding from being calculated correctly</h3>
+				<ul class="list list-bullet">
+					<li>
+						Data was missing that is required to calculate your funding
+					</li>
+					<li>
+						XML in the uploaded file was not formed correctly
+					</li>
+				</ul>
 				<p>
-					Detail about the errors that were detected can be found in <a href="#">error reports</a>.
+					More detail about the errors that were found can be viewed by downloading the <a href="#">error report</a> (CSV, 87kB).
 				</p>
 			</div>
 			{% else %}
@@ -41,7 +49,6 @@
 			{% include './includes/_file-details.html' %}
 
 			<a class="button" href="check-your-details" role="button" id="upload-complete-button">Continue</a>
-
 		</div>
 
 		<div class="column-third">

@@ -2,8 +2,8 @@
 		<div class="column-half">
 			<div class="data">
 				<span class="data-item font-small">Estimated funding<span class="visually-hidden">: </span></span>
-				{% set fundingPerLearner = 3048 %}
-				{% set learners = 24 %}
+				{% set fundingPerLearner = 3102 %}
+				{% set learners = 37 %}
 				{% set fundingAmount = (learners * fundingPerLearner) %}
 				<span class="data-item bold-xlarge">
 					{% include './../_funding-amount.html' %}
@@ -14,7 +14,7 @@
 		<div class="column-half">
 			<div class="data">
 				<span class="data-item font-small">Learners<span class="visually-hidden">: </span></span>
-				<span class="data-item bold-xlarge">{{learners}}</span>
+				<span class="data-item bold-xlarge">{{learners | numeral().format('0,0')}}</span>
 			</div>
 		</div>
 	</div>
@@ -49,6 +49,10 @@
 			<tr>
 				<td>Apprenticeships from 1 May 2017<br> (or available for non-funded learning aims)</td>
 				<td>£{{ (fundingAmount * 0.16) | numeral().format('0,0') }}</td>
+			</tr>
+			<tr>
+				<td><span class="bold-small">Total</span></td>
+				<td><span class="bold-small">£{{ (fundingAmount) | numeral().format('0,0') }}</span></td>
 			</tr>
 		</tbody>
 	</table>
