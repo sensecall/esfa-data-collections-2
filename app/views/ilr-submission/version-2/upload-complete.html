@@ -22,33 +22,78 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
-				ILR file uploaded
+				Check and confirm you want to submit this file for processing
 			</h1>
 
 			{% if data['ilr-status'] == 'errors' %}
 			<div class="error-summary">
-				<h3 class="heading-medium">Errors were found in this file that may prevent funding from being calculated correctly</h3>
+				<h2 class="heading-medium">Errors were found in this file that may prevent funding from being calculated correctly:</h2>
+
+				<br>
+
 				<ul class="list list-bullet">
 					<li>
-						Data was missing that is required to calculate your funding
+						<h3 class="heading-small">
+							Data required to calculate your funding is missing
+						</h3>
+						<p>
+							To find out about what data is required for each learner, you can read more in the <a href="#">ILR submission guidelines</a>.
+						</p>
 					</li>
+
 					<li>
-						XML in the uploaded file was not formed correctly
+						<h3 class="heading-small">
+							XML in the uploaded file is not formatted correctly
+						</h3>
+						<p>
+							You can read more about how to format your ILR data file correctly in the <a href="#">ILR submission guidelines</a>.
+						</p>
 					</li>
 				</ul>
+
+				<h3 class="heading-medium">
+					Error report
+				</h3>
 				<p>
-					More detail about the errors that were found can be viewed by downloading the <a href="#">error report</a> (CSV, 87kB).
+					Detailed information about the errors that were found can be viewed by downloading the <a href="#">error report</a> (CSV, 87kB).
 				</p>
 			</div>
 			{% else %}
 			<div class="success-summary">
 				<h3 class="heading-medium">No issues were detected that might prevent this file from being processed</h3>
 			</div>
+			{% include './includes/_file-details.html' %}
 			{% endif %}
 
-			{% include './includes/_file-details.html' %}
+			<form>
+				<div class="form-group">
+					<fieldset>
 
-			<a class="button" href="check-your-details" role="button" id="upload-complete-button">Continue</a>
+						<legend>
+							<h3 class="heading-medium">
+								Do you want to submit this file?
+							</h3>
+							<p class="form-hint">
+								If any errors were found in your file then funding amounts may not be calculated correctly.
+							</p>
+						</legend>
+
+						<div class="multiple-choice">
+							<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+							<label for="radio-inline-1">Yes, I want to submit this file</label>
+						</div>
+						<div class="multiple-choice">
+							<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+							<label for="radio-inline-2">No, do not submit this file</label>
+						</div>
+
+					</fieldset>
+				</div>
+
+				<div class="form-group">
+					<a class="button" href="email-option" role="button" id="upload-complete-button">Continue</a>
+				</div>
+			</form>
 		</div>
 
 		<div class="column-third">
