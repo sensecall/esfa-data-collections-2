@@ -3,7 +3,7 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/submission-type`)
+  res.redirect(`/${req.feature}/${req.sprint}/start`)
 })
 
 router.post('/upload-ilr-file', (req, res) => {
@@ -26,6 +26,11 @@ router.post('/learners-left', (req, res) => {
   } else {
     res.redirect(`/${req.feature}/${req.sprint}/learners-joined`)
   }
+})
+
+router.get('/email', (req, res) => {
+  var url = req.protocol + '://' + req.get('host');
+  res.render(`${req.feature}/${req.sprint}/email`,{url})
 })
 
 router.post('/learners-joined', (req, res) => {

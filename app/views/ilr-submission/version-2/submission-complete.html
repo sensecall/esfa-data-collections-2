@@ -25,36 +25,31 @@
 				</h1>
 
 				<p class="font-medium">
-					Your ILR submission for {% include './_return-period-text.html' %} is being processed. This should take around 3 hours.
+					Your ILR submission for {% include './_return-period-text.html' %} is being processed. The current wait time is around 3 hours.
 				</p>
-			</div>
-
-			<h3 class="heading-medium">
-				Upload details
-			</h3>
-			<table class="table-font-xsmall">
-				<tbody>
-					<tr>
-						<td><span class="bold">File name</span></td>
-						<td>{{ data['file-upload'] }}</td>
-					</tr>
-					<tr>
-						<td><span class="bold">File size</span></td>
-						<td>209.8kb</td>
-					</tr>
-					<tr>
-						<td><span class="bold">Date and time</span></td>
-						<td>{{ data['file-date'] }}</td>
-					</tr>
-				</tbody>
-			</table>	
+			</div>	
 			
 			<h2 class="heading-medium">What happens next?</h2>
-			{% if data['email-confirmation'] %}<p>You will receive an email notification once your file has been processed.</p>{% endif %}
+			
+			{% if data['email-confirmation'] %}
+			<p>You will receive an email notification once your file has been processed.</p>
+			{% endif %}
 
-			<p>If any warnings or errors are found in the data you submitted they will be listed in a report file which can be downloaded once your submission has been processed.</p>
+			<p>You will be able to <a href="ilr-submission-details?ilr-submission-status=processing">view details about this submission</a> once the data file has been processed, including:</p>
 
-			<p><a class="button" href="data-submissions" role="button" id="upload-complete-button">Finished</a></p>
+			<ul class="list list-bullet">
+				<li>Calculated funding amounts</li>
+				<li>Details about issues that might affect your funding</li>
+				<li>A detailed breakdown of learners in your organisation</li>
+			</ul>
+
+			<p>An email will be sent to let you know when your file has been processed.</p>
+
+			<!-- <p><a class="button" href="data-submissions" role="button" id="upload-complete-button">Finished</a></p> -->
+		</div>
+
+		<div class="column-third">
+
 		</div>
 	</div>
 </main>

@@ -1,7 +1,7 @@
-{% if data['funding-amount'] and data['funding-amount'] > 9999 %}
-&pound;{{ data['funding-amount'] | numeral().format('0.0a') }}
-{% elif data['funding-amount'] and data['funding-amount'] < 10000 %}
-&pound;{{ data['funding-amount'] | numeral().format('0,0') }}
+{% if fundingAmount and fundingAmount > 9999 %}
+&pound;{{ fundingAmount | numeral().format('0.0a') }}
+{% elif fundingAmount and fundingAmount < 10000 %}
+&pound;{{ fundingAmount | numeral().format('0,0') }}
 {% else %}
-&pound;{{ 124000 | numeral().format('0.0a') }}
+&pound;{{ fundingAmount | numeral().format('0.00a') }}
 {% endif %}

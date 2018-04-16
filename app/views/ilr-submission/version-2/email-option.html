@@ -22,35 +22,30 @@
 
 	<div class="grid-row">
 		<div class="column-two-thirds">		
-			<form action="learners-left-additional">
+			<form action="submission-complete">
 				<div class="form-group">
 					<fieldset>
 						<legend>
-							<h1 class="heading-large">Why did this learner leave?</h1>
+							<h1 class="heading-large">Do you want to receive an email when your file has been processed?</h1>
 						</legend>
 
-						<h2 class="heading-medium">{{data['leaver-name']}}</h2>
-
-						<div class="multiple-choice">
-							<input id="radio-1" type="radio" name="leavers-group" value="SMITH, John">
-							<label for="radio-1">Reason 1</label>
+						<div class="multiple-choice" data-target="contact-by-email">
+							<input id="radio-yes" type="radio" name="radio-email" value="Yes">
+							<label for="radio-yes">Yes</label>
+						</div>
+						<div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+							<label class="form-label" for="contact-email">Email address</label>
+							<input class="form-control" name="contact-email" type="text" id="contact-email" value="youremail@test.com">
 						</div>
 
 						<div class="multiple-choice">
-							<input id="radio-2" type="radio" name="leavers-group" value="WILLIAMS, Jane">
-							<label for="radio-2">Reason 2</label>
+							<input id="radio-no" type="radio" name="radio-email" value="false">
+							<label for="radio-no">No</label>
 						</div>
-						<div class="multiple-choice">
-							<input id="radio-3" type="radio" name="leavers-group" value="WORCESTER, Ann">
-							<label for="radio-3">Reason 3</label>
-						</div>
-						<div class="multiple-choice">
-							<input id="radio-4" type="radio" name="leavers-group" value="YATES, Barry">
-							<label for="radio-4">Reason 4</label>
 					</fieldset>
 				</div>
 
-				<input type="submit" value="Confirm" class="button">
+				<input type="submit" value="Continue" class="button">
 			</form>
 		</div>
 

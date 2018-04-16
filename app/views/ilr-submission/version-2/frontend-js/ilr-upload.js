@@ -48,9 +48,9 @@ $(document).ready(function () {
 		}, 9500);
 
 		var times = [
-		'14 minutes',
-		'8 minutes',
-		'5 minutes',
+		'4 minutes',
+		'3 minutes',
+		'2 minutes',
 		'2 minutes',
 		'1 minute',
 		'36 seconds',
