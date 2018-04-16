@@ -3,7 +3,7 @@
 			<div class="data">
 				<span class="data-item font-small">Estimated funding<span class="visually-hidden">: </span></span>
 				{% set fundingPerLearner = (3191/11) %}
-				{% set learners = 37 %}
+				{% set learners = (data['learners'] or 37) %}
 				{% set fundingAmount = (learners * fundingPerLearner) %}
 				<span class="data-item bold-xlarge">
 					{% include './../_funding-amount.html' %}
@@ -81,9 +81,9 @@
 	</p>
 
 	<p>
-		If you think there is a problem with the calculation, you can also <a href="#">let us know</a> about an issue.
+		Otherwise, if we receive no further data from your organisation within the current Return period, your funding calculation for this period will be based on the data in this submission and you do not need to take any further action.
 	</p>
 
 	<p>
-		Otherwise, if we receive no further data from your organisation within the current Return period, your funding calculation for this period will be based on the data in this submission and you do not need to take any further action.
+		If you think there is a problem with the calculation you can <a href="#">let us know about an issue</a>.
 	</p>
