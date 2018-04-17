@@ -2,6 +2,7 @@ const {addMonths, format} = require('date-fns')
 
 var parse = require('date-fns/parse')
 var numeralFilter = require('nunjucks-numeral-filter')
+var nunjucksDate = require('nunjucks-date')
 
 module.exports = function (env) {
   /**
@@ -14,6 +15,13 @@ module.exports = function (env) {
 
   // nunjucks numeral.js
   filters.numeral = numeralFilter
+
+  // nunjucks numeral.js
+  filters.parseDate = parse
+
+
+nunjucksDate.setDefaultFormat('dddd Do MMMM, YYYY');
+  filters.date = nunjucksDate
 
   // DWP dummy data example
   filters.loadDummyData = (filename, feature = 'claim-capture') => {
@@ -39,6 +47,12 @@ module.exports = function (env) {
   // ESFA dummy data
   filters.esfaDummyData = (filename, version = 'version-2') => {
     const data = require(`./views/${version}/_dummy-data/${filename}.json`)
+    return data
+  }
+
+  // ilr-submission dummy data
+  filters.loadData = (filename, feature = 'ilr-submission') => {
+    const data = require(`./views/${feature}/_dummy-data/${filename}.json`)
     return data
   }
 

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Submit ILR data
+{% endblock %}
+
+{% block service_name %}
+Submit ILR data
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">
+				Your ILR file was not submitted for processing
+			</h1>
+
+			<p>
+				Per your instruction, the ILR file you uploaded has not been submitted for processing.
+			</p>
+			<p>
+				Any data contained in the file has not been used to calculate your organisation's funding for this return period.
+			</p>
+
+			<h2 class="heading-medium">
+				What you can do now
+			</h2>
+			<ul class="list list-bullet">
+				<li><a href="upload-ilr-file">Submit an ILR file</a></li>
+				<li>Read the <a href="https://www.gov.uk/government/publications/ilr-guides-and-templates-for-2017-to-2018#how-to-submit-an-ilr-data-return">ILR submission guidance</a></li>
+			</ul>
+		</div>
+
+		<div class="column-third">
+			{% include './includes/_return-period-info.html' %}
+		</div>
+	</div>
+</main>
+
+{% endblock %}

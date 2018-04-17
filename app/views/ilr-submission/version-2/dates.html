@@ -1,0 +1,60 @@
+{% extends "./layout-guidance.html" %}
+{% set data = 'returnPeriods' | loadData %}
+
+{% block page_title %}
+Submit an ILR - GOV.UK
+{% endblock %}
+
+{% block service_name %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include './includes/_phase-banner.html' %}
+	
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h2 class="heading-large">
+				<span class="heading-secondary">
+					Guidance
+				</span>
+				Individualised Learner Records (<abbr title="Individualised Learner Record">ILR</abbr>) submission calendar
+			</h2>
+
+
+			{% for period in data.return_periods %}
+			<h3 class="heading-medium">
+				{{period.name}}
+			</h3>
+			<div class="panel panel-border-wide">
+				<p>
+					{{period.name}} runs from {{period.start_date | date}} until {{period.end_date | date}}.
+				</p>
+			</div>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Event</th>
+						<th>Start</th>
+						<th>End</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					{% for event in period.events %}		
+					<tr>
+						<td>{{event.name}}</td>
+						<td>{{event.start | date }}</td>
+						<td>{{event.end | date }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			{% endfor %}
+		</div>
+	</div>
+</main>
+
+{% endblock %}

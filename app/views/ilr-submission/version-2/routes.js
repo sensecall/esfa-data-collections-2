@@ -10,6 +10,10 @@ router.post('/upload-ilr-file', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/uploading`)
 })
 
+router.post('/uploading', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/upload-complete`)
+})
+
 router.post('/choose-submission', (req, res) => {
   var submissionType = req.body['submissionType']
   if (submissionType === 'ilr') {
@@ -19,49 +23,18 @@ router.post('/choose-submission', (req, res) => {
   }
 })
 
-router.post('/learners-left', (req, res) => {
-  var submissionType = req.body['learners-left']
-  if (submissionType === 'true') {
-    res.redirect(`/${req.feature}/${req.sprint}/learners-left-search`)
-  } else {
-    res.redirect(`/${req.feature}/${req.sprint}/learners-joined`)
-  }
-})
-
 router.get('/email', (req, res) => {
   var url = req.protocol + '://' + req.get('host');
   res.render(`${req.feature}/${req.sprint}/email`,{url})
 })
 
-router.post('/learners-joined', (req, res) => {
-  var submissionType = req.body['learners-joined']
-  if (submissionType === 'true') {
-    res.redirect(`/${req.feature}/${req.sprint}/add-learner-1`)
+router.post('/upload-complete', (req, res) => {
+  var submitFile = req.body['submit-file']
+  if (submitFile === 'true') {
+    res.redirect(`/${req.feature}/${req.sprint}/email-option`)
   } else {
-    res.redirect(`/${req.feature}/${req.sprint}/change-learner-details`)
+    res.redirect(`/${req.feature}/${req.sprint}/data-not-submitted`)
   }
-})
-
-router.post('/change-learner-details', (req, res) => {
-  var submissionType = req.body['learners-changed']
-  if (submissionType === 'true') {
-    res.redirect(`/${req.feature}/${req.sprint}/change-learner-details`)
-  } else {
-    res.redirect(`/${req.feature}/${req.sprint}/summary`)
-  }
-})
-
-router.post('/learners-left-additional', (req, res) => {
-  var submissionType = req.body['learners-left-additional']
-  if (submissionType === 'true') {
-    res.redirect(`/${req.feature}/${req.sprint}/learners-left-search`)
-  } else {
-    res.redirect(`/${req.feature}/${req.sprint}/learners-joined`)
-  }
-})
-
-router.get('/file', (req, res) => {
-	res.redirect('/file')
 })
 
 module.exports = router

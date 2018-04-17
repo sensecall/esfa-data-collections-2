@@ -44,7 +44,7 @@ $(document).ready(function () {
 	if($('#uploading-content').length){
 		var currentPage = window.location.href.split("?")[0];
 		setTimeout(function () {
-			window.location.href = currentPage + "/../upload-complete";
+			$('#uploading-form').submit()
 		}, 9500);
 
 		var times = [

@@ -1,7 +1,9 @@
 	<div class="grid-row">
 		<div class="column-half">
 			<div class="data">
-				<span class="data-item font-small">Estimated funding<span class="visually-hidden">: </span></span>
+				<h2 class="data-item font-small">
+					Estimated funding<span class="visually-hidden">: </span>
+				</h2>
 				{% set fundingPerLearner = (3191/11) %}
 				{% set learners = (data['learners'] or 37) %}
 				{% set fundingAmount = (learners * fundingPerLearner) %}
@@ -13,7 +15,9 @@
 
 		<div class="column-half">
 			<div class="data">
-				<span class="data-item font-small">Learners<span class="visually-hidden">: </span></span>
+				<h2 class="data-item font-small">
+					Learners<span class="visually-hidden">: </span>
+				</h2>
 				<span class="data-item bold-xlarge">{{learners | numeral().format('0,0')}}</span>
 			</div>
 		</div>
@@ -85,5 +89,5 @@
 	</p>
 
 	<p>
-		If you think there is a problem with the calculation you can <a href="#">let us know about an issue</a>.
+		If you think there is a problem with your funding calculation you can <a href="#">let us know about an issue</a>.
 	</p>

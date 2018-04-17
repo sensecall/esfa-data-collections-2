@@ -1,0 +1,45 @@
+{ 
+  "return_periods": [
+    { 
+      "id": "1",
+      "name": "Return period 1",
+      "start_date": "2017-08-07",
+      "end_date": "2017-08-27",
+      "events": [
+        { 
+          "name": "Release",
+          "start": "07 August 2017",
+          "end": "09 August 2017"
+        },
+        { 
+          "name": "Learning aims reference data update",
+          "start": "08 August 2017",
+          "end": "08 August 2017"
+        },
+        { 
+          "name": "Optional Release",
+          "start": "17 August 2017",
+          "end": "22 August 2017"
+        }
+      ]
+    },
+    { 
+      "id": "2",
+      "name": "Return period 2",
+      "start_date": "2017-08-07",
+      "end_date": "2017-08-27",
+      "events": [
+        { 
+          "name": "Release",
+          "start": "07 August 2017",
+          "end": "09 August 2017"
+        },
+        { 
+          "name": "Learning aims reference data update",
+          "start": "08 August 2017",
+          "end": "08 August 2017"
+        }
+      ]
+    }
+  ]
+}
