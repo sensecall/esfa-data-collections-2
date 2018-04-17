@@ -12,28 +12,44 @@ Submit an ILR - GOV.UK
 
 <main id="content" role="main">
 	{% include './includes/_phase-banner.html' %}
-	
+
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h2 class="heading-large">
+			<h1 class="heading-large">
 				<span class="heading-secondary">
 					Guidance
 				</span>
 				Individualised Learner Records (<abbr title="Individualised Learner Record">ILR</abbr>) submission calendar
-			</h2>
+			</h1>
+			<p class="lede">
+				Guidance about return period dates and deadlines for learning providers who submit data to the ESFA.
+			</p>
+		</div>
+	</div>
 
+	<hr>
 
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<aside class="govuk-box-highlight">
+				<p class="font-medium bold">
+					{% include './_return-period-text.html' %} is open now and will close in
+				</p>
+				<span class="font-xxlarge bold">15 days</span>
+				<p class="font-medium bold">
+					File submissions will be stopped on Tuesday 6th February 2018 at 6.00 PM
+				</p>
+			</aside>
+			
 			{% for period in data.return_periods %}
-			<h3 class="heading-medium">
+			<h3 class="heading-medium" id="return-period{{period.id}}">
 				{{period.name}}
 			</h3>
-			<div class="panel panel-border-wide">
-				<p>
-					{{period.name}} runs from {{period.start_date | date}} until {{period.end_date | date}}.
-				</p>
-			</div>
+			<p>
+				{{period.name}} runs from {{period.start_date | date}} until {{period.end_date | date}}.
+			</p>
 
-			<table>
+			<table class="table-font-xsmall">
 				<thead>
 					<tr>
 						<th>Event</th>
@@ -53,6 +69,21 @@ Submit an ILR - GOV.UK
 				</tbody>
 			</table>
 			{% endfor %}
+		</div>
+		<div class="column-third">
+			<div class="govuk-related-items">
+				<h2 class="heading-medium">
+					Skip to a return period
+				</h2>
+
+				<ul>
+					{% for period in data.return_periods %}
+					<li>
+						<a href="#return-period{{period.id}}">{{period.name}}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 	</div>
 </main>
