@@ -11,7 +11,7 @@ router.post('/upload-ilr-file', (req, res) => {
 })
 
 router.post('/uploading', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/upload-complete`)
+  res.redirect(`/${req.feature}/${req.sprint}/upload-complete?ilr-status=errors`)
 })
 
 router.post('/choose-submission', (req, res) => {
