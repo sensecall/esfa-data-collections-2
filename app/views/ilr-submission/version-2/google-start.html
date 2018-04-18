@@ -15,12 +15,12 @@
 				</div>
 			</center>
 
-			<form id="search-form">
+			<form id="search-form" action="google-results">
 				<center>
-					<input type="text" name="search" id="search-box">
+					<input type="text" name="google-search-query" id="search-box">
 					<div id="button-container">
 						<input type="submit" value="Google Search">
-						<input type="submit" value="I'm Feeling Lucky">
+						<input type="button" value="I'm Feeling Lucky">
 					</div>
 				</center>
 			</form>
@@ -100,7 +100,9 @@
 		margin-top: 30px;
 	}
 
-	input[type="submit"] {
+	input[type="submit"],
+	input[type="button"]
+	 {
 		background-color: #F2F2F2;
 		border: 1px solid #F2F2F2;
 		border-radius: 2px;
@@ -112,7 +114,8 @@
 		margin: 0 2px;
 	}
 
-	input[type="submit"]:hover {
+	input[type="submit"]:hover,
+	input[type="button"]:hover {
 		border-color: #C6C6C6;
 		background-color: #F8F8F8;
 		color: #222;

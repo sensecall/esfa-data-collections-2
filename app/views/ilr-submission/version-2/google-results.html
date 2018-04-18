@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://use.fontawesome.com/8a10763003.js"></script>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="main.css">
+	<title>Google Search</title>
+</head>
+<body>
+
+
+
+<!--HEADER-->
+	
+	<header id="header" class="group">
+		<div class="search">
+			<img src="https://raw.githubusercontent.com/itsmhuang/google-searchpage/master/images/logo-small.png" alt="Google Logo" class="logo">
+		
+			<input type="text" name="search-bar" placeholder="{{data['google-search-query'] or 'submit ilr esfa'}}">
+			<a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR42u2Xz2sTQRSAX8VSb1K8iNqKooJH2Ux6Ksn+iPQqxZMIehJB0do/IMhmQWsvHr2KSEGk0tSLIoWIYNUKij20F2/N7iaUZnYT0kYzzhMKs0HDJiTdLcwHDwKZSd63781LBiQSSW9JZdkhzfKm1Rz9mjZp/W9YdEU3vXv4HsQZ40FtNG36q5rls//Ej4tmbSS2T15Mvp3ExOPmEMQNbBtMMEyoljcFcQN7PqyAlqNfIG7gYQ0tYNIaxA1MrJPY3wImbUqBKAXSFv0tBSIVMOkvKRDtGKWN/T6FdqRAxFNoWwpEPIXqUqBT6ALU/UVgu8GW4GD3f6f9TRDYNJTDrk7YbtiqUumHwIYoUJuHERDAS0r4CvgFECgbY+cFAR7KT+g1POmCKFDNw6WggHc3fBtVb4CAoyauBgXIG+g1Xh5mRAGah6cggBd11fK/h7lOprIs0H6uRl6KAo5O7kOv4QmPiwJ4Jqqv4FiwCtXjvD2+tRmfK6kZ/ygI2HritK0rDVGgrClJ6DWMwYC/AGuCBMYcIC2V0CzvjmbRz3j3xUjn6CfeYreUJ2wQkGD75INPX1mFfsEFrrcIYCvdhC4paWQakxajpJMr0C9YFg54i7AsClRmh9/xnr0NHcInzZStk2aLwAcGMAD9pPIazvFKVDD5rdnhJeHLX5RTyRPQHpz5o66emMc9wdlPtvA8wF7Aq2BUHh1525qEo5JtR1WeOXpickO9cJIpyuD6xJmhYiZ5ytWSl3mlnuOaf+2zDaLDXmJrSgZ/MYVEugo+gSh+FkSBa4yd5Ul87DZ5XpFl/AyIEjzYjkau8WqshU2cr13HPbgX4gJOD97n465GZlyVvC9mSKloKI2iTnbwNT+gBX54H+IaXAtxJzE3ycSAFqSAFJACUkAikXD+AHj5/wx2o5osAAAAAElFTkSuQmCC" alt="Google Microphone" class="micro"></a></a>
+			<img src="https://raw.githubusercontent.com/itsmhuang/google-searchpage/master/images/searchb-logo.png" alt="Magnifying Glass as a search button" class="mag">
+		</div>
+		
+		<div class="user">
+			
+		</div>
+	</header>
+
+
+
+
+<!--NAVBAR-->
+
+	<nav class="nav-bar">
+		<div class="categories">
+			<ul>
+				<li><a href="#" class="active">All</a></li>
+				<li><a href="#">Videos</a></li>
+				<li><a href="#">Shopping</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Maps</a></li>
+				<li><a href="#">More&nbsp;<i class="fa fa-sort-desc" aria-hidden="true"></i></a></li>
+				<li><a href="#">Search Tools</a></li>
+			</ul>
+		</div>
+
+		<div class="icons">
+			<a href="#"><i class="fa fa-user"></i></a><!--
+			--><a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a><!--
+			--><a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
+		</div>
+	</nav>
+
+
+
+
+<!--RESULTS-->
+
+	<section class="container">
+		<p id="calculations">About 151,000 results (0.51 seconds) </p>
+
+		<div class="results">
+			<h2><a href="#">Individualised Learner Record (ILR) - GOV.UK</a></h2>
+			<p class="url">https://www.gov.uk/government/collections/individualised-learner-record-ilr</p>
+			<p><span class="date">25 Feb 2014</span> - ILR data applications. Software and on-line applications to assist with the ILR data collection process. Includes links to the learning aims reference service (LARS), the funding information system (FIS) and the provider data self assessment toolkit (PDSAT).</p>
+
+			<table  class="table">
+				<tbody>
+					<tr>
+						<td>
+							<h2><a href="#" class="table-header">Web Development 101</a></h2>
+							<p class="table-content">How this Course Will Work - HTML and CSS Basics - Installations</p>
+						</td>
+						<td>
+							<h2><a href="#" class="table-header">Ruby Programming</a></h2>
+							<p class="table-content">How this Course Will Work - Ruby Building Blocks - Building Blocks</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h2><a href="#" class="table-header">Login</a></h2>
+							<p class="table-content">Sign in with Github ...or do it the old fashioned way: Email ...</p>
+						</td>
+						<td>
+							<h2><a href="#" class="table-header">What a Web Developer Does</a></h2>
+							<p class="table-content">So What Does a Web Developer Actually Do? ... But what exactly ...</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h2><a href="#" class="table-header">Free Web Development Courses</a></h2>
+							<p class="table-content">Web Development 101 - Ruby Programming - HTML5 and CSS3</p>
+						</td>
+						<td>
+							<h2><a href="#" class="table-header">FAQ</a></h2>
+							<p class="table-content">Frequently Asked Questions. Who Is This For? This course is ...</p>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="#" class="table-link">more results from theodinproject.com</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="results">
+			<h2><a href="#">A Better Way to Learn Programming? Notes on The Odin Project ...</a></h2>
+			<p class="url">everydayutilitarian.com/essays/notes-on-the-odin-project/</p>
+			<p><span class="date">Jul 9, 2014 - </span>That being said, I do have some modifications I'd like to see to <span class="bold">The Odin Project</span>. So consider doing The Odin Project, except with the following ...</p>
+		</div>
+
+		<div class="results">
+			<h2><a href="#">How does The Odin Project compare to programming bootcamps like ...</a></h2>
+			<p class="url">https://www.quora.com/How-does-The-Odin-Project-compare-to-programming...</p>
+			<p><span class="date">Jan 12, 2015 - </span>I attended <span class="bold">Odin Project</span> meetups before it was cool --I mean before it was a website. I met the creator (Erik Trautman) a handful of times through his meetup ...</p>
+		</div>
+
+		<div class="results">
+			<h2><a href="#">People who have finished The Odin Project, what are your capabilities ...</a></h2>
+			<p class="url">https://www.reddit.com/r/.../people_who_have_finished_the_odin_project_what/</p>
+			<p>In fact, the creator of <span class="bold">The Odin Project</span> is a bootcamp alumnus (from which I can't remember off the top of my head) and built <span class="bold">The Odin Project</span> ...</p>
+		</div>
+
+		<div class="results">
+			<h2><a href="#">GitHub - TheOdinProject/theodinproject: Main Website for The Odin ...</a></h2>
+			<p class="url">https://github.com/TheOdinProject/theodinproject
+</p>
+			<p>Main Website for <span class="bold">The Odin Project</span>. Contribute to theodinproject development by creating an account on GitHub.</p>
+		</div>
+
+		<div class="results">
+			<h2><a href="#">ODIN project, ORCID and DataCite Interoperability Network</a></h2>
+			<p class="url">https://odin-project.eu/</p>
+			<p>Following on from our achievements, we're continuing the good work on Project THOR. For more information, visit the Project THOR website.</p>
+		</div>
+
+		<div class="results">
+			<h2><a href="#">The Odin Project - Pivotal Tracker</a></h2>
+			<p class="url">https://www.pivotaltracker.com/n/projects/1199678</p>
+		</div>
+	</section>
+
+
+
+<!--RELATED-->
+
+	<section class="container container-related">
+		<h2 id="header-related">Searches related to the odin project</h2>
+
+		<div class="related">
+			<ul>
+				<li><a href="#">the odin project <span>review</span></a></li><!--
+				--><li><a href="#">the odin project <span>reddit</span></a></li><!--
+				--><li><a href="#"><span>viking code school</span></a></li><!--
+				--><li><a href="#"><span>hack reactor</span></a></li>
+			</ul>
+		</div>
+
+		<div class="related">
+			<ul>
+				<li><a href="#"><span>how long does</span> the odin project <span>take</span></a></li><!--
+				--><li><a href="#">the odin project <span>github</span></a></li><!--
+				--><li><a href="#">the odin project <span>for python</span></a></li><!--
+				--><li><a href="#">the odin project <span>job</span></a></li>
+			</ul>
+		</div>
+	</section>
+
+
+
+<!--PAGINATION-->
+
+	<section class="pages container">
+		<img src="https://raw.githubusercontent.com/DanielK95/google-homepage/master/pages_google.png" alt="Google Pagination Logo">
+		<i class="fa fa-angle-right fa-2x arrow" aria-hidden="true"></i>
+
+		<ul>
+			<li><a href="#" class="page page-active">1</a></li><!--
+			--><li><a href="#" class="page">2</a></li><!--
+			--><li><a href="#" class="page">3</a></li><!--
+			--><li><a href="#" class="page">4</a></li><!--
+			--><li><a href="#" class="page">5</a></li><!--
+			--><li><a href="#" class="page">6</a></li><!--
+			--><li><a href="#" class="page">7</a></li><!--
+			--><li><a href="#" class="page">8</a></li><!--
+			--><li><a href="#" class="page">9</a></li><!--
+			--><li><a href="#" class="page">10</a></li><!--
+			--><li><a href="#" class="page next">Next</a></li>
+		</ul>
+	</section>
+
+
+
+<!--FOOTER-->
+
+	<footer class="footer">
+		<div class="container">
+			<small><i class="fa fa-circle" aria-hidden="true"></i> Saint Peters, MO - From your phone (Location History) - <a href="#">Use precise location</a> - <a href="#">Learn more</a></small>
+
+			<ul>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Send Feedback</a></li>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Terms</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<style type="text/css">
+
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+		/***********************************************************
+BASE
+***********************************************************/
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+   color: #000;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #000;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #000;  
+}
+
+:-ms-input-placeholder {  
+   color: #000;  
+}
+
+
+
+/***********************************************************
+HEADER LEFT
+***********************************************************/
+
+#header {
+	background-color: #f1f1f1;
+	height: 60px;
+}
+
+#header > div {
+	float: left;
+}
+
+
+.logo {
+	height: 34px;
+	margin: 0 20px;
+	position: relative;
+	top: 15px;
+	width: 91px;
+}
+
+.search {
+	position: relative;
+	width: 70%;
+}
+
+.search input {
+	border: 1px solid #d9d9d9;
+	color: #000;
+    font-size: 1em;
+    height: 40px;
+    text-indent: 10px;
+    width: 63%;
+}
+
+
+.micro,
+.mag {
+	position: absolute;
+}
+
+.micro {
+    height: 24px;
+    right: 215px;
+    top: 18px;
+    width: 24px;
+}
+
+.mag {
+	top: 9px;
+}
+
+
+
+/***********************************************************
+HEADER RIGHT
+***********************************************************/
+
+.user {
+	text-align: right;
+	width: 30%;
+}
+
+.user li {
+	display: inline-block;
+	margin-left: 3%;
+}
+
+.user-options {
+	position: relative;
+	top: 5px;
+}
+
+.user-notif,
+.user-pic {
+	border-radius: 50%;
+}
+
+.user-notif {
+	background-color: tomato;
+	color: #fff;
+	display: block;
+	font-family: sans-serif;
+	font-size: .8em;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	width: 20px;
+}
+
+.user-pic {
+	margin-right: 35px;
+	position: relative;
+	top: 13px;
+}
+
+
+
+/***********************************************************
+NAVBAR
+***********************************************************/
+
+.nav-bar {
+	border-bottom: 1px solid #f1f1f1;
+	height: 60px;
+}
+
+.categories,
+.icons {
+	float: left;
+}
+
+.categories li,
+.icons a {
+	display: inline-block;
+}
+
+.categories {
+	padding-left: 130px;
+	width: 60%;
+}
+
+.categories li {
+    margin: 0 4px;
+    line-height: 60px;
+}
+
+.categories a {
+    color: #7f8894;
+    display: block;
+    font-family: sans-serif;
+    font-size: .85em;
+    height: 60px;
+    padding: 0 10px;
+}
+
+.categories .active {
+	color: #7788f4;
+	border-bottom: 3px solid #7788f4;
+	font-weight: bold;
+}
+
+.categories i[class*="fa"] {
+	bottom: 2px;
+	position: relative;
+}
+
+.icons {
+	text-align: right;
+	width: 40%;
+}
+
+.icons a {
+    background-color: #f4f4f4;
+	border: 1px solid #dadada;
+    color: #515151;
+    margin: 15px 0;
+    padding: 5px 20px 5px;
+}
+
+.icons a:nth-child(3) {
+	margin: 0 30px 0 15px;
+}
+
+
+
+
+
+/***********************************************************
+RESULTS SECTION
+***********************************************************/
+
+.container {
+	margin-left: 142px;
+	width: 47%;
+}
+
+#calculations,
+.url + p,
+.table-content,
+.date {
+	font-family: sans-serif;
+	font-size: .85em;
+}
+
+#calculations {	
+	color: #7f8894;
+	margin: 15px 0 20px;
+}
+
+.results {
+	margin-bottom: 20px;
+}
+
+.results h2 a,
+.table-header {
+	color: #1a0dab;
+    display: block;
+    font-size: 1.13em;
+    font-family: arial, sans-serif;
+}
+
+.url {
+    color: #006621;
+    font-family: arial, sans-serif;
+    font-size: .9em;
+    margin: 4px 0;
+}
+
+.url span {
+	color: #006627;
+	font-weight: bold;
+}
+
+.url + p,
+.table-content {
+	color: #545454;
+}
+
+.url + p,
+.date {
+	line-height: 18px;
+}
+
+.bold {
+	color: #6a6a6a;
+	font-weight: bold;
+}
+
+.date {
+	color: #8387a7;
+	font-size: 1em
+}
+
+.table {
+	border-bottom: 1px solid #f1f1f1;
+	display: block;
+}
+
+.table-header,
+.table-content,
+.table-link {
+	margin-left: 30px;
+}
+
+.table-header {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	width: 90%;
+}
+
+.table-content {
+	width: 70%;
+	line-height: 18px;
+}
+
+.table-link {
+	display: block;
+	color: #1a0dab;
+	margin-bottom: 25px; 
+	margin-top: 10px;
+	font-family: arial, sans-serif;
+	font-size: .8em;
+}
+
+
+
+/***********************************************************
+RElATED SECTION
+***********************************************************/
+
+.container-related {
+	border-top: 1px solid #f1f1f1;
+	border-bottom: 1px solid #f1f1f1;
+	padding-bottom: 15px;
+}
+
+#header-related {
+	color: #878080;
+    margin: 15px 0 10px 5px;
+    font-size: 1.1em;
+    font-family: arial, sans-serif;
+}
+
+.related {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 15px;
+}
+
+.related ul li {
+	line-height: 25px;
+}
+
+.related a {
+    color: #1a0dab;
+    font-family: arial, sans-serif;
+    font-size: .9em;
+}
+
+.related span {
+	font-weight: bold;
+
+}
+
+
+
+
+/***********************************************************
+PAGINATION
+***********************************************************/
+
+.pages {
+	padding: 25px 0 30px;
+	position: relative;
+	text-align: center;
+}
+
+.pages ul li {
+	display: inline-block;
+}
+
+.pages ul li:first-child a {
+	margin-left: 55px;
+}
+
+.page {
+    display: block;
+    width: 20px;
+    font-family: arial, sans-serif;
+    font-size: .8em;
+    color: #5990f6;
+
+}
+
+.page-active {
+	color: black;
+}
+
+.next {
+	width: 80px;
+	text-align: right;
+}
+
+.arrow {
+    color: #5990f6;
+    position: absolute;
+    top: 35px;
+    right: 145px;
+}
+
+
+
+
+/***********************************************************
+FOOTER
+***********************************************************/
+
+.footer {
+	background-color: #f1f1f1;
+	border-top: 1px solid #dadada;
+}
+
+.footer small {
+	color: #9e9e9e;
+    display: block;
+    margin: 20px 0;
+    font-family: arial, sans-serif;
+    font-size: .8em;
+}
+
+.footer a {
+	color: #77777a;
+}
+
+.footer ul li {
+	display: inline-block;
+    margin: 0 25px 15px 0;
+    font-family: arial, sans-serif;
+    font-size: .8em;
+}
+
+	</style>
+
+</body>
+</html>
