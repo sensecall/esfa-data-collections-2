@@ -31,7 +31,9 @@ $(document).ready(function () {
 
 		// revert the page when clicking the change button
 		var changeButton = $('#change-file');
-		changeButton.on('click',function() {
+		changeButton.on('click',function(e) {
+			e.preventDefault();
+			
 			// hide the file details
 			$('#file-details').addClass('hidden');
 
