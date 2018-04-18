@@ -22,12 +22,12 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
-				Check and confirm you want to submit this file for processing
+				Submit your file
 			</h1>
 
 			{% if data['ilr-status'] == 'errors' %}
 			<div class="error-summary">
-				<h2 class="heading-medium">Errors were found in this file that may prevent funding from being calculated correctly:</h2>
+				<h2 class="heading-medium">Your file has errors:</h2>
 
 				<br>
 
@@ -52,12 +52,13 @@
 				</ul>
 
 				<p class="error-summary-list">
-					Detailed information about the errors that were found can be viewed by downloading the <a href="#">error report</a> (CSV, 87kB).
+					Detailed information about the errors that were found can be viewed by <a href="#">downloading the error report (CSV, 87kB)</a>.
 				</p>
 			</div>
 			{% else %}
 			<div class="success-summary">
-				<h3 class="heading-medium">No issues were detected that might prevent this file from being processed</h3>
+				<h3 class="heading-medium">Your file has no errors.</h3>
+				<p>There may be warnings to address about your data. <a href="#">Download the error report (CSV, 87kB)</a>. </p>				
 			</div>
 			{% include './includes/_file-details.html' %}
 			{% endif %}
@@ -70,9 +71,11 @@
 							<h3 class="heading-medium">
 								Do you want to submit this file?
 							</h3>
+							<div class="panel panel-border-wide">
 							<p>
-								If any errors were found in your file then funding amounts may not be calculated correctly.
+								If any errors or warnings were found in your file then funding amounts may not be calculated correctly.
 							</p>
+							</div>
 						</legend>
 
 						<div class="multiple-choice">
@@ -81,7 +84,7 @@
 						</div>
 						<div class="multiple-choice">
 							<input id="radio-inline-2" type="radio" name="submit-file" value="false">
-							<label for="radio-inline-2">No, do not submit this file</label>
+							<label for="radio-inline-2">No, I want to check the file again</label>
 						</div>
 
 					</fieldset>
