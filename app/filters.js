@@ -2,7 +2,6 @@ const {addMonths, format} = require('date-fns')
 
 var parse = require('date-fns/parse')
 var numeralFilter = require('nunjucks-numeral-filter')
-var nunjucksDate = require('nunjucks-date')
 
 module.exports = function (env) {
   /**
@@ -19,9 +18,6 @@ module.exports = function (env) {
   // nunjucks numeral.js
   filters.parseDate = parse
 
-
-nunjucksDate.setDefaultFormat('dddd Do MMMM, YYYY');
-  filters.date = nunjucksDate
 
   // DWP dummy data example
   filters.loadDummyData = (filename, feature = 'claim-capture') => {
