@@ -19,7 +19,7 @@ router.post('/choose-submission', (req, res) => {
   if (submissionType === 'ilr') {
     res.redirect(`/${req.feature}/${req.sprint}/upload-ilr-file`)
   } else {
-    res.redirect('/version-2/')
+    res.redirect(`/${req.feature}/${req.sprint}/choose-submission`)
   }
 })
 
