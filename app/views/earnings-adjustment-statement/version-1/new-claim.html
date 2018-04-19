@@ -1,0 +1,46 @@
+{% extends "./layout.html" %}
+
+{% set serviceName = 'Submit ILR data' %}
+
+{% block page_title %}
+{{serviceName}} - GOV.UK
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+	{% include './frontend-js/ilr-upload.js' %}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- {% include './includes/_header-nav.html' %} -->
+
+<main id="content" role="main">
+	{% include './includes/_phase-banner.html' %}
+	
+	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">		
+			<div class="form-group">
+				<h1 class="heading-large">
+					Add a new funding claim (EAS)
+				</h1>
+
+				<p>
+					You can add lots of different funding claims or just one.
+				</p>
+			</fieldset>
+		</div>
+
+		<a href="choose-month" class="button">Add a new claim</a>
+	</form>
+</div>
+
+<div class="column-one-third">
+
+</div>
+</div>
+</main>
+
+{% endblock %}

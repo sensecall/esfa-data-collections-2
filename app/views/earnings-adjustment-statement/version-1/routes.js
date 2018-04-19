@@ -17,7 +17,7 @@ router.post('/uploading', (req, res) => {
 router.post('/choose-submission', (req, res) => {
   var submissionType = req.body['submissionType']
   if (submissionType === 'eas') {
-    res.redirect(`/${req.feature}/${req.sprint}/choose-month`)
+    res.redirect(`/${req.feature}/${req.sprint}/new-claim`)
   } else {
     res.redirect(`/${req.feature}/${req.sprint}/choose-submission`)
   }

@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add a claim for other funding (EAS)
+{% endblock %}
+
+{% block service_name %}
+Add a claim for other funding (EAS)
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include './includes/_phase-banner.html' %}
+
+	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">
+				<span class="heading-secondary">Add a new claim</span>
+				Which category is this claim for?
+			</h1>
+
+			<form action="input-values">
+				<div class="form-group">
+					{% if data['category'] == '1-1','1-2' %}
+					{% set categories = [{
+						title: "16 to 18 trailblazer apprenticeships",
+						id: 1
+					},
+					{
+						title: "19 to 23 apprenticeship frameworks",
+						id: 2
+					},
+					{
+						title: "19 to 23 trailblazer apprenticeships",
+						id: 3
+					},
+					{
+						title: "24 apprenticeship frameworks",
+						id: 4
+					},
+					{
+						title: "24 trailblazer apprenticeships",
+						id: 5
+					}] %}
+					{% elseif data['programme'] == 2 %}
+					{% set categories = [{
+						title: "16 to 18 levy contracted apprenticeships",
+						id: 1
+					},
+					{
+						title: "16 to 18 non-levy contracted apprenticeships",
+						id: 2
+					},
+					{
+						title: "adult levy contracted apprenticeships",
+						id: 3
+					},
+					{
+						title: "adult non-levy contracted apprenticeships",
+						id: 4
+					}] %}
+					{% elseif data['programme'] == 3 %}
+					{% set categories = [{
+						title: "16 to 18 traineeships",
+						id: 1
+					},
+					{
+						title: "16 to 19 traineeships bursary",
+						id: 2
+					}] %}
+					{% elseif data['programme'] == 4 %}
+					{% set categories = [{
+						title: "19 to 24 traineeships",
+						id: 1
+					},
+					{
+						title: "AEB – other learning",
+						id: 2
+					}] %}
+					{% elseif data['programme'] == 5 %}
+					{% set categories = [{
+						title: "Advanced Learner Loans bursary",
+						id: 1
+					}] %}
+					{% endif %}
+					{% for category in categories %}
+					<div class="multiple-choice">
+						<input id="radio-{{category.id}}" type="radio" name="category" value="{{data['programme']}}-{{category.id}}">
+						<label for="radio-{{category.id}}">{{category.title}}</label>
+					</div>
+					{% endfor %}
+				</div>
+
+				<input type="submit" value="Continue" class="button">
+			</form>
+		</div>
+
+		<div class="column-third">
+		</div>
+	</div>
+</main>
+
+{% endblock %}
