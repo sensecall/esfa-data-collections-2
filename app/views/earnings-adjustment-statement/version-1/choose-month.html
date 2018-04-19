@@ -1,0 +1,52 @@
+{% extends "./layout.html" %}
+
+{% set serviceName = 'Submit ILR data' %}
+
+{% block page_title %}
+{{serviceName}} - GOV.UK
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+	{% include './frontend-js/ilr-upload.js' %}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include './includes/_phase-banner.html' %}
+	
+	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">		
+			<form action="eas-funding-types">
+				<div class="form-group">
+					<fieldset>
+						<legend>
+							<h1 class="heading-large">
+								Which month do you want to send earnings adjustment information for?
+							</h1>
+						</legend>
+
+						{% for month in ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
+						<div class="multiple-choice">
+							<input id="radio-{{month}}" type="radio" name="eas-month" value="{{month}}">
+							<label for="radio-{{month}}">{{month}} 2018</label>
+						</div>
+						{% endfor %}
+					</fieldset>
+				</div>
+
+				<input type="submit" value="Continue" class="button">
+			</form>
+		</div>
+
+		<div class="column-one-third">
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}
