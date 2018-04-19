@@ -1,6 +1,6 @@
 {% extends "./layout.html" %}
 
-{% set serviceName = 'Submit ILR data' %}
+{% set serviceName = 'Submit learner data' %}
 
 {% block page_title %}
 {{serviceName}} - GOV.UK
@@ -22,25 +22,29 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">			
 			<h1 class="heading-large">
-				Check your file for errors
+				Check learner data
 			</h1>
 			
-						<p>When you are happy with your data you can then submit your file.</p>
+						<p>Use our error validation tool to check your data before you submit your ILR file.</p>
+			
 		
 			
 			<p>Make sure:</p>
 			<ul class="list list-bullet">
-				<li>Learner data is entered correctly</li>
-				<li>The file is an <abbr title="Extensible Markup Language">XML</abbr> file format or a compressed ZIP file</li>
+				<li>learner data is entered correctly</li>
+				<li>the file is an <abbr title="Extensible Markup Language">XML</abbr> file format or a compressed ZIP file</li>
 			</ul>
-
+<p>You can check your data for errors multiple times.</p>
+			<div class="panel panel-border-wide">
+							<p>
+								If any errors or warnings are found in your data then funding amounts may not be calculated correctly.
+							</p>
+							</div>
+						
 			<form method="post" id="file-submission">
 				<div id="upload-v2">
-					<p class="panel panel-border-narrow">
-						<strong class="bold-small">
-							You can check your file for errors multiple times before submission.
-						</strong>
-					</p>
+					
+					
 					
 					<div id="upload-select-area">
 						<label for="upload" class="button" role="button">
@@ -65,7 +69,7 @@
 							<input type="hidden" name="ilr-submission-status" value="processed">
 							<input type="hidden" name="file-date" value="">
 
-							<input type="submit" class="button" name="confirm-upload" value="Confirm and upload ILR file">
+							<input type="submit" class="button" name="confirm-upload" value="Check file">
 						</div>
 					</div>
 

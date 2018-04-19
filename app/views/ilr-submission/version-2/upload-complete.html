@@ -1,6 +1,6 @@
 {% extends "./layout.html" %}
 
-{% set serviceName = 'Submit ILR data' %}
+{% set serviceName = 'Submit learner data' %}
 
 {% block page_title %}
 {{serviceName}} - GOV.UK
@@ -22,37 +22,37 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
-				Submit your file
+				Submit your data
 			</h1>
 
 			{% if data['ilr-status'] == 'errors' %}
 			<div class="error-summary">
-				<h2 class="heading-medium">Your file has errors:</h2>
+				<h2 class="heading-medium">Your data has errors:</h2>
 
 				<br>
 
 				<ul class="list list-bullet">
 					<li>
 						<h3 class="heading-small error-summary-heading">
-							Data required to calculate your funding is missing
+							data required to calculate your funding is missing
 						</h3>
 						<p>
-							Find out <a href="https://www.gov.uk/government/publications/ilr-guides-and-templates-for-2017-to-2018#how-to-submit-an-ilr-data-return">what data is required for each learner</a>
+							<a href="https://www.gov.uk/government/publications/ilr-guides-and-templates-for-2017-to-2018#how-to-submit-an-ilr-data-return">What data is required for each learner</a>
 						</p>
 					</li>
 
 					<li>
 						<h3 class="heading-small">
-							XML in the uploaded file is not formatted correctly
+							the file is not formatted correctly
 						</h3>
 						<p>
-							Read more about <a href="https://www.gov.uk/government/publications/ilr-guides-and-templates-for-2017-to-2018#how-to-submit-an-ilr-data-return">how to format your ILR data file correctly</a>
+							<a href="https://www.gov.uk/government/publications/ilr-guides-and-templates-for-2017-to-2018#how-to-submit-an-ilr-data-return">How to format your ILR data file correctly</a>
 						</p>
 					</li>
 				</ul>
 
 				<p class="error-summary-list">
-					Detailed information about the errors that were found can be viewed by <a href="#">downloading the error report (CSV, 87kB)</a>.
+					Details about the errors can be viewed by <a href="#">downloading the error report (CSV, 87kB)</a>.
 				</p>
 			</div>
 			{% else %}
@@ -69,22 +69,18 @@
 
 						<legend>
 							<h3 class="heading-medium">
-								Do you want to submit this file?
+								Do you want to submit this data?
 							</h3>
-							<div class="panel panel-border-wide">
-							<p>
-								If any errors or warnings were found in your file then funding amounts may not be calculated correctly.
-							</p>
-							</div>
+							
 						</legend>
 
 						<div class="multiple-choice">
 							<input id="radio-inline-1" type="radio" name="submit-file" value="true">
-							<label for="radio-inline-1">Yes, I want to submit this file</label>
+							<label for="radio-inline-1">Yes, I want to submit this data</label>
 						</div>
 						<div class="multiple-choice">
 							<input id="radio-inline-2" type="radio" name="submit-file" value="false">
-							<label for="radio-inline-2">No, I want to check the file again</label>
+							<label for="radio-inline-2">No, I want to check the data again</label>
 						</div>
 
 					</fieldset>
