@@ -24,45 +24,57 @@ Add a claim for other funding (EAS)
 
 			<form action="input-values">
 				<div class="form-group">
-					{% if data['category'] == '1-1','1-2' %}
+					{% if data['programme'] == 1 %}
+					<!-- Apprenticeships for starts before 1 May 2017 -->
 					{% set categories = [{
-						title: "16 to 18 trailblazer apprenticeships",
+						title: "16 to 18 apprenticeship frameworks",
 						id: 1
 					},
 					{
-						title: "19 to 23 apprenticeship frameworks",
+						title: "16 to 18 trailblazer apprenticeships",
 						id: 2
 					},
 					{
-						title: "19 to 23 trailblazer apprenticeships",
+						title: "19 to 23 apprenticeship frameworks",
 						id: 3
 					},
 					{
-						title: "24 apprenticeship frameworks",
+						title: "19 to 23 trailblazer apprenticeships",
 						id: 4
 					},
 					{
-						title: "24 trailblazer apprenticeships",
+						title: "24+ apprenticeship frameworks",
 						id: 5
+					},
+					{
+						title: "24+ trailblazer apprenticeships",
+						id: 6
 					}] %}
+
 					{% elseif data['programme'] == 2 %}
+					<!-- Apprenticeships for starts on or after 1 May 2017 -->
 					{% set categories = [{
 						title: "16 to 18 levy contracted apprenticeships",
 						id: 1
 					},
 					{
-						title: "16 to 18 non-levy contracted apprenticeships",
-						id: 2
-					},
-					{
 						title: "adult levy contracted apprenticeships",
-						id: 3
+						id: 2
+					}] %}
+
+					{% elseif data['programme'] == 3 or data['programme'] == 4 %}
+					<!-- Apprenticeships for starts from 1 May 2017 (non-procured, non-levy contracts) -->
+					{% set categories = [{
+						title: "16 to 18 non-levy contracted apprenticeships",
+						id: 1
 					},
 					{
 						title: "adult non-levy contracted apprenticeships",
-						id: 4
+						id: 2
 					}] %}
-					{% elseif data['programme'] == 3 %}
+
+					{% elseif data['programme'] == 5 %}
+					<!-- 16 to 18 traineeships (not funded through a 16 to 19 contract) -->
 					{% set categories = [{
 						title: "16 to 18 traineeships",
 						id: 1
@@ -71,16 +83,20 @@ Add a claim for other funding (EAS)
 						title: "16 to 19 traineeships bursary",
 						id: 2
 					}] %}
-					{% elseif data['programme'] == 4 %}
+
+					{% elseif data['programme'] == 6 or data['programme'] == 7 %}
+					<!-- Adult education – traineeships and ‘other learning’ (non-procured provision) -->
 					{% set categories = [{
 						title: "19 to 24 traineeships",
 						id: 1
 					},
 					{
-						title: "AEB – other learning",
+						title: "AEB – other learning (note this is formula funded AEB only)",
 						id: 2
 					}] %}
-					{% elseif data['programme'] == 5 %}
+
+					{% elseif data['programme'] == 8 %}
+					<!-- Advanced Learner Loans -->
 					{% set categories = [{
 						title: "Advanced Learner Loans bursary",
 						id: 1
