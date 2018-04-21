@@ -19,56 +19,98 @@ Add a claim for other funding (EAS)
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
 				<span class="heading-secondary">Add a new claim</span>
-				Enter the amount of funding being claimed for each choose-category
+				Enter the amount of funding being claimed for each funding category
 			</h1>
 
-			<form action="choose-category">
+			<form action="new-claim">
 				<div class="form-group">
 					<fieldset>
-						{% set inputs = [{
-							name: 'Excess Learning Support'
+					{% set excluded = {
+						"inputs": {
+							"1": {
+								"excluded": [ "3-1", "3-2" ]
+							}
+						}
+					} %}
+
+					{% set inputs = [
+						{
+							name: 'Excess Learning Support',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						},
 						{
-							name: 'Exceptional Learning Support'
+							name: 'Exceptional Learning Support',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						},
 						{
-							name: 'Audit Adjustments'
+							name: 'Audit Adjustments',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						},
 						{
-							name: 'Authorised Claims'
+							name: 'Authorised Claims',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						},
 						{
-							name: 'Learner Support'
+							name: 'Learner Support',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						},
 						{
-							name: 'Vulnerable bursary'
+							name: 'Vulnerable bursary',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						},
 						{
-							name: 'Discretionary bursary'
+							name: 'Discretionary bursary',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						},
 						{
-							name: 'Free meals'
+							name: 'Free meals',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						},
 						{
-							name: 'Area costs audit adjustment'
+							name: 'Area costs audit adjustment',
+							excluded: [
+							'3-1',
+							'3-2'
+							]
 						}] %}
 
 						{% for input in inputs %}
-
-						{% if input.excluded == data['category'] %}
-						moo
-						{% endif %}
-
+						{% set excluded = input.excluded %}
+						{% if data['category'] not in excluded %}
 						<div class="form-group">
 							<label class="form-label" for="input--{{ input.name | lower | replace(" ", "_") }}">
-								{{input.name}}
+								{{inputs[loop.index - 1].name}}
 							</label>
 							<div class="govuk-currency-input__inner">
 								<span class="govuk-currency-input__inner__unit">£</span>
 								<input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="input--{{ input.name | lower | replace(" ", "_") }}" data-non-numeric="" id="input--{{ input.name | lower | replace(" ", "_") }}" pattern="[0-9]\d*(\.\d+)?" type="text">
 							</div>
-
 						</div>
+						{% endif %}
 						{% endfor %}
 					</fieldset>
 				</div>
