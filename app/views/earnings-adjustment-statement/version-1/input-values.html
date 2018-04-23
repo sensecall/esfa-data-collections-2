@@ -25,14 +25,6 @@ Add a claim for other funding (EAS)
 			<form action="new-claim">
 				<div class="form-group">
 					<fieldset>
-					{% set excluded = {
-						"inputs": {
-							"1": {
-								"excluded": [ "3-1", "3-2" ]
-							}
-						}
-					} %}
-
 					{% set inputs = [
 						{
 							name: 'Excess Learning Support',
@@ -65,8 +57,9 @@ Add a claim for other funding (EAS)
 						{
 							name: 'Learner Support',
 							excluded: [
-							'3-1',
-							'3-2'
+							'1-2',
+							'1-4',
+							'1-6'
 							]
 						},
 						{

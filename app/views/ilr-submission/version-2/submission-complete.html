@@ -43,7 +43,7 @@
 				<li>a detailed breakdown of learner funding in your organisation</li>
 			</ul>
 
-			{% if data['contact-email'] %}
+			{% if data['get-email'] == 'true' %}
 			<p>An email will be sent to <span class="bold">{{data['contact-email']}}</span> when your file has been processed.</p>
 			{% endif %}
 
