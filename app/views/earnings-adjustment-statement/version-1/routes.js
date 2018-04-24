@@ -28,6 +28,21 @@ router.get('/email', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/email`,{url})
 })
 
+router.post('/choose-category', (req, res) => {
+  var category = req.body['category']
+  var required = ['2-1','2-2','2-3','2-4','2-5','2-6']
+
+  function check(arr, val) {
+    return arr.some(arrVal => val === arrVal);
+  }
+
+if (check(required, category) === true) {
+  res.redirect(`/${req.feature}/${req.sprint}/choose-sub-category`)
+} else {
+  res.redirect(`/${req.feature}/${req.sprint}/input-values`)
+}
+})
+
 router.post('/upload-complete', (req, res) => {
   var submitFile = req.body['submit-file']
   if (submitFile === 'true') {

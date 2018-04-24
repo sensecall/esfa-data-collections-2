@@ -19,36 +19,24 @@ Add a claim for other funding (EAS)
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
 				<span class="heading-secondary">Add a new claim</span>
-				Which category is this claim for?
+				Which type of claim is this?
 			</h1>
 
-			<form method="post">
+			<form action="input-values">
 				<div class="form-group">
-					{% if data['programme'] == 1 %}
+					{% if data['programme'] == '2' %}
 					<!-- Apprenticeships for starts before 1 May 2017 -->
 					{% set categories = [{
-						title: "16 to 18 apprenticeship frameworks",
+						title: "Training (excluding English \& Maths)",
 						id: 1
 					},
 					{
-						title: "16 to 18 trailblazer apprenticeships",
+						title: "Additional payments for providers",
 						id: 2
 					},
 					{
-						title: "19 to 23 apprenticeship frameworks",
+						title: "Additional payments for employers",
 						id: 3
-					},
-					{
-						title: "19 to 23 trailblazer apprenticeships",
-						id: 4
-					},
-					{
-						title: "24+ apprenticeship frameworks",
-						id: 5
-					},
-					{
-						title: "24+ trailblazer apprenticeships",
-						id: 6
 					}] %}
 
 					{% elseif data['programme'] == 2 %}
