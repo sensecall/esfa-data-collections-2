@@ -22,15 +22,11 @@
 
 	<div class="grid-row">
 		<div class="column-two-thirds">	
-			<form action="choose-month">
+			<form method="post">
 				<div class="form-group">
 					<h1 class="heading-large">
-						Add a new funding claim (EAS)
+						Review your funding claims
 					</h1>
-
-					<p>
-						You can add lots of different funding claims or just one.
-					</p>
 
 					{% if data['claim-count'] > 0 %}
 					<table>
@@ -78,7 +74,23 @@
 
 				<input type="hidden" value="{{ data['claim-count'] or 0 }}" name="claim-count">
 
-				<input type="submit" class="button" value="Add a new claim">
+
+				<h2 class="heading-medium">
+					Do you want to add another claim?
+				</h2>
+
+				<div class="form-group inline">
+					<div class="multiple-choice">
+						<input id="radio-yes" type="radio" name="addClaim" value="true">
+						<label for="radio-yes">Yes</label>
+					</div>
+					<div class="multiple-choice">
+						<input id="radio-no" type="radio" name="addClaim" value="false">
+						<label for="radio-no">No</label>
+					</div>
+				</div>
+
+				<input type="submit" value="Continue" class="button">
 			</form>
 		</div>
 

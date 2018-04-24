@@ -52,4 +52,13 @@ router.post('/upload-complete', (req, res) => {
   }
 })
 
+router.post('/review-claims', (req, res) => {
+  var addClaim = req.body['addClaim']
+  if (addClaim === 'true') {
+    res.redirect(`/${req.feature}/${req.sprint}/choose-month`)
+  } else {
+    res.redirect(`/${req.feature}/${req.sprint}/claim-complete`)
+  }
+})
+
 module.exports = router
