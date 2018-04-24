@@ -32,7 +32,7 @@
 					<table>
 						<thead>
 							<th>
-								Claim
+								Date
 							</th>
 							<th>
 								Amount
@@ -45,10 +45,17 @@
 							</th>
 						</thead>
 
-						{% for i in range(0, data['claim-count']) -%}
+						{% for i in range(1, data['claim-count']) -%}
 						<tr>
 							<td>
-								#{{i+1}}
+								{% set month = 'claim-' + i + '-month' %}
+								{% set year = 'claim-' + i + '-year' %}
+								{% if data[month] < 10 %}
+								0{{data[month]}}
+								{% else %}
+								{{data[month]}}
+								{% endif %}
+							{{data[year]}}
 							</td>
 							<td>
 								&pound;278

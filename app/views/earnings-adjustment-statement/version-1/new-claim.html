@@ -23,62 +23,17 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">	
 			<form action="choose-month">
-				<div class="form-group">
-					<h1 class="heading-large">
-						Add a new funding claim (EAS)
-					</h1>
+				<h1 class="heading-large">
+					Add a new funding claim (EAS)
+				</h1>
 
-					<p>
-						You can add lots of different funding claims or just one.
-					</p>
+				<p>
+					You can add lots of different funding claims or just one.
+				</p>
 
-					{% if data['claim-count'] > 0 %}
-					<table>
-						<thead>
-							<th>
-								Claim
-							</th>
-							<th>
-								Amount
-							</th>
-							<th>
-								Category
-							</th>
-							<th colspan="2">
-								
-							</th>
-						</thead>
+				<input type="hidden" value="{{ data['claim-count'] or 1 }}" name="claim-count">
 
-						{% for i in range(0, data['claim-count']) -%}
-						<tr>
-							<td>
-								#{{i+1}}
-							</td>
-							<td>
-								&pound;278
-							</td>
-							<td>
-								Category
-							</td>
-							<td>
-								<a href="#">
-									Change
-								</a>
-							</td>
-							<td>
-								<a href="#">
-									Remove
-								</a>
-							</td>
-						</tr>
-						{%- endfor %}
-					</table>
-					{% endif %}
-				</div>
-
-				<input type="hidden" value="{{ data['claim-count'] or 0 }}" name="claim-count">
-
-				<input type="submit" class="button" value="Add a new claim">
+				<input type="submit" class="button button-start" value="Add a new claim">
 			</form>
 		</div>
 
