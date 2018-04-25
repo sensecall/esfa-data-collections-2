@@ -1,0 +1,236 @@
+{% extends "./layout.html" %}
+
+{% set serviceName = 'ILR data submission' %}
+
+{% block page_title %}
+{{serviceName}}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include './includes/_phase-banner.html' %}
+
+	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">
+				ILR submission error summary report
+			</h1>
+
+			<div class="grid-row">
+				<div class="column-one-half">
+					<ul class="list list-number">
+						<li>
+							<a href="#">
+								Totals
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Learner summary
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="column-one-half">
+					<ul class="list list-number" start="3">
+						<li>
+							<a href="#">
+								Learning delivery summary
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Learner Destination and Progression Summary
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<hr>
+
+			<table>
+				<caption class="heading-medium">Totals</caption>
+				<tbody>
+					<tr>
+						<td>Errors</td>
+						<td>None</td>
+					</tr>
+					<tr>
+						<td>Warnings</td>
+						<td>2291</td>
+					</tr>
+					<tr>
+						<td>Learners with warnings only</td>
+						<td>1027</td>	
+					</tr>
+					<tr>
+						<td>Learners with errors</td>
+						<td>None</td>	
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table-font-xsmall">
+				<caption class="heading-medium">Learner summary</caption>
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Learners without warnings or errors</th>
+						<th>Learners with warnings only</th>
+						<th>Learners with errors</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Apprenticeships (from May 2017)</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>16-19 EFA Funded Learners</td>
+						<td>0</td>
+						<td>4</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Adult Skills Funded</td>
+						<td>0</td>
+						<td>936</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Community Learning Funded</td>
+						<td>0</td>
+						<td>70</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>ESF Funded</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Other Skills Funding Agency Funded</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Other EFA Funded</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>No Skills Funding Agency or EFA 19 Funded</td>
+						<td>0</td>
+						<td>19</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td><span class="bold-small">Total</span></td>
+						<td><span class="bold-small">0</span></td>
+						<td><span class="bold-small">1026</span></td>
+						<td><span class="bold-small">0</span></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table-font-xsmall">
+				<caption class="heading-medium">Learning delivery summary</caption>
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Count</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Apprenticeships (from May 2017)</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>16-19 EFA</td>
+						<td>15</td>
+					</tr>
+					<tr>
+						<td>Adult Skills</td>
+						<td>2333</td>
+					</tr>
+					<tr>
+						<td>Community Learning Funded</td>
+						<td>112</td>
+					</tr>
+					<tr>
+						<td>ESF Co-financed</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Other Skills Funding Agency Funded</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Other EFA Funded</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>No Skills Funding Agency or EFA 19 Funded</td>
+						<td>19</td>
+					</tr>
+					<tr>
+						<td>of which are 24+ Advanced Learning Loans Learning Deliveries</td>
+						<td>19</td>
+					</tr>
+					<tr>
+						<td><span class="bold-small">Total learning delivery count</span></td>
+						<td><span class="bold-small">2480</span></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table-font-xsmall">
+				<caption class="heading-medium">Learner Destination and Progression Summary</caption>
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Count</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Valid Learner Destination and Progression Count</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Invalid Learner Destination and Progression Count</td>
+						<td>15</td>
+					</tr>
+					<tr>
+						<td>Learner Destination and Progression with Warnings</td>
+						<td>2333</td>
+					</tr>
+					<tr>
+						<td><span class="bold-small">Total Learning Destination and Progression count</span></td>
+						<td><span class="bold-small">2594</span></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<br>
+
+			<p><a href="#">Download the full error report</a> (CSV, 87kB)</p>
+		</div>
+
+		<div class="column-one-third">
+
+		</div>
+	</div>
+</main>
+{% endblock %}

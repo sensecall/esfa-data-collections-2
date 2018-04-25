@@ -52,13 +52,13 @@
 				</ul>
 
 				<p class="error-summary-list">
-					Details about the errors can be viewed by <a href="#">downloading the error report (CSV, 87kB)</a>.
+					You can <a href="error-report">view more detail about the errors</a> or if you prefer, you can <a href="#">download the full error report (CSV, 87kB)</a>.
 				</p>
 			</div>
 			{% else %}
 			<div class="success-summary">
 				<h3 class="heading-medium">Your file has no errors.</h3>
-				<p>There may be warnings to address about your data. <a href="#">Download the error report (CSV, 87kB)</a>. </p>				
+				<p>There may be warnings to address about your data. <a href="error-report">View more detail about the warnings</a>. </p>				
 			</div>
 			{% include './includes/_file-details.html' %}
 			{% endif %}
