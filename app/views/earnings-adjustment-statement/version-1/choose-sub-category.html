@@ -92,7 +92,7 @@ Add a claim for other funding (EAS)
 					{% endif %}
 					{% for category in categories %}
 					<div class="multiple-choice">
-						<input id="radio-{{category.id}}" type="radio" name="category" value="{{data['programme']}}-{{category.id}}">
+						<input id="radio-{{category.id}}" type="radio" name="category" value="{{data['programme']}}-{{category.id}}" required>
 						<label for="radio-{{category.id}}">{{category.title}}</label>
 					</div>
 					{% endfor %}

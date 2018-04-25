@@ -60,7 +60,7 @@ Add a claim for other funding (EAS)
 					%}
 					{% for programme in programmes %}
 					<div class="multiple-choice">
-						<input id="radio-{{programme.id}}" type="radio" name="programme" value="{{programme.id}}">
+						<input id="radio-{{programme.id}}" type="radio" name="programme" value="{{programme.id}}" required>
 						<label for="radio-{{programme.id}}">{{programme.title}}</label>
 					</div>
 					{% endfor %}
