@@ -31,12 +31,14 @@
 
 			{% include './includes/_file-details.html' %}
 			
+			{% if data['ilr-submission-status'] == "processed" %}
 			<h3 class="heading-medium">
 				Share this report
 			</h3>
 			<p>
-				If you need to, you can <a href="#">share this report</a> for someone else to view.
-			</p> 
+				If you want to, you can <a href="#">share this report</a> for someone else to view.
+			</p>
+			{% endif %}
 		</div>
 	</div>
 </main>
