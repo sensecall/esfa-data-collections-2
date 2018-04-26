@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Add a claim for other funding (EAS)
+{% endblock %}
+
+{% block service_name %}
+Add a claim for other funding (EAS)
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include './includes/_phase-banner.html' %}
+
+	<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-large">
+				Add funding claim(s)
+			</h1>
+		</div>
+	</div>
+
+	<form method="post">
+		{% set categories = ["Apprenticeships for starts before 1 May 2017", "Apprenticeships for starts on or after 1 May 2017","Apprenticeships for starts from 1 May 2017 (non-procured, non-levy contracts)","Apprenticeships funded under procured contracts for non-levy contracts","16 to 18 traineeships (not funded through a 16 to 19 contract)","Adult education – traineeships and ‘other learning’ (non-procured provision)", "Adult education – traineeships and ‘other learning’ (procured provision from 1 November 2017)","Advanced Learner Loans"] %}
+
+		<table>
+			<thead>
+				<tr>
+					<th>
+						Claim category
+					</th>
+					<th>
+						Month
+						<span class="form-hint">
+							E.g. January
+						</span>
+					</th>
+					<th colspan="2">
+						Amount
+						<span class="form-hint">
+							E.g. 23045
+						</span>
+					</th>
+				</tr>
+			</thead>
+
+			<tr>
+				<td>
+					<select class="form-control form-control-3-4" id="select-box" name="select-box">
+						{% for category in categories %}
+						<option>{{category}}</option>
+						{% endfor %}
+					</select>
+				</td>
+				<td>
+					{% set months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
+					<select class="form-control form-control-3-4" id="select-box" name="select-box">
+						{% for month in months %}
+						<option>{{month}}</option>
+						{% endfor %}
+					</select>
+				</td>
+				<td>
+					<div class="govuk-currency-input__inner">
+						<span class="govuk-currency-input__inner__unit">£</span>
+						<input class="govuk-currency-input__inner__input form-control form-control-3-4" aria-label="Enter amount in pounds" name="input" data-non-numeric="" id="input" pattern="[0-9]\d*(\.\d+)?" type="number">
+					</div>
+				</td>
+				<td>
+					<a href="#">
+						Remove
+					</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="4">
+					<a href="#" class="button button-secondary">
+						Add another claim
+					</a>
+				</td>
+			</tr>
+		</table>
+
+		<br>
+
+		<input type="hidden" name="claim-count" value="{{data['claim-count'] or 1}}">
+
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<h2 class="heading-medium">
+					Finished adding claims?
+				</h2>
+				<p>
+					If you have no further claims to add to your Earnings adjustment statement, you can save your changes and finish.
+				</p>
+				<div class="form-group">
+					<input type="submit" class="button" value="Save and finish">
+				</div>
+			</div>
+		</div>
+	</form>
+</main>
+
+{% endblock %}

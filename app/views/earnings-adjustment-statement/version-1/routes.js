@@ -52,6 +52,16 @@ router.post('/upload-complete', (req, res) => {
   }
 })
 
+router.post('/test-form', (req, res) => {
+  var addClaim = req.body['add-claim']
+  const claimCount = req.body['claim-count']
+  if (addClaim === 'true') {
+    res.redirect(`/${req.feature}/${req.sprint}/test-form`)
+  } else {
+    res.redirect(`/${req.feature}/${req.sprint}/data-not-submitted`)
+  }
+})
+
 router.post('/review-claims', (req, res) => {
   var addClaim = req.body['addClaim']
   if (addClaim === 'true') {

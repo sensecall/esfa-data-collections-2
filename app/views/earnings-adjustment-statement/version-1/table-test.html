@@ -194,6 +194,8 @@ Add a claim for other funding (EAS)
 				<h2 class="heading-medium">
 					{{programme.title}}
 				</h2>
+				{% else %}
+				<br>
 				{% endif %}
 
 				{% if programme.subtitle %}
@@ -202,7 +204,7 @@ Add a claim for other funding (EAS)
 				</h3>
 				{% endif %}
 				
-				<table>
+				<table class="table-font-xsmall">
 					<tr>
 						<td></td>
 						{% for inputType in inputs %}
