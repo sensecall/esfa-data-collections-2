@@ -46,10 +46,18 @@ Add a claim for other funding (EAS)
 					</th>
 				</tr>
 			</thead>
-
+			{% set claimCount = data['claim-count'] | int %}
+			{% if not data['claim-count'] or claimCount === 0 %}
+			<tr>
+				<td colspan="3" style="text-align:center">
+					You have not added any claims yet
+				</td>
+			</tr>
+			{% else %}
+			{% for claim in range(0,claimCount) %}
 			<tr>
 				<td>
-					<select class="form-control form-control-3-4" id="select-box" name="select-box">
+					<select class="form-control form-control-3-4" name="eas-claim-{{loop.index}}-category">
 						{% for category in categories %}
 						<option>{{category}}</option>
 						{% endfor %}
@@ -57,30 +65,36 @@ Add a claim for other funding (EAS)
 				</td>
 				<td>
 					{% set months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
-					<select class="form-control form-control-3-4" id="select-box" name="select-box">
+					<select class="form-control form-control-3-4" name="eas-claim-{{loop.index}}-month">
 						{% for month in months %}
-						<option>{{month}}</option>
+						<option value="{{month}}">{{month}}</option>
 						{% endfor %}
 					</select>
 				</td>
 				<td>
 					<div class="govuk-currency-input__inner">
 						<span class="govuk-currency-input__inner__unit">£</span>
-						<input class="govuk-currency-input__inner__input form-control form-control-3-4" aria-label="Enter amount in pounds" name="input" data-non-numeric="" id="input" pattern="[0-9]\d*(\.\d+)?" type="number">
+						<input class="govuk-currency-input__inner__input form-control form-control-3-4" aria-label="Enter amount in pounds" name="eas-claim-{{loop.index}}-value" data-non-numeric="" pattern="[0-9]\d*(\.\d+)?" type="number" value="{{data['eas-claim-'+loop.index+'-value']}}">
 					</div>
 				</td>
 				<td>
 					<a href="#">
-						Remove
+						&times;
 					</a>
 				</td>
 			</tr>
+			{% endfor %}
+			{% endif %}
 
 			<tr>
 				<td colspan="4">
-					<a href="#" class="button button-secondary">
-						Add another claim
-					</a>
+					{% if not data['claim-count'] or claimCount === 0 %}
+					{% set claimCount = 1 %}
+					{% else %}
+					{% set claimCount = (claimCount + 1) %}
+					{% endif %}
+					<input type="hidden" name="claim-count" value="{{claimCount}}">
+					<input type="submit" class="button button-secondary" value="Add a claim" name="add-claim">
 				</td>
 			</tr>
 		</table>
@@ -98,7 +112,7 @@ Add a claim for other funding (EAS)
 					If you have no further claims to add to your Earnings adjustment statement, you can save your changes and finish.
 				</p>
 				<div class="form-group">
-					<input type="submit" class="button" value="Save and finish">
+					<input type="submit" class="button" value="Save and finish" name="save-finish">
 				</div>
 			</div>
 		</div>

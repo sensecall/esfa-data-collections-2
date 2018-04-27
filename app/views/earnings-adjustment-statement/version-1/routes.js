@@ -36,11 +36,11 @@ router.post('/choose-category', (req, res) => {
     return arr.some(arrVal => val === arrVal);
   }
 
-if (check(required, category) === true) {
-  res.redirect(`/${req.feature}/${req.sprint}/choose-sub-category`)
-} else {
-  res.redirect(`/${req.feature}/${req.sprint}/input-values`)
-}
+  if (check(required, category) === true) {
+    res.redirect(`/${req.feature}/${req.sprint}/choose-sub-category`)
+  } else {
+    res.redirect(`/${req.feature}/${req.sprint}/input-values`)
+  }
 })
 
 router.post('/upload-complete', (req, res) => {
@@ -53,12 +53,12 @@ router.post('/upload-complete', (req, res) => {
 })
 
 router.post('/test-form', (req, res) => {
-  var addClaim = req.body['add-claim']
-  const claimCount = req.body['claim-count']
-  if (addClaim === 'true') {
+  var action = req.body['add-claim']
+
+  if (req.body['add-claim']) {
     res.redirect(`/${req.feature}/${req.sprint}/test-form`)
-  } else {
-    res.redirect(`/${req.feature}/${req.sprint}/data-not-submitted`)
+  } else if(req.body['save-finish']) {
+    res.redirect(`/${req.feature}/${req.sprint}/test-form-complete`)
   }
 })
 
