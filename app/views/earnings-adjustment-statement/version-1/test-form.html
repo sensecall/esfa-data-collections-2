@@ -55,19 +55,20 @@ Add a claim for other funding (EAS)
 			</tr>
 			{% else %}
 			{% for claim in range(0,claimCount) %}
+			{% set i = loop.index %}
 			<tr>
 				<td>
 					<select class="form-control form-control-3-4" name="eas-claim-{{loop.index}}-category">
 						{% for category in categories %}
-						<option>{{category}}</option>
+						<option {{"selected" if data['eas-claim-'+i+'-category'] == category}}>{{category}}</option>
 						{% endfor %}
 					</select>
 				</td>
 				<td>
 					{% set months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
-					<select class="form-control form-control-3-4" name="eas-claim-{{loop.index}}-month">
+					<select class="form-control form-control-3-4" name="eas-claim-{{i}}-month">
 						{% for month in months %}
-						<option value="{{month}}">{{month}}</option>
+						<option value="{{month}}" {{"selected" if data['eas-claim-'+i+'-month'] == month}}>{{month}}</option>
 						{% endfor %}
 					</select>
 				</td>
