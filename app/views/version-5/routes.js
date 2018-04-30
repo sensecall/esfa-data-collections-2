@@ -37,4 +37,17 @@ router.post('/ilr-submission/upload-complete', (req, res) => {
   }
 })
 
+// ———————————————————————————————————————————————
+// EAS form
+// ———————————————————————————————————————————————
+router.post('/eas/test-form', (req, res) => {
+  var action = req.body['add-claim']
+
+  if (req.body['add-claim']) {
+    res.redirect(`/${req.version}/eas/test-form`)
+  } else if(req.body['save-finish']) {
+    res.redirect(`/${req.version}/eas/test-form-complete`)
+  }
+})
+
 module.exports = router
