@@ -64,7 +64,7 @@ Add a claim for other funding (EAS)
 						{% endfor %}
 					</select>
 				</td>
-				<td>
+				<td width="170">
 					{% set months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
 					<select class="form-control form-control-3-4" name="eas-claim-{{i}}-month">
 						{% for month in months %}
@@ -90,7 +90,7 @@ Add a claim for other funding (EAS)
 					{% set claimCount = (claimCount + 1) %}
 					{% endif %}
 					<input type="hidden" name="claim-count" value="{{claimCount}}">
-					<input type="submit" class="button button-secondary" value="Add a{{ "nother" if claimCount > 0}} claim" name="add-claim">
+					<input type="submit" class="button button-secondary" value="Add a{{ 'nother' if claimCount > 1}} claim" name="add-claim">
 				</td>
 			</tr>
 		</table>
