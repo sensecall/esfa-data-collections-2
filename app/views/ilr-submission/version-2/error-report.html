@@ -18,13 +18,13 @@
 			<h1 class="heading-large">
 				ILR submission Rule Violation Summary Report
 				<span class="visually-hidden"> for </span>
-				<span class="heading-secondary">{% include './_return-period-text.html' %}</span>
+				<span class="heading-secondary">{% include '../_return-period-text.html' %}</span>
 			</h1>
 			
 
 			<div class="grid-row">
 				<div class="column-one-half">
-					<ul class="list list-number">
+					<ol class="list list-number">
 						<li>
 							<a href="#totals">
 								Totals
@@ -40,11 +40,11 @@
 								Learning delivery summary
 							</a>
 						</li>
-					</ul>
+					</ol>
 				</div>
 
 				<div class="column-one-half">
-					<ul class="list list-number" start="4">
+					<ol class="list list-number" start="4">
 						<li>
 							<a href="#learner-destination-and-progression-summary">
 								Learner Destination and Progression Summary
@@ -55,14 +55,14 @@
 								Download
 							</a>
 						</li>
-					</ul>
+					</ol>
 				</div>
 			</div>
 
 			<hr>
 
 			<table id="totals">
-				<caption class="heading-medium">Totals</caption>
+				<caption class="heading-medium">1. Totals</caption>
 				<tbody>
 					<tr>
 						<td>Errors</td>
@@ -84,7 +84,7 @@
 			</table>
 
 			<table class="table-font-xsmall" id="learner-summary">
-				<caption class="heading-medium">Learner summary</caption>
+				<caption class="heading-medium">2. Learner summary</caption>
 				<thead>
 					<tr>
 						<th>Type</th>
@@ -152,7 +152,7 @@
 			</table>
 
 			<table class="table-font-xsmall" id="learning-delivery-summary">
-				<caption class="heading-medium">Learning delivery summary</caption>
+				<caption class="heading-medium">3. Learning delivery summary</caption>
 				<thead>
 					<tr>
 						<th>Type</th>
@@ -204,7 +204,7 @@
 			</table>
 
 			<table class="table-font-xsmall" id="learner-destination-and-progression-summary">
-				<caption class="heading-medium">Learner Destination and Progression Summary</caption>
+				<caption class="heading-medium">4. Learner Destination and Progression Summary</caption>
 				<thead>
 					<tr>
 						<th>Type</th>
@@ -232,7 +232,8 @@
 			</table>
 
 			<br><br>
-
+<h2 class="heading-medium">5. Download</h2>
+			<p>View the errors and warnings per learner record.</p>
 			<div class="notice" id="download-report">
 				<i class="icon icon-file-download"></i>
 				<strong class="small">
@@ -250,7 +251,7 @@
 				Share this report
 			</h3>
 			<p>
-				If you want to, you can <a href="#">share this report</a> for someone else to view.
+				You can <a href="#">share this report</a>.
 			</p>
 		</div>
 	</div>
