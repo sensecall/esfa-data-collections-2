@@ -18,10 +18,17 @@ GOV.UK prototype kit
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="example">
-        {% include 'summaries/ilr-submission/version-2.html' %}
+        {% include 'summaries/version-5/summary.html' %}
       </div>
 
       <h2 class="heading-large">All versions</h2>
+
+      <details>
+        <summary><span class="summary">Version 5</span></summary>
+        <div class="panel">
+          {% include 'summaries/version-5/summary.html' %}
+        </div>
+      </details>
 
       <details>
         <summary><span class="summary">ILR submission - Version 2</span></summary>
@@ -30,7 +37,7 @@ GOV.UK prototype kit
         </div>
       </details>
 
-       <details>
+      <details>
         <summary><span class="summary">ILR submission - Version 1</span></summary>
         <div class="panel">
           {% include 'summaries/ilr-submission/version-1.html' %}
