@@ -31,13 +31,9 @@
 			<p>You will receive an email notification once your data has been processed.</p>
 			{% endif %}
 
-			<p>If you need to make additional earnings adjustment claims, you can <a href="new-claim">add a new claim</a>. You can submit other data by returning to the <a href="./">ESFA data submission service</a> start page.</p>
+			<p>If you need to make additional earnings adjustment claims, you can <a href="new-claim">add a new claim</a>. You can submit other data by returning to the <a href="/{{version}}">ESFA data submission service</a> start page.</p>
 
 			<p>Otherwise, you can close this window as your data has been saved.</p>
-
-			{% if data['get-email'] == 'true' %}
-			<p>An email will be sent to <span class="bold">{{data['contact-email']}}</span> when your file has been processed.</p>
-			{% endif %}
 
 			<!-- <p><a class="button" href="data-submissions" role="button" id="upload-complete-button">Finished</a></p> -->
 		</div>
