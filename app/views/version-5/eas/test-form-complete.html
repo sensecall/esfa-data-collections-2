@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-Add a claim for other funding (EAS)
+Submit learner data
 {% endblock %}
 
 {% block service_name %}
-Add a claim for other funding (EAS)
+Submit learner data
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@ Add a claim for other funding (EAS)
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
-				Review your funding claim(s)
+				Review your additional spending
 			</h1>
 		</div>
 	</div>
@@ -30,7 +30,7 @@ Add a claim for other funding (EAS)
 			<thead>
 				<tr>
 					<th>
-						Claim category
+						Category
 					</th>
 					<th>
 						Month
@@ -44,7 +44,7 @@ Add a claim for other funding (EAS)
 			{% if not data['claim-count'] or claimCount === 0 %}
 			<tr>
 				<td colspan="3" style="text-align:center">
-					You have not added any claims yet
+					You have not added any additional spendings
 				</td>
 			</tr>
 			{% else %}
@@ -82,10 +82,10 @@ Add a claim for other funding (EAS)
 		<div class="grid-row">
 			<div class="column-two-thirds">
 				<h2 class="heading-medium">
-					Confirm your claims
+					Confirm your additional spending
 				</h2>
 				<p>
-					If you have no further claims to add, you can Save and finish this session. Claims can be added, changed and deleted until the end of the ESFA year.
+					Additional spending can be added, changed and deleted until the end of the academic year.
 				</p>
 				<div class="form-group">
 					<input type="submit" class="button" value="Save and finish" name="save-finish">

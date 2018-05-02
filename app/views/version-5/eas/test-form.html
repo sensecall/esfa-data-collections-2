@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-Add a claim for other funding (EAS)
+Submit learner data
 {% endblock %}
 
 {% block service_name %}
-Add a claim for other funding (EAS)
+Submit learner data
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@ Add a claim for other funding (EAS)
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<h1 class="heading-large">
-				Add funding claim(s)
+				Add additional spending
 			</h1>
 		</div>
 	</div>
@@ -30,7 +30,7 @@ Add a claim for other funding (EAS)
 			<thead>
 				<tr>
 					<th>
-						Claim category
+						Category
 					</th>
 					<th>
 						Month
@@ -50,7 +50,7 @@ Add a claim for other funding (EAS)
 			{% if not data['claim-count'] or claimCount === 0 %}
 			<tr>
 				<td colspan="3" style="text-align:center">
-					You have not added any claims yet
+					You have not added any additional spending yet
 				</td>
 			</tr>
 			{% else %}
@@ -101,12 +101,12 @@ Add a claim for other funding (EAS)
 
 		<div class="grid-row">
 			<div class="column-two-thirds">
-				<h2 class="heading-medium">
-					Finished adding claims?
+				<!--<h2 class="heading-medium">
+					Finished adding your additional spending?
 				</h2>
 				<p>
-					If you have no further claims to add to your Earnings adjustment statement, you can save your changes and finish.
-				</p>
+					If you have no further information to add to your Earnings adjustment statement, you can save your changes and finish.
+				</p>-->
 				<div class="form-group">
 					<input type="submit" class="button" value="Save and continue" name="save-finish">
 				</div>

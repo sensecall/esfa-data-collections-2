@@ -1,6 +1,6 @@
 {% extends "./layout.html" %}
 
-{% set serviceName = 'Add a claim for other funding (EAS)' %}
+{% set serviceName = 'Submit learner data' %}
 
 {% block page_title %}
 {{serviceName}} - GOV.UK
@@ -31,9 +31,18 @@
 			<p>You will receive an email notification once your data has been processed.</p>
 			{% endif %}
 
-			<p>If you need to make additional earnings adjustment claims, you can <a href="new-claim">add a new claim</a>. You can submit other data by returning to the <a href="/{{version}}">ESFA data submission service</a> start page.</p>
+			
 
-			<p>Otherwise, you can close this window as your data has been saved.</p>
+			<p>
+		If we receive no further data from your organisation in return period 6, your funding calculation will be based on the this data.
+	</p>
+			<p>
+		If there is a problem with your funding calculation <a href="#">let us know</a>.
+	</p>
+			<h3 class="heading-medium">
+		Other data submissions
+	</h3>
+			<p>You can <a href="/version-5/choose-submission">submit an Individualised Learner Record</a>.</p>
 
 			<!-- <p><a class="button" href="data-submissions" role="button" id="upload-complete-button">Finished</a></p> -->
 		</div>
