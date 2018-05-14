@@ -15,18 +15,18 @@ GOV.UK prototype kit
 </div>
 
 <main id="content" role="main">
+  <div class="example">
+    {% include 'summaries/version-5.html' %}
+  </div>
+
   <div class="grid-row">
     <div class="column-two-thirds">
-      <div class="example">
-        {% include 'summaries/version-5/summary.html' %}
-      </div>
-
       <h2 class="heading-large">All versions</h2>
 
       <details>
-        <summary><span class="summary">Version 5</span></summary>
+        <summary><span class="summary">Version 5 (combined EAS &amp; ILR)</span></summary>
         <div class="panel">
-          {% include 'summaries/version-5/summary.html' %}
+          {% include 'summaries/version-5.html' %}
         </div>
       </details>
 
@@ -45,26 +45,40 @@ GOV.UK prototype kit
       </details>
 
       <details>
-        <summary><span class="summary">Version 3</span></summary>
+        <summary><span class="summary">Version 3 (with start page)</span></summary>
         <div class="panel">
-          {% include 'summaries/version-3/summary.html' %}
+          {% include 'summaries/version-3.html' %}
         </div>
       </details>
 
       <details>
-        <summary><span class="summary">Version 2</span></summary>
+        <summary><span class="summary">Version 2 (SFS dashboard)</span></summary>
         <div class="panel">
-          {% include 'summaries/version-2/summary.html' %}
+          {% include 'summaries/version-2.html' %}
         </div>
       </details>
 
       <details>
-        <summary><span class="summary">Version 1</span></summary>
+        <summary><span class="summary">Version 1 (with provider sub-nav)</span></summary>
         <div class="panel">
-          {% include 'summaries/version-1/summary.html' %}
+          {% include 'summaries/version-1.html' %}
         </div>
       </details>
-      <!-- end data collections stuff -->
+
+      <h2 class="heading-large">Other</h2>
+      <details>
+        <summary><span class="summary">Estimate your funding (concept)</span></summary>
+        <div class="panel">
+          {% include 'summaries/estimate-your-funding.html' %}
+        </div>
+      </details>
+
+       <details>
+        <summary><span class="summary">Learner data collection (concept)</span></summary>
+        <div class="panel">
+          {% include 'summaries/learner-data-collection.html' %}
+        </div>
+      </details>
     </div>
   </div>
 </main>
