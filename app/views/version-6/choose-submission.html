@@ -19,7 +19,7 @@
 					Your recent ILR file submission
 				</h3>
 				<p>
-					The ILR file you recently submitted is being processed. You will be able to <a href="ilr-submission/ilr-submission-details">view information and reports related to your submission</a> in around 15 minutes.
+					The ILR file you recently submitted is being processed. You will be able to <a href="ilr-submission/ilr-submission-details?ilr-submission-status=processing">view information and reports related to your submission</a> in around 15 minutes.
 				</p>
 			</div>
 			{% elif data['ilr-submission-status'] == "processed" %}
@@ -28,7 +28,7 @@
 					Your recent ILR file submission
 				</h3>
 				<p>
-					The ILR file you recently submitted has been processed and you can now <a href="ilr-submission/ilr-submission-details">view information and reports related to your submission</a>.
+					The ILR file you recently submitted has been processed and you can now <a href="ilr-submission/ilr-submission-details?ilr-submission-status=processed">view information and reports related to your submission</a>.
 				</p>
 			</div>
 			{% endif %}
