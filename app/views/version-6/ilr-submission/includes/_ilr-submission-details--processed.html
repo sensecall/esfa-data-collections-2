@@ -2,7 +2,7 @@
 		<div class="column-half">
 			<div class="data">
 				<h2 class="data-item font-small">
-					Estimated funding<span class="visually-hidden">: </span>
+					R06 funding<span class="visually-hidden">: </span>
 				</h2>
 				{% set fundingPerLearner = (3191/11) %}
 				{% set learners = (data['learners'] or 37) %}
@@ -23,8 +23,12 @@
 		</div>
 	</div>
 
+	<div class="panel panel-border-wide">
+		Brief explanation of why payment can differ to the funding amount and that payments are made by the 10th working day of the month.
+	</div>
+
 	<table class="table-font-xsmall">
-		<caption class="heading-medium">Estimated funding breakdown</caption>
+		<caption class="heading-medium">Funding breakdown</caption>
 		<tbody>
 			<tr>
 				<td>16-19 (excluding Apprenticeships)</td>
@@ -58,9 +62,17 @@
 				<td><span class="bold-small">Total</span></td>
 				<td><span class="bold-small">£{{ (fundingAmount) | numeral().format('0,0') }}</span></td>
 			</tr>
+			<tr>
+				<td>
+					<span class="">Change from <a href="#">Return period 5</a></span>
+				</td>
+				<td>
+					4.52% <span class="visually-hidden">higher than Return period 5</span>
+				</td>
+			</tr>
 		</tbody>
 	</table>
-
+	
 	<h2 class="heading-medium">
 		Reports
 	</h2>
@@ -92,7 +104,7 @@
 		If there is a problem with your funding calculation <a href="#">let us know</a>.
 	</p>
 
-<h3 class="heading-medium">
+	<h3 class="heading-medium">
 		Other data submissions
 	</h3>
-<p>You can <a href="/{{version}}/choose-submission">submit an Earnings Adjustment Statement</a>.</p>
+	<p>You can <a href="/{{version}}/choose-submission">submit an Earnings Adjustment Statement</a>.</p>
