@@ -57,42 +57,53 @@
 				<h3 class="heading-medium">Your data has no errors.</h3>
 				<p>There may be warnings to address about your data. <a href="#">Download the error report (CSV, 87kB)</a>. </p>
 			</div>
-			{% include './includes/_file-details.html' %}
+
+			<dl class="govuk-check-your-answers cya-questions-short">
+				<div>
+					<dt class="cya-question">
+						Learners detected
+					</dt>
+					<dd class="cya-answer">
+						3,928
+					</dd>
+				</div>
+
+				<div>
+					<dt class="cya-question">
+						File name
+					</dt>
+					<dd class="cya-answer">
+						{{data['file-upload']}}
+					</dd>
+				</div>
+
+				<div>
+					<dt class="cya-question">
+						File size
+					</dt>
+					<dd class="cya-answer">
+						209.8kb
+					</dd>
+				</div>
+			</dl>
 			{% endif %}
 
-			<form method="post">
+			<br><br>
+
+			<form method="post">				
 				<div class="form-group">
-					<fieldset>
-						<legend>
-							<h3 class="heading-medium">
-								Do you want to submit this data?
-							</h3>
-							
-						</legend>
-
-						<div class="multiple-choice" data-target="contact-by-email">
-							<input id="radio-inline-1" type="radio" name="submit-file" value="true">
-							<label for="radio-inline-1">Yes, submit this data</label>
-						</div>
-						<div class="panel panel-border-narrow js-hidden" id="contact-by-email">
-							<label class="form-label form-label-bold" for="contact-email">Email address</label>
-							<div class="form-hint">
-								Updates about this ILR submission will be sent to this email address.
-							</div>
-							<input class="form-control" type="email" id="contact-email" name="contact-email" value="youremail@test.com">
-						</div>
-
-						<div class="multiple-choice">
-							<input id="radio-inline-2" type="radio" name="submit-file" value="false">
-							<label for="radio-inline-2">No, I need to check the data again</label>
-						</div>
-
-					</fieldset>
+					<label class="form-label form-label-bold" for="contact-email">Email address (optional. Emails will be sent to confirm your file submission and when reports are ready.)</label>
+					<div class="form-hint">
+						<!-- Updates about this ILR submission will be sent to this email address. -->
+					</div>
+					<input class="form-control" type="email" id="contact-email" name="contact-email" value="youremail@test.com">
 				</div>
 
-				<div class="form-group">
-					<input class="button" type="submit" role="button" id="upload-complete-button" value="Continue">
-				</div>
+				<input type="submit" class="button" value="Submit file">
+
+				<hr>
+
+				<a href="data-not-submitted">Cancel this submission and check data again</a>
 			</form>
 		</div>
 
