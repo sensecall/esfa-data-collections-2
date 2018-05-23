@@ -3,8 +3,8 @@
     { 
       "id": "1",
       "name": "Return period 1",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
@@ -26,12 +26,12 @@
     { 
       "id": "2",
       "name": "Return period 2",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
-          "start": "2017-08-08",
+          "start": "09 August 2017",
           "end": "09 August 2017"
         },
         { 
@@ -44,8 +44,8 @@
     { 
       "id": "3",
       "name": "Return period 3",
-      "start_date": "2017-09-05",
-      "end_date": "2017-09-28",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
@@ -62,12 +62,12 @@
     { 
       "id": "4",
       "name": "Return period 4",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
-          "start": "2017-08-08",
+          "start": "09 August 2017",
           "end": "09 August 2017"
         },
         { 
@@ -80,12 +80,12 @@
     { 
       "id": "5",
       "name": "Return period 5",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
-          "start": "2017-08-08",
+          "start": "09 August 2017",
           "end": "09 August 2017"
         },
         { 
@@ -98,12 +98,12 @@
     { 
       "id": "6",
       "name": "Return period 6",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
-          "start": "2017-08-08",
+          "start": "09 August 2017",
           "end": "09 August 2017"
         },
         { 
@@ -116,12 +116,12 @@
     { 
       "id": "7",
       "name": "Return period 7",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
-          "start": "2017-08-08",
+          "start": "09 August 2017",
           "end": "09 August 2017"
         },
         { 
@@ -134,12 +134,12 @@
     { 
       "id": "8",
       "name": "Return period 8",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
-          "start": "2017-08-08",
+          "start": "09 August 2017",
           "end": "09 August 2017"
         },
         { 
@@ -152,12 +152,12 @@
     { 
       "id": "9",
       "name": "Return period 9",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
-          "start": "2017-08-08",
+          "start": "09 August 2017",
           "end": "09 August 2017"
         },
         { 
@@ -170,12 +170,12 @@
     { 
       "id": "10",
       "name": "Return period 10",
-      "start_date": "2017-08-07",
-      "end_date": "2017-08-27",
+      "start_date": "09 August 2017",
+      "end_date": "09 August 2017",
       "events": [
         { 
           "name": "Release",
-          "start": "2017-08-08",
+          "start": "09 August 2017",
           "end": "09 August 2017"
         },
         { 
