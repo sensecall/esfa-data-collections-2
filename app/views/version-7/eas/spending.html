@@ -20,13 +20,16 @@ Submit learner data
 			<h1 class="heading-xlarge">
 				Manage your Earnings adjustment statement
 			</h1>
+			<h2 class="heading-large">
+				Your claims
+			</h2>
 		</div>
 	</div>
 
 	<form method="post">
 		{% set categories = ["Apprenticeships for starts before 1 May 2017", "Apprenticeships for starts on or after 1 May 2017","Apprenticeships for starts from 1 May 2017 (non-procured, non-levy contracts)","Apprenticeships funded under procured contracts for non-levy contracts","16 to 18 traineeships (not funded through a 16 to 19 contract)","Adult education – traineeships and ‘other learning’ (non-procured provision)", "Adult education – traineeships and ‘other learning’ (procured provision from 1 November 2017)","Advanced Learner Loans"] %}
 
-		<table>
+		<table class="table-font-xsmall">
 			<thead>
 				<tr>
 					<th>
@@ -59,16 +62,11 @@ Submit learner data
 					{{data['eas-claim-'+i+'-month']}}
 				</td>
 				<td>
-					&pound;{{data['eas-claim-'+i+'-value']}}
+					&pound;{{data['eas-claim-'+i+'-value'] | numeral().format('0.00a')}}
 				</td>
 				<td>
 					<a href="#">
 						Change
-					</a>
-				</td>
-				<td>
-					<a href="#">
-						Delete
 					</a>
 				</td>
 			</tr>
@@ -79,16 +77,18 @@ Submit learner data
 		<br>
 
 		<input type="hidden" name="claim-count" value="{{claimCount}}">
-		<input type="submit" class="button" value="Add a claim" name="new-claim">
+		<p>
+			<input type="submit" class="button" value="Add a claim" name="new-claim">
+		</p>
 
 		<div class="grid-row">
 			<div class="column-two-thirds">
 				<h2 class="heading-medium">
-					Confirm your additional spending
+					Finished adding claims
 				</h2>
-				<p>
+				<div class="panel panel-border-wide">
 					Additional spending can be added, changed and deleted until the end of the academic year.
-				</p>
+				</div>
 				<div class="form-group">
 					<input type="submit" class="button" value="Save and finish" name="save-finish">
 				</div>

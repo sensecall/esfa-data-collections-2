@@ -27,6 +27,10 @@
 				Add a new funding claim (EAS)
 			</h1>
 
+			<p>
+				Use this form to add a new claim for your organisation's Earnings adjustment statement.
+			</p>
+
 			{% set claimId = ((data['claim-count'] | int) + 1) | int %}
 
 			<form method="post">
@@ -75,6 +79,10 @@
 
 				<input type="hidden" value="{{claimId}}" name="claim-count">
 				<input type="submit" class="button" value="Save and continue" name="add-claim">
+				<hr>
+				<p>
+					or <a href="spending">cancel</a> and return to your claims
+				</p>
 			</form>
 		</div>
 
