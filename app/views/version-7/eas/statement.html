@@ -76,6 +76,32 @@ Submit learner data
 			</tr>
 			{% endif %}
 			{% endfor %}
+			<tr>
+				<th>
+					Total
+				</th>
+				<th></th>
+				<th class="numeric">
+					{% for claim in range(0,claimCount) %}
+					{% set i = loop.index %}
+
+					<!-- if total doesnt exist -->
+					<!-- set total to zero -->
+					{% if not total %}
+					{% set total = 0 | int %}
+					{% endif %}
+
+					<!-- then set total to value + total -->
+					{% set value = data['eas-claim-'+i+'-value'] | int %}
+					{% set total = value + total | int %}
+					{% if loop.last == true %}
+					&pound;{{total | numeral().format('0.00')}}
+					{% endif %}
+					{% endfor %}
+				</th>
+				<th>
+				</th>
+			</tr>
 			{% endif %}
 		</table>
 
