@@ -16,12 +16,19 @@ GOV.UK prototype kit
 
 <main id="content" role="main">
   <div class="example">
-    {% include 'summaries/version-6.html' %}
+    {% include 'summaries/version-7.html' %}
   </div>
 
   <div class="grid-row">
     <div class="column-two-thirds">
       <h2 class="heading-large">All versions</h2>
+
+      <details>
+        <summary><span class="summary">Version 6</span></summary>
+        <div class="panel">
+          {% include 'summaries/version-6.html' %}
+        </div>
+      </details>
 
       <details>
         <summary><span class="summary">Version 5 (combined EAS &amp; ILR)</span></summary>
