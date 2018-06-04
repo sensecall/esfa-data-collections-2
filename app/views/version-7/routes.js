@@ -19,7 +19,7 @@ router.post('/choose-submission', (req, res) => {
   if (submissionType === 'ilr') {
     res.redirect(`/${req.version}/ilr-submission/upload-ilr-file`)
   } else {
-    res.redirect(`/${req.version}/eas/spending`)
+    res.redirect(`/${req.version}/eas/statement`)
   }
 })
 
@@ -35,7 +35,7 @@ router.post('/ilr-submission/upload-complete', (req, res) => {
 // ———————————————————————————————————————————————
 // EAS form
 // ———————————————————————————————————————————————
-router.post('/eas/spending', (req, res) => {
+router.post('/eas/statement', (req, res) => {
   if (req.body['new-claim']) {
     res.redirect(`/${req.version}/eas/new-claim`)
   } else if(req.body['save-finish']) {
@@ -43,8 +43,20 @@ router.post('/eas/spending', (req, res) => {
   }
 })
 
+router.get('/eas/', (req, res) => {
+  res.redirect(`/${req.version}/eas/statement`)
+})
+
 router.post('/eas/new-claim', (req, res) => {
-  res.redirect(`/${req.version}/eas/spending`)
+  res.redirect(`/${req.version}/eas/statement`)
+})
+
+router.post('/eas/change-claim', (req, res) => {
+  if (req.body['save-changes']) {
+    res.redirect(`/${req.version}/eas/statement`)
+  } else if(req.body['delete-claim']) {
+    res.redirect(`/${req.version}/eas/statement`)
+  }
 })
 
 module.exports = router

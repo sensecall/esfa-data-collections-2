@@ -32,19 +32,21 @@ Submit learner data
 		<table class="table-font-xsmall">
 			<thead>
 				<tr>
-					<th>
+					<th scope="col">
 						Category
 					</th>
-					<th>
+					<th scope="col">
 						Month
 					</th>
-					<th colspan="3">
+					<th class="numeric" scope="col">
 						Amount
+					</th>
+					<th>
 					</th>
 				</tr>
 			</thead>
 			{% set claimCount = data['claim-count'] %}
-			{% if not claimCount or claimCount === 0 %}
+			{% if not claimCount or claimCount == 0 %}
 			{% set claimCount = 0 %}
 			<tr>
 				<td colspan="3" style="text-align:center">
@@ -54,6 +56,8 @@ Submit learner data
 			{% else %}
 			{% for claim in range(0,claimCount) %}
 			{% set i = loop.index %}
+			{% if data['eas-claim-'+i+'-hidden'] == 'true' %}
+			{% else %}
 			<tr>
 				<td>
 					{{data['eas-claim-'+i+'-category']}}
@@ -61,15 +65,16 @@ Submit learner data
 				<td>
 					{{data['eas-claim-'+i+'-month']}}
 				</td>
-				<td>
-					&pound;{{data['eas-claim-'+i+'-value'] | numeral().format('0.00a')}}
+				<td class="numeric">
+					&pound;{{data['eas-claim-'+i+'-value'] | numeral().format('0.00')}}
 				</td>
 				<td>
-					<a href="#">
+					<a href="change-claim?edit-claim=true&claim-id={{i}}">
 						Change
 					</a>
 				</td>
 			</tr>
+			{% endif %}
 			{% endfor %}
 			{% endif %}
 		</table>
@@ -78,7 +83,7 @@ Submit learner data
 
 		<input type="hidden" name="claim-count" value="{{claimCount}}">
 		<p>
-			<input type="submit" class="button" value="Add a claim" name="new-claim">
+			<input type="submit" class="button button-secondary" value="Add a claim" name="new-claim">
 		</p>
 
 		<div class="grid-row">
@@ -90,7 +95,7 @@ Submit learner data
 					Additional spending can be added, changed and deleted until the end of the academic year.
 				</div>
 				<div class="form-group">
-					<input type="submit" class="button" value="Save and finish" name="save-finish">
+					<input type="submit" class="button" value="Finish" name="save-finish">
 				</div>
 			</div>
 		</div>
