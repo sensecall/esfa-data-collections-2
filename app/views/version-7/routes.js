@@ -29,7 +29,12 @@ router.get('/ilr-submission/email', (req, res) => {
 })
 
 router.post('/ilr-submission/upload-complete', (req, res) => {
+  var submitILR = req.body['submit-file']
+  if (submitILR === 'true') {
     res.redirect(`/${req.version}/ilr-submission/submission-complete`)
+  } else {
+    res.redirect(`/${req.version}/ilr-submission/data-not-submitted`)
+  }
 })
 
 // ———————————————————————————————————————————————
