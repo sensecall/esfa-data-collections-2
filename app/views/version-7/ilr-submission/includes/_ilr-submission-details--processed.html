@@ -37,41 +37,41 @@
 		<tbody>
 			<tr>
 				<td>16-19 (excluding Apprenticeships)</td>
-				<td>£{{ (fundingAmount * 0.23) | numeral().format('0,0') }}</td>
+				<td class="numeric">£{{ (fundingAmount * 0.23) | numeral().format('0,0') }}</td>
 			</tr>
 			<tr>
 				<td>Other 16-19</td>
-				<td>£{{ (fundingAmount * 0.42) | numeral().format('0,0') }}</td>
+				<td class="numeric">£{{ (fundingAmount * 0.42) | numeral().format('0,0') }}</td>
 			</tr>
 			<tr>
 				<td>Adult skills</td>
-				<td>£{{ (fundingAmount * 0.125) | numeral().format('0,0') }}</td>
+				<td class="numeric">£{{ (fundingAmount * 0.125) | numeral().format('0,0') }}</td>
 			</tr>
 			<tr>
 				<td>Community Learning</td>
-				<td>£{{ (fundingAmount * 0.04) | numeral().format('0,0') }}</td>
+				<td class="numeric">£{{ (fundingAmount * 0.04) | numeral().format('0,0') }}</td>
 			</tr>
 			<tr>
 				<td>ESF</td>
-				<td>£{{ (fundingAmount * 0.025) | numeral().format('0,0') }}</td>
+				<td class="numeric">£{{ (fundingAmount * 0.025) | numeral().format('0,0') }}</td>
 			</tr>
 			<tr>
 				<td>Other Adult</td>
-				<td>£{{ (fundingAmount * 0) | numeral().format('0,0') }}</td>
+				<td class="numeric">£{{ (fundingAmount * 0) | numeral().format('0,0') }}</td>
 			</tr>
 			<tr>
 				<td>Apprenticeships from 1 May 2017<br> (or available for non-funded learning aims)</td>
-				<td>£{{ (fundingAmount * 0.16) | numeral().format('0,0') }}</td>
+				<td class="numeric">£{{ (fundingAmount * 0.16) | numeral().format('0,0') }}</td>
 			</tr>
 			<tr>
 				<td><span class="bold-small">Total</span></td>
-				<td><span class="bold-small">£{{ (fundingAmount) | numeral().format('0,0') }}</span></td>
+				<td class="numeric"><span class="bold-small">£{{ (fundingAmount) | numeral().format('0,0') }}</span></td>
 			</tr>
 			<tr>
 				<td>
 					<span class="">Change from <a href="#">Return period 5</a></span>
 				</td>
-				<td>
+				<td class="numeric">
 					4.52% <span class="visually-hidden">higher than Return period 5</span>
 				</td>
 			</tr>
