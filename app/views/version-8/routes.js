@@ -17,11 +17,26 @@ router.post('/ilr-submission/uploading', (req, res) => {
 router.post('/choose-submission', (req, res) => {
   var submissionType = req.body['submissionType']
   if (submissionType === 'ilr') {
-    res.redirect(`/${req.version}/ilr-submission/upload-ilr-file`)
+    var returnPeriodStatus = req.body['returnPeriodStatus']
+    if (returnPeriodStatus === 'open'){
+      var page = 'upload-ilr-file'
+    } else {
+      var page = 'window-closed-notice'
+    }
+    res.redirect(`/${req.version}/ilr-submission/${page}`)
   } else if (submissionType === 'eas') {
     res.redirect(`/${req.version}/eas/statement`)
   } else {
     res.redirect(`/${req.version}/esf/upload-esf-file`)
+  }
+})
+
+router.get('/ilr-submission/upload-ilr-file', (req, res) => {
+  var ilrReturnWindow = req.body['ilrReturnWindow']
+  if (ilrReturnWindow === 'open'){
+    res.redirect(`${req.version}/ilr-submission/dasljdalskdjsad`)
+  } else {
+    res.render(`${req.version}/ilr-submission/upload-ilr-file`)
   }
 })
 

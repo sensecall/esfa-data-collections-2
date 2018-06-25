@@ -153,3 +153,23 @@ $pale-blue: #EDF4F7;
 .email {
   width: 640px
 }
+
+
+
+.popover {
+  .popover-link {
+    color: red;
+    background: #000;
+  }
+  .popover-content {
+    display: none;
+  }
+  &:focus {
+    outline: 3px solid red
+  }
+  &:active {
+    .popover-content {
+      display: block
+    }
+  }
+}

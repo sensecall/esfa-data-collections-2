@@ -52,6 +52,8 @@
 							<label for="radio-ilr">Individualised Learner Record (ILR)</label>
 						</div>
 
+						<input type="hidden" name="returnPeriodStatus" value="{{data['return-period-status'] or 'open'}}">
+
 						<div class="multiple-choice">
 							<input id="radio-eas" type="radio" name="submissionType" value="eas" required>
 							<label for="radio-eas">Earnings Adjustment Statement (EAS)</label>
