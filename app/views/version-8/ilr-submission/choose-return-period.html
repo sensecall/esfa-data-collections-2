@@ -18,26 +18,30 @@
 		<div class="column-two-thirds" id="uploading-content">
 			<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
 
-			<form method="post">
+			<form action="upload-ilr-file">
 				<div class="form-group">
 					<fieldset>
 						<legend>
-							<h1 class="heading-large">Which return period do you need to submit data for?</h1>
+							<h1 class="heading-large">Choose the return period you are submitting data for</h1>
 						</legend>
 
+						<p class="">
+							There are two return periods open for data submissions so you need to choose which return period this data submission is being made for.
+						</p>
+
 						<div class="multiple-choice">
-							<input id="radio-period-13" type="radio" name="submissionType" value="ilr" required>
+							<input id="radio-period-13" type="radio" name="returnPeriod" value="13" required>
 							<label for="radio-period-13">Return period 13 (R13) for 2017-18</label>
 						</div>
 
 						<div class="multiple-choice">
-							<input id="radio-period-1" type="radio" name="submissionType" value="eas" required>
+							<input id="radio-period-1" type="radio" name="returnPeriod" value="01" required>
 							<label for="radio-period-1">Return period 1 (R01) for 2018-19</label>
 						</div>
 					</fieldset>
 				</div>
 
-				<a href="upload-ilr-file" class="button">Start submitting data</a>
+				<input type="submit" class="button" value="Continue">
 			</form>
 		</div>
 	</div>
