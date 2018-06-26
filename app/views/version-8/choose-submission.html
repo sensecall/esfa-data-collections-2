@@ -54,6 +54,11 @@
 
 						<input type="hidden" name="returnPeriodStatus" value="{{data['return-period-status'] or 'open'}}">
 
+<!-- BELOW IS WHAT YOU WERE DOING YESTERDAY -->
+						<input type="hidden" name="overlappingReturnPeriod" value="{{data['overlapping-return-period'] or 'false'}}">
+<!-- ABOVE IS WHAT YOU WERE DOING YESTERDAY -->
+
+
 						<div class="multiple-choice">
 							<input id="radio-eas" type="radio" name="submissionType" value="eas" required>
 							<label for="radio-eas">Earnings Adjustment Statement (EAS)</label>

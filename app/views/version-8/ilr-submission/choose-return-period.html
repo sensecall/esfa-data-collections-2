@@ -1,0 +1,46 @@
+{% extends "../layout.html" %}
+
+{% set serviceName = 'Submit learner data' %}
+
+{% block page_title %}
+{{serviceName}} - GOV.UK
+{% endblock %}
+
+{% block page_scripts %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include '../_common/_phase-banner.html' %}
+	
+	<div class="grid-row">
+		<div class="column-two-thirds" id="uploading-content">
+			<a class="link-back" href="javascript:history.back()">Back<span class="visuallyhidden"> to the previous page</span></a>
+
+			<form method="post">
+				<div class="form-group">
+					<fieldset>
+						<legend>
+							<h1 class="heading-large">Which return period do you need to submit data for?</h1>
+						</legend>
+
+						<div class="multiple-choice">
+							<input id="radio-period-13" type="radio" name="submissionType" value="ilr" required>
+							<label for="radio-period-13">Return period 13 (R13) for 2017-18</label>
+						</div>
+
+						<div class="multiple-choice">
+							<input id="radio-period-1" type="radio" name="submissionType" value="eas" required>
+							<label for="radio-period-1">Return period 1 (R01) for 2018-19</label>
+						</div>
+					</fieldset>
+				</div>
+
+				<a href="upload-ilr-file" class="button">Start submitting data</a>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

@@ -18,8 +18,14 @@ router.post('/choose-submission', (req, res) => {
   var submissionType = req.body['submissionType']
   if (submissionType === 'ilr') {
     var returnPeriodStatus = req.body['returnPeriodStatus']
-    if (returnPeriodStatus === 'open'){
-      var page = 'upload-ilr-file'
+    var overlappingReturnPeriod = req.body['overlappingReturnPeriod']
+
+    if (returnPeriodStatus != 'closed'){
+      if (overlappingReturnPeriod != 'true'){
+        var page = 'upload-ilr-file'
+      } else {
+        var page = 'choose-return-period'
+      }
     } else {
       var page = 'window-closed-notice'
     }
